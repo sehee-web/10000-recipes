@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 49.96 59.4">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke-linecap: round;
+        stroke-width: .95px;
+      }
+
+      .cls-1, .cls-2, .cls-3 {
+        stroke: #231f20;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-2 {
+        fill: #868686;
+      }
+
+      .cls-2, .cls-3 {
+        stroke-width: 1.27px;
+      }
+
+      .cls-3 {
+        fill: #fff;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g id="chopstick">
+        <line class="cls-1" x1="34.34" y1="21.71" x2="42.13" y2=".48"/>
+        <line class="cls-1" x1="36.81" y1="23.54" x2="48.79" y2="4.36"/>
+      </g>
+      <path id="rice" class="cls-3" d="M4.17,35.03s-.45-6.24,3.02-6.4c0,0-1.35-3.96,4.05-4.6,0,0,.64-4.25,5.72-2.7,0,0,1.35-4.95,5.72-1.29,0,0,2.44-4.37,6.11-.58,0,0,3.73-1.87,6.11,2.51,0,0,3.99-.49,4.63,4.06,0,0,3.67,.05,3.92,4.56,0,0,3.47,.96,2.64,4.44H4.17Z"/>
+      <path id="bowl" class="cls-2" d="M.75,35.03H49.31s-.45,18.72-11.58,23.73H12.07s-7.91-3.54-11.32-23.73Z"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>레시피 상세페이지 — 만개의 레시피</title>
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" href="css/common.css">
+<link rel="stylesheet" href="css/recipe-detail.css">
+<link rel="icon" type="image/png" sizes="32x32" href="/images_10000_recipes/favicon.png">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="js/common.js"></script>
+</head>
+<body>
+
+<!--header-->
+    <header id="header" class="header">
+        <div class="header_inner">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="images_10000_recipes/10000_recipes_logo.png" alt="만개의 레시피">
+                </a>
+            </h1>
+                <h2 class="hide">사용자 메뉴</h2>
+                    <ul class="top_menu">
+                            <li class="join"><a href="login.html">로그인 / 회원가입</a></li>
+                            <li><a href="coming-soon.html">최근 본 레시피</a></li>
+                    </ul>
+                    <div class="header_row">
+                        <ul class="bottom_top_menu">
+                            <li>
+                                <a href="coming-soon.html">
+                                    <img src="images_10000_recipes/myPage.svg" alt="마이페이지" height="42">
+                                    <span>마이페이지</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="coming-soon.html">
+                                    <img src="images_10000_recipes/scrap.svg" alt="스크랩한 레시피" height="42">
+                                    <span>스크랩한 레시피</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="coming-soon.html">
+                                    <img src="images_10000_recipes/recipe_upload.svg" alt="레시피 등록" height="42">
+                                    <span>레시피 등록</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <form action="#" method="get" class="search-box">
+                            <fieldset>
+                                <legend class="hide">통합검색</legend>
+                                <label for="topSch" hidden>입력</label>
+                                <input type="search" name="topSch" id="topSch" placeholder="오늘 저녁은 시원한 콩나물국 어때요?">
+                                <button type="submit">
+                                    <img src="images_10000_recipes/search.png" alt="검색">
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
+
+            <!-- gnb -->
+            <nav id="gnb" class="gnb">
+                <div class="ctg_wrap">
+                    <a href="#none" class="ctg_toggle" aria-expanded="false">
+                        <span class="ctg"><img src="images_10000_recipes/ctg_icon.png" alt="">카테고리</span>
+                    </a>
+                    <ul class="ctg_panel">
+                        <li><strong class="ctg_title">종류</strong></li>
+                        <li><a href="category.html?d2=banchan">반찬</a></li>
+                        <li><a href="category.html?d2=guk-jjigae">국/찌개</a></li>
+                        <li><a href="category.html?d2=bap-juk-tteok">밥/죽/떡</a></li>
+                        <li><a href="category.html?d2=noodle">면</a></li>
+                        <li><a href="category.html?d2=jang-yangnyeom">장류/양념</a></li>
+                        <li><a href="category.html?d2=salad">샐러드</a></li>
+                        <li><a href="category.html?d2=western">양식</a></li>
+                        <li><strong class="ctg_title">재료</strong></li>
+                        <li><a href="ingredient.html?d2=meat">육류</a></li>
+                        <li><a href="ingredient.html?d2=seafood">해산물</a></li>
+                        <li><a href="ingredient.html?d2=vegetable">채소</a></li>
+                        <li><a href="ingredient.html?d2=egg-dairy">달걀/유제품</a></li>
+                        <li><a href="ingredient.html?d2=flour">밀가루</a></li>
+                        <li><a href="ingredient.html?d2=grain-nuts">곡류/견과류</a></li>
+                        <li><a href="ingredient.html?d2=fruit">과일</a></li>
+                        <li><strong class="ctg_title">방법</strong></li>
+                        <li><a href="method.html?d2=boil-simmer">끓이기/조리기</a></li>
+                        <li><a href="method.html?d2=stir-grill">볶기/굽기</a></li>
+                        <li><a href="method.html?d2=fry-pan">튀김/부침</a></li>
+                        <li><a href="method.html?d2=steam-boil-blanch">찜/삶기/데치기</a></li>
+                        <li><a href="method.html?d2=mix-toss">무침/비빔</a></li>
+                        <li><a href="method.html?d2=pickle">절임</a></li>
+                        <li><a href="method.html?d2=raw">회</a></li>
+                        <li><strong class="ctg_title">상황</strong></li>
+                        <li><a href="situation.html?d2=quick">간편식</a></li>
+                        <li><a href="situation.html?d2=special">특별식</a></li>
+                        <li><a href="situation.html?d2=holiday">명절</a></li>
+                        <li><a href="situation.html?d2=pregnancy-baby">임산부/이유식</a></li>
+                        <li><a href="situation.html?d2=diet">다이어트</a></li>
+                        <li><a href="situation.html?d2=hangover">해장</a></li>
+                        <li><a href="situation.html?d2=late-night">야식</a></li>
+                        <li><strong class="ctg_title">건강식단</strong></li>
+                        <li><a href="health.html?d2=stomach">위 건강</a></li>
+                        <li><a href="health.html?d2=intestine">장 건강</a></li>
+                        <li><a href="health.html?d2=liver">간 건강</a></li>
+                        <li><a href="health.html?d2=blood-sugar">혈당조절</a></li>
+                        <li><a href="health.html?d2=anti-cancer">암 예방</a></li>
+                    </ul>
+                </div>
+                <h2 class="hide">주요 메뉴</h2>
+                <ul class="main_menu">
+                    <li><a href="today_menu.html">오늘 뭐 먹지?</a></li>
+                    <li><a href="coming-soon.html">베스트</a></li>
+                    <li><a href="coming-soon.html">이벤트</a></li>
+                    <li><a href="coming-soon.html">셰프</a></li>
+                    <li class="comm">
+                        <a href="#" class="comm_toggle" aria-expanded="false">커뮤니티</a>
+                            <ul class="comm_panel">
+                                <li><a href="coming-soon.html">공지사항</a></li>
+                                <li><a href="coming-soon.html">자주 묻는 질문</a></li>
+                                <li><a href="coming-soon.html">레시피 후기</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- BREADCRUMB -->
+<div class="breadcrumb-wrap">
+  <div class="recipe-detail-inner">
+    <nav aria-label="현재 위치">
+        <ol class="breadcrumb">
+            <li class="breadcrumb__item">
+                <a href="index.html">홈</a>
+            </li>
+            <li aria-hidden="true">
+                <span class="breadcrumb__sep">›</span>
+            </li>
+            <!-- depth1 switcher -->
+            <li class="breadcrumb__item">
+                <div class="depth1-switcher" id="depth1-switcher">
+                    <!--
+                        switcher-trigger
+                        aria-haspopup  : 팝업 메뉴가 있음을 스크린리더에 전달
+                        aria-expanded  : 열림/닫힘 상태 (JS가 토글)
+                        aria-controls  : 연결된 메뉴 id
+                    -->
+                    <button type="button" class="switcher-trigger" id="switcher-trigger-btn"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        aria-controls="switcher-menu-list">
+                        <span id="switcher-label">종류</span>
+                        <span class="switcher-trigger__arrow" aria-hidden="true">
+                            <svg viewBox="0 0 9 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M1 1L4.5 5L8 1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </span>
+                    </button>
+                    <!--
+                        switcher-menu
+                        role="menu"      : 드롭다운 메뉴
+                        각 항목은 <a> 링크 — 클릭 시 해당 depth1 페이지로 이동
+                        data-d1          : depth1 식별자
+                        data-label       : switcher-label에 표시할 텍스트
+                    -->
+                    <ul class="switcher-menu" id="switcher-menu-list" role="menu" aria-label="카테고리 대분류 선택">
+                        <li role="none">
+                            <a class="switcher-item is-active" href="category.html" role="menuitem" aria-current="page" data-d1="type" data-label="종류">
+                                종류
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a class="switcher-item" href="ingredient.html" role="menuitem" data-d1="ingredient" data-label="재료">
+                                재료
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a class="switcher-item" href="method.html" role="menuitem" data-d1="method" data-label="방법">
+                                방법
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a class="switcher-item" href="situation.html" role="menuitem" data-d1="situation" data-label="상황">
+                                상황
+                            </a>
+                        </li>
+                        <li role="none">
+                            <a class="switcher-item" href="health.html" role="menuitem" data-d1="health" data-label="건강식단">
+                                건강식단
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <!-- depth2 — JS가 is-visible 클래스 추가/제거 -->
+            <li class="bc-dynamic" id="bc-sep-d2" aria-hidden="true">
+                <span class="breadcrumb__sep">›</span>
+            </li>
+            <li class="bc-dynamic breadcrumb__item breadcrumb__item--current" id="bc-d2"></li>
+            <!-- depth3 — JS가 is-visible 클래스 추가/제거 -->
+            <li class="bc-dynamic" id="bc-sep-d3" aria-hidden="true">
+                <span class="breadcrumb__sep">›</span>
+            </li>
+            <li class="bc-dynamic breadcrumb__item breadcrumb__item--current" id="bc-d3" aria-current="page"></li>
+        </ol>
+    </nav>
+  </div>
+</div>
+
+<main class="main-wrap">
+
+  <section class="hero">
+    <div class="hero-inner">
+
+      <!-- 좌: 이미지 -->
+      <div class="hero-image">
+        <div class="hero-image-placeholder">
+          <svg viewBox="0 0 48 48" fill="none" stroke="#aaa" stroke-width="1.8">
+            <rect x="4" y="8" width="40" height="32" rx="3"/>
+            <circle cx="16" cy="20" r="4"/>
+            <path d="M4 36 l12-10 8 8 8-12 12 14"/>
+          </svg>
+          <span>레시피 이미지</span>
+        </div>
+      </div>
+
+      <!-- 우: 정보 -->
+      <div class="hero-info">
+
+        <!-- 제목 + 작성자 -->
+        <div class="hero-left">
+          <h1 class="recipe-title"></h1>
+          <p class="recipe-subtitle"></p>
+          <div class="author-row">
+            <div class="author-avatar">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#aaa" stroke-width="1.8"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <span class="author-name"></span>
+          </div>
+        </div>
+
+        <!-- 구분선 -->
+        <div class="hero-divider"></div>
+
+        <!-- 메타 아이콘 -->
+        <div class="meta-icons">
+          <div class="meta-icon-item">
+            <svg viewBox="0 0 28 28" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="10" cy="9" r="4"/>
+              <path d="M2 24v-2a6 6 0 0 1 6-6h4a6 6 0 0 1 6 6v2"/>
+              <circle cx="20" cy="9" r="3" opacity=".5"/>
+              <path d="M24 24v-1.5a4.5 4.5 0 0 0-3-4.2" opacity=".5"/>
+            </svg>
+            <span class="meta-icon-label">4인분</span>
+          </div>
+
+          <div class="meta-icon-divider"></div>
+
+          <div class="meta-icon-item">
+            <svg viewBox="0 0 28 28" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round">
+              <circle cx="14" cy="15" r="9"/>
+              <path d="M14 9v6l4 2"/>
+              <path d="M11 3h6"/>
+            </svg>
+            <span class="meta-icon-label">60분 이내</span>
+          </div>
+
+          <div class="meta-icon-divider"></div>
+
+          <div class="meta-icon-item">
+            <svg viewBox="0 0 28 28" fill="none" stroke="#555" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="18" width="5" height="7" rx="1"/>
+              <rect x="11" y="12" width="5" height="13" rx="1"/>
+              <rect x="19" y="6" width="5" height="19" rx="1" opacity=".35"/>
+            </svg>
+            <span class="meta-icon-label">초급</span>
+          </div>
+        </div>
+
+        <!-- 구분선 -->
+        <div class="hero-divider"></div>
+
+        <!-- 액션 버튼 -->
+        <div class="action-icons">
+          <!-- 스크랩 -->
+          <button class="action-btn" aria-label="레시피 스크랩">
+            <span class="tooltip">레시피 스크랩</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/>
+            </svg>
+          </button>
+
+          <!-- 프린트 -->
+          <button class="action-btn" aria-label="레시피 출력">
+            <span class="tooltip">레시피 출력</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 6 2 18 2 18 9"/>
+              <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/>
+              <rect x="6" y="14" width="12" height="8"/>
+            </svg>
+          </button>
+
+          <!-- 공유 버튼 + 팝업 -->
+          <div class="share-popup-wrap">
+            <button class="action-btn" id="shareBtn" aria-label="레시피 공유" aria-expanded="false" onclick="toggleShare(event)">
+              <span class="tooltip">레시피 공유</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/>
+                <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+                <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+              </svg>
+            </button>
+            <div class="share-popup" id="sharePopup" role="dialog" aria-label="공유하기">
+              <p class="share-popup-title">공유하기</p>
+              <div class="share-sns-row">
+                <a href="#" class="share-sns-btn" aria-label="카카오톡으로 공유">
+                  <div class="share-sns-icon" style="background:#e8e8e8;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M12 3C7.03 3 3 6.36 3 10.5c0 2.6 1.55 4.9 3.9 6.28l-.98 3.6 4.08-2.6c.64.1 1.3.15 1.97.15 4.97 0 9-3.36 9-7.5S16.97 3 12 3z" fill="#888"/>
+                    </svg>
+                  </div>
+                  <span class="share-sns-label">카카오톡</span>
+                </a>
+                <a href="#" class="share-sns-btn" aria-label="인스타그램으로 공유">
+                  <div class="share-sns-icon" style="background:#e8e8e8;">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#888" stroke-width="1.8" stroke-linecap="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5.5"/>
+                      <circle cx="12" cy="12" r="5"/>
+                      <circle cx="17.5" cy="6.5" r="1" fill="#888" stroke="none"/>
+                    </svg>
+                  </div>
+                  <span class="share-sns-label">인스타그램</span>
+                </a>
+                <a href="#" class="share-sns-btn" aria-label="네이버로 공유">
+                  <div class="share-sns-icon" style="background:#e8e8e8;">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path d="M5 5h4.8l4.4 6.8V5H19v14h-4.7L9.8 12V19H5V5z" fill="#888"/>
+                    </svg>
+                  </div>
+                  <span class="share-sns-label">네이버</span>
+                </a>
+              </div>
+              <div class="share-divider"></div>
+              <button class="share-url-btn" onclick="copyURL()" type="button">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="9" y="9" width="13" height="13" rx="2"/>
+                  <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/>
+                </svg>
+                <span class="share-url-text">URL 복사</span>
+                <span class="share-copy-done" id="copyDone">복사됨 ✓</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 재료 + 조리순서 -->
+  <div class="content-grid">
+
+    <!-- 재료 사이드바 -->
+    <aside class="sidebar">
+      <div class="sidebar-head">
+        <h2>재료</h2>
+        <span>4인분</span>
+      </div>
+      <div class="sidebar-body">
+      </div>
+      <!-- <button class="sidebar-buy">🛒 전체 재료 구매</button> -->
+    </aside>
+
+    <!-- 스프링 공책 (조리순서) -->
+    <div class="notebook">
+      <div class="spring-bar">
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+        <div class="spring-hole"></div>
+      </div>
+      <div class="bookmark"></div>
+
+      <div class="notebook-body">
+        <div class="steps-header">
+          <div>
+            <h2>조리 순서</h2>
+            <!-- <p>How to cook</p> -->
+            <div class="accent-line"></div>
+          </div>
+        </div>
+
+        <ol class="step-list">
+        </ol>
+
+        <div class="notebook-footer">
+          <span>만개의 레시피</span>
+          <span>— 1 —</span>
+        </div>
+        <div class="page-curl"></div>
+      </div>
+    </div>
+
+  </div><!-- /content-grid -->
+
+  <!-- 후기 / 질문 탭 -->
+  <section class="review-section">
+
+    <div class="tab-bar" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('review', this)">
+        요리 후기 <span class="tab-count">0</span>
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('question', this)">
+        질문 <span class="tab-count">0</span>
+      </button>
+    </div>
+
+    <!-- 요리 후기 패널 -->
+    <div id="panel-review" class="tab-panel active" role="tabpanel">
+
+      <!-- 후기 작성 -->
+      <div class="review-write">
+        <div class="review-write-img">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+          사진 추가
+        </div>
+        <div class="review-write-body">
+          <div class="star-row">
+            <span class="star on" onclick="setStar(1)">★</span>
+            <span class="star on" onclick="setStar(2)">★</span>
+            <span class="star on" onclick="setStar(3)">★</span>
+            <span class="star on" onclick="setStar(4)">★</span>
+            <span class="star" onclick="setStar(5)">★</span>
+          </div>
+          <input class="review-input" type="text" placeholder="요리 후기를 남겨주세요">
+        </div>
+        <button class="submit-btn">등록</button>
+      </div>
+
+      <!-- 후기 카드들 --><div class="review-more-btn">
+        <button class="more-btn">후기 더보기 ∨</button>
+      </div>
+    </div>
+
+    <!-- 질문 패널 -->
+    <div id="panel-question" class="tab-panel" role="tabpanel">
+
+      <div class="q-write-box">
+        <textarea class="q-input" placeholder="레시피 재료, 양, 조리 방법 등 궁금한 점을 질문해 주세요."></textarea>
+        <div class="q-submit-row">
+          <button class="submit-btn">질문 등록</button>
+        </div>
+      </div><div class="review-more-btn">
+        <button class="more-btn">질문 더보기 ∨</button>
+      </div>
+    </div>
+
+  </section>
+
+</main>
+
+    <!--footer-->
+    <footer id="footer" class="footer">
+        <div class="footer_inner">
+            <div class="footer_left">
+                <h2>(주)만개의 레시피</h2>
+                <div class="footer_link">
+                    <h3 class="hide">푸터 주요 메뉴</h3>
+                        <ul>
+                            <li><a href="https://www.10000recipe.com/company/intro.html">회사소개 · 광고 제휴</a></li>
+                            <li><a href="#">개인정보처리방침</a></li>
+                            <li><a href="#">이용약관</a></li>
+                            <li><a href="#">고객센터</a></li>
+                        </ul>
+                </div>
+                <div class="footer_address">
+                    <ul>
+                        <li>대표 : 이인경</li>
+                        <li>이메일 : <a href="mailto:help@10000recipe.com">help@10000recipe.com</a></li>
+                        <li>Fax : 02-323-5049</li>
+                    </ul>
+                    <address>주소: 서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호 </address>
+                    <p>사업자등록번호 291-81-02485 </p>
+                    <p>통신판매업신고 2022-서울금천-3089
+                        <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2918102485"><span>사업자정보확인</span></a>
+                    </p>
+                    <p>서울지방중소기업청 제 031134233-1-01643호</p>
+                </div>
+            </div>
+            <div class="footer_divider" aria-hidden="true"></div>
+            <div class="footer_right">
+                <div class="footer_cs">
+                    <p>쇼핑문의(만개의 레시피)<span>02-6953-4433</span></p>
+                    <p>운영시간<span>평일 10:00부터 18:00</span></p>
+                    <p>서비스 이용문의<span>070-4896-6416</span></p>
+                </div>
+                <ul class="footer_sns">
+                    <li class="sns_insta"><a href="https://www.instagram.com/10000recipe/"><span class="hide">인스타그램 바로가기</span></a></li>
+                    <li class="sns_fb"><a href="https://www.facebook.com/10000recipe"><span class="hide">페이스북 바로가기</span></a></li>
+                    <li class="sns_yout"><a href="https://www.youtube.com/channel/UCKA_6r3CWC76x_EaFO6jsPA"><span class="hide">유튜브 바로가기</span></a></li>
+                    <li class="sns_bl"><a href="https://blog.naver.com/ezday1"><span class="hide">네이버 블로그 바로가기</span></a></li>
+                    <li class="sns_kko"><a href="https://tv.kakao.com/channel/2134164/video"><span class="hide">카카오티비 바로가기</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer_copy">Copyright 만개의레시피 Inc. All Rights Reserved</p>
+        <div class="top_bt"><a href="#"><span class="hide">위로 바로가기</span></a></div>
+    </footer>
+
+<script src="js/recipe-data.js"></script>
+<script src="js/recipe-detail-loader.js"></script>
+
+<script>
+/* 공유 팝업 */
+function toggleShare(e) {
+  e.stopPropagation();
+  var popup = document.getElementById('sharePopup');
+  var btn = document.getElementById('shareBtn');
+  var isOpen = popup.classList.contains('open');
+  popup.classList.toggle('open', !isOpen);
+  btn.setAttribute('aria-expanded', String(!isOpen));
+}
+
+function copyURL() {
+  var url = window.location.href;
+  navigator.clipboard.writeText(url).then(function() {
+    var done = document.getElementById('copyDone');
+    done.classList.add('show');
+    setTimeout(function() { done.classList.remove('show'); }, 1800);
+  });
+}
+
+document.addEventListener('click', function(e) {
+  var popup = document.getElementById('sharePopup');
+  var wrap = document.querySelector('.share-popup-wrap');
+  if (popup && wrap && !wrap.contains(e.target)) {
+    popup.classList.remove('open');
+    document.getElementById('shareBtn').setAttribute('aria-expanded', 'false');
+  }
+});
+
+/* 후기/질문 탭 */
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-btn').forEach(function(b) {
+    b.classList.remove('active');
+    b.setAttribute('aria-selected', 'false');
+  });
+  document.querySelectorAll('.tab-panel').forEach(function(p) {
+    p.classList.remove('active');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected', 'true');
+  document.getElementById('panel-' + name).classList.add('active');
+}
+
+/* 별점 */
+function setStar(n) {
+  document.querySelectorAll('.star').forEach(function(s, i) {
+    s.classList.toggle('on', i < n);
+  });
+}
+</script>
+
+</body>
+</html>

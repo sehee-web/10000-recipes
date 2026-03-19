@@ -1,0 +1,696 @@
+:root{
+    /* 주조색 */
+  --color-primary: #74b243;
+  --color-primary-dark: #3d6320;
+  --color-primary-light: #dcead1;
+
+  /* 강조색 */
+  --color-point: #e9722e;
+
+  /* 보조색 */
+  --color-sub: #9a9595;
+
+  /* 텍스트 */
+  --color-text: #1e3a0a;
+  --color-text-muted: #555;
+}
+.category-page {
+    min-width: 1264px;
+}
+
+.category-inner {
+    width: 1264px;
+    margin: 0 auto;
+}
+
+/* 사이드바 + 콘텐츠 2열 */
+.category-layout {
+    display: flex;
+    align-items: flex-start;
+    gap: 28px;
+    padding-top: 38px;
+}
+
+
+/* BREADCRUMB + DEPTH1 SWITCHER */
+.breadcrumb-wrap {
+    background: #fff;
+    padding-top: 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.breadcrumb {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 12px 0;
+    font-size: 13px;
+    color: #999;
+    gap: 0;
+}
+
+.breadcrumb__sep {
+    color: #d5d5d5;
+    font-size: 16px;
+    padding: 0 10px;
+    user-select: none;
+}
+
+.breadcrumb__item a {
+    color: #555;
+    padding: 2px 4px;
+    border-radius: 4px;
+    transition: color 0.2s ease;
+}
+
+.breadcrumb__item a:hover {
+    color: var(--color-point);
+}
+
+.breadcrumb__item--current {
+    color: #1a1a1a;
+    font-weight: 600;
+}
+
+/* depth2·3 동적 항목 — JS가 is-visible 추가 */
+.bc-dynamic {
+    display: none;
+}
+
+.bc-dynamic.is-visible {
+    display: contents;
+}
+
+/* depth1 switcher */
+.depth1-switcher {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+}
+
+.switcher-trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    padding: 3px 7px 3px 9px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 6px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--color-point);
+    cursor: pointer;
+    transition: border-color 0.2s ease, background 0.2s ease;
+    white-space: nowrap;
+    line-height: 1.4;
+}
+
+.switcher-trigger:hover {
+    border-color: var(--color-point);
+    background: #FDF3EC;
+}
+
+.depth1-switcher.is-open .switcher-trigger {
+    border-color: var(--color-point);
+    background: #FDF3EC;
+}
+
+.switcher-trigger__arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-point);
+    transition: transform 0.22s ease;
+    flex-shrink: 0;
+}
+.switcher-trigger__arrow svg {
+    width: 9px;
+    height: 9px;
+}
+.depth1-switcher.is-open .switcher-trigger__arrow {
+    transform: rotate(180deg);
+}
+
+/* 드롭다운 패널 */
+.switcher-menu {
+    position: absolute;
+    top: calc(100% + 10px);
+    left: 0;
+    min-width: 150px;
+    background: #fff;
+    border: 1.5px solid #ebebeb;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+    padding: 5px;
+    z-index: 200;
+    /* 닫힌 상태 */
+    opacity: 0;
+    transform: translateY(-6px);
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease;
+    list-style: none;
+}
+
+.depth1-switcher.is-open .switcher-menu {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.switcher-item {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    /* width: 100%; */
+    /* padding: 8px 11px; */
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+}
+
+.switcher-item:hover {
+    background: #f5f5f5;
+    color: var(--color-point);
+}
+
+.switcher-item.is-active {
+    background: #FDF3EC;
+    color: var(--color-point);
+    font-weight: 700;
+}
+
+/* 현재 항목 체크 표시 */
+.switcher-item.is-active::after {
+    content: '✓';
+    margin-left: auto;
+    font-size: 13px;
+    color: var(--color-point);
+}
+
+/* DEPTH2 필터바 */
+.depth2-filter-wrap {
+    background: #fff;
+    border-bottom: 2px solid #ebebeb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.depth2-filter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+/* .depth2-filter::-webkit-scrollbar {
+    display: none;
+} */
+
+.depth2-filter__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1.5px solid #d5d5d5;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    line-height: 1;
+}
+
+.depth2-filter__btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.depth2-filter__btn.is-active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+.depth2-filter__btn--all.is-active {
+    background: var(--color-point);
+    border-color: var(--color-point);
+}
+
+/* SIDEBAR */
+.category-sidebar {
+    width: 160px;
+    flex-shrink: 0;
+    position: sticky;
+    top: 100px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 12px;
+    
+}
+
+/* 사이드바 제목 */
+.sidebar__heading {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--color-point);
+    padding: 12px;
+    margin-bottom: 0;
+    cursor: default;
+}
+
+/* 아코디언 전체 래퍼 */
+.depth3-accordion {
+    width: 100%;
+}
+
+/* 아이템 구분 */
+.accordion-item:not(:last-child) {
+    border-bottom: 1.5px solid #d5d5d5;
+}
+
+/* ── 트리거 ── */
+.accordion-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 14px;
+    background: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-align: left;
+    cursor: pointer;
+    gap: 6px;
+    transition: color 0.15s ease;
+    border: none;
+}
+
+.accordion-trigger:hover {
+    color: var(--color-primary);
+}
+
+.accordion-item.is-open > .accordion-trigger {
+    color: var(--color-primary);
+}
+
+.accordion-trigger__label {
+    flex: 1;
+}
+
+.accordion-trigger__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #bbb;
+    transition: transform 0.22s ease, color 0.15s ease;
+    flex-shrink: 0;
+}
+
+.accordion-trigger__icon svg {
+    width: 11px;
+    height: 11px;
+}
+
+.accordion-item.is-open > .accordion-trigger .accordion-trigger__icon {
+    transform: rotate(180deg);
+    color: var(--color-primary);
+}
+
+/* ── 패널 ── */
+.accordion-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-item.is-open > .accordion-panel {
+    max-height: 300px;
+}
+
+.accordion-panel__list {
+    padding: 0 6px 4px;
+    list-style: none;
+}
+
+/* depth3 버튼 */
+.accordion-panel__btn {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 400;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    text-align: left;
+}
+
+.accordion-panel__btn:hover {
+    background: #DCEAD1;
+    color: var(--color-primary);
+    
+}
+
+.accordion-panel__btn.is-active {
+    background: #dcead1;
+    color: #3d6320;
+    font-weight: 600;
+    border-left: 3px solid var(--color-primary);
+}
+/* CONTENT AREA */
+.content-area {
+    flex: 1;
+    min-width: 0;
+}
+
+/* 툴바 */
+.recipe-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.recipe-toolbar__count {
+    font-size: 14px;
+    color: #555;
+}
+
+.recipe-toolbar__count strong {
+    color: var(--color-point);
+    font-weight: 700;
+}
+
+.sort-select {
+    padding: 6px 26px 6px 11px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #555;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E") no-repeat right 9px center;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s ease;
+}
+
+.sort-select:focus {
+    border-color: var(--color-primary);
+}
+
+
+/* 
+   RECIPE LIST  —  4열 그리드
+ */
+.recipe-list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 20px;
+    margin-bottom: 40px;
+}
+
+
+/* 
+   RECIPE CARD
+ */
+.recipe-card {
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(116, 178, 67, 0.15);
+    border-color: transparent;
+}
+
+/* 이미지 영역 */
+.recipe-card__img-wrap {
+    position: relative;
+    width: 100%;
+    padding-bottom: 100%; /* 1:1 정사각형 */
+    overflow: hidden;
+    background: #f5f5f5;
+}
+
+.recipe-card__img-wrap img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.28s ease;
+}
+
+.recipe-card:hover .recipe-card__img-wrap img {
+    transform: scale(1.04);
+}
+
+/* 뱃지 */
+.recipe-card__badge {
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    z-index: 2;
+}
+
+.recipe-card__badge--best { background: var(--color-point); }
+.recipe-card__badge--new  { background: #4a9cd4; }
+.recipe-card__badge--easy { background: var(--color-primary); }
+.recipe-card__badge--hot { background: var(--color-point); }
+
+/* 스크랩 버튼 */
+.recipe-card__scrap {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    z-index: 2;
+    cursor: pointer;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+    transition: transform 0.15s ease;
+}
+.recipe-card__scrap:focus {
+    outline: none;
+}
+.recipe-card__scrap:hover {
+    transform: scale(1.08);
+}
+
+/* 카드 바디 */
+.recipe-card__body {
+    padding: 15px 12px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+}
+
+/* 별점 */
+.recipe-card__stars {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.stars__icons {
+    display: flex;
+    gap: 1px;
+}
+
+.star {
+    font-size: 12px;
+    color: #ffc107;
+    line-height: 1;
+}
+
+.star--empty {
+    color: #d5d5d5;
+}
+
+.review-count {
+    font-size: 12px;
+    color: #999;
+    margin-left: 2px;
+}
+
+/* 제목 */
+.recipe-card__title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* 설명 */
+.recipe-card__desc {
+    font-size: 14px;
+    color: #999;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis
+}
+
+/* 태그 */
+.recipe-card__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+.recipe-card__tag {
+    display: inline-block;
+    padding: var(--tag-padding);
+    background-color: var(--tag-bg);
+    color: var(--tag-color);
+    border-radius: var(--tag-radius);
+    font-size: var(--tag-font-size);
+    font-weight: var(--tag-font-weight);
+    letter-spacing: var(--tag-letter-spacing);
+    white-space: nowrap;
+}
+
+/* 메타 정보 */
+.recipe-card__meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: auto;
+    padding-top: 8px;
+    border-top: 1px solid #e9e9e9;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #1a1a1a;
+    white-space: nowrap;
+}
+
+
+.meta-item__icon {
+    width: 12px;
+    height: 12px;
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+.meta-item--author {
+    margin-left: 5px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.meta-item--author address {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.author-avatar {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #ebebeb;
+    flex-shrink: 0;
+}
+
+.author-name {
+    font-size: 11px;
+    color: var(--color-primary);
+    font-weight: 500;
+    max-width: 60px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* 
+   PAGINATION
+ */
+.pagination-wrap {
+    display: flex;
+    justify-content: center;
+    padding: 4px 0;
+}
+
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+}
+
+.pagination__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 6px;
+    border: 1.5px solid #d5d5d5;
+    background: #fff;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+}
+
+.pagination__btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.pagination__btn.is-active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+
+.pagination__btn--arrow {
+    font-size: 15px;
+    color: #999;
+}
+
+.pagination__btn:disabled {
+    opacity: 0.35;
+    pointer-events: none;
+}

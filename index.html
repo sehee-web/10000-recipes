@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>만개의 레시피</title>
+    <link rel= "stylesheet" href="css/reset.css">
+    <link rel= "stylesheet" href="css/common.css">
+    <link rel= "stylesheet" href="css/main.css">
+    <link rel= "stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+    <link rel="icon" type="image/png" sizes="32x32" href="images_10000_recipes/favicon.png">
+    <style>       
+        /*wrap*/
+        .wrap{
+            min-width: 1440px;
+            overflow-x: clip;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+
+</head>
+<body>
+    <!--바로가기-->
+    <div class="skip_menu">
+        <a href="#none">검색 바로가기</a>
+        <a href="#none">주메뉴 바로가기</a>
+        <a href="#none">탑메뉴 바로가기</a>        
+        <a href="#none">사이트 이용안내 바로가기</a>
+    </div>
+
+    <div class="wrap">
+        <!--header-->
+        <header id="header" class="header">
+            <div class="header_inner">
+                <h1 class="logo">
+                    <a href="index.html">
+                        <img src="images_10000_recipes/10000_recipes_logo.png" alt="만개의 레시피">
+                    </a>
+                </h1>
+        
+                    <h2 class="hide">사용자 메뉴</h2>
+                        <ul class="top_menu">
+                            <li class="join"><a href="login.html">로그인 / 회원가입</a></li>
+                            <li class="non-click"><a href="#">최근 본 레시피</a></li>
+                        </ul>
+                        <div class="header_row">
+                            <ul class="bottom_top_menu non-click">
+                                <li>
+                                    <a href="coming-soon.html">
+                                        <img src="images_10000_recipes/myPage.svg" alt="마이페이지" height="42">
+                                        <span>마이페이지</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="coming-soon.html">
+                                        <img src="images_10000_recipes/scrap.svg" alt="스크랩한 레시피" height="42">
+                                        <span>스크랩한 레시피</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="coming-soon.html">
+                                        <img src="images_10000_recipes/recipe_upload.svg" alt="레시피 등록" height="42">
+                                        <span>레시피 등록</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <form action="#" method="get" class="search-box">
+                                <fieldset>  <!--hidden-->
+                                    <legend class="hide">통합검색</legend>
+                                    <label for="topSch" hidden>입력</label>
+                                    <input type="search" name="topSch" id="topSch" placeholder="오늘 저녁은 시원한 콩나물국 어때요?">
+                                    <button type="submit">
+                                        <img src="images_10000_recipes/search.png" alt="검색">
+                                    </button>
+                                </fieldset>
+                            </form>
+                        </div>
+        
+                <!-- gnb -->
+        
+                <nav id="gnb" class="gnb">
+                                            
+                    <div class="ctg_wrap">
+                        <a href="#none" class="ctg_toggle" aria-expanded="false"> <!--js에서 페이지 이동 막기-->
+                            <span class="ctg"><img src="images_10000_recipes/ctg_icon.png" alt="">카테고리</span>
+                        </a>
+                        <ul class="ctg_panel">
+                        <li><strong class="ctg_title">종류</strong></li>
+                        <li><a href="category.html?d2=banchan">반찬</a></li>
+                        <li><a href="category.html?d2=guk-jjigae">국/찌개</a></li>
+                        <li><a href="category.html?d2=bap-juk-tteok">밥/죽/떡</a></li>
+                        <li><a href="category.html?d2=noodle">면</a></li>
+                        <li><a href="category.html?d2=jang-yangnyeom">장류/양념</a></li>
+                        <li><a href="category.html?d2=salad">샐러드</a></li>
+                        <li><a href="category.html?d2=western">양식</a></li>
+                        <li><strong class="ctg_title">재료</strong></li>
+                        <li><a href="ingredient.html?d2=meat">육류</a></li>
+                        <li><a href="ingredient.html?d2=seafood">해산물</a></li>
+                        <li><a href="ingredient.html?d2=vegetable">채소</a></li>
+                        <li><a href="ingredient.html?d2=egg-dairy">달걀/유제품</a></li>
+                        <li><a href="ingredient.html?d2=flour">밀가루</a></li>
+                        <li><a href="ingredient.html?d2=grain-nuts">곡류/견과류</a></li>
+                        <li><a href="ingredient.html?d2=fruit">과일</a></li>
+                        <li><strong class="ctg_title">방법</strong></li>
+                        <li><a href="method.html?d2=boil-simmer">끓이기/조리기</a></li>
+                        <li><a href="method.html?d2=stir-grill">볶기/굽기</a></li>
+                        <li><a href="method.html?d2=fry-pan">튀김/부침</a></li>
+                        <li><a href="method.html?d2=steam-boil-blanch">찜/삶기/데치기</a></li>
+                        <li><a href="method.html?d2=mix-toss">무침/비빔</a></li>
+                        <li><a href="method.html?d2=pickle">절임</a></li>
+                        <li><a href="method.html?d2=raw">회</a></li>
+                        <li><strong class="ctg_title">상황</strong></li>
+                        <li><a href="situation.html?d2=quick">간편식</a></li>
+                        <li><a href="situation.html?d2=special">특별식</a></li>
+                        <li><a href="situation.html?d2=holiday">명절</a></li>
+                        <li><a href="situation.html?d2=pregnancy-baby">임산부/이유식</a></li>
+                        <li><a href="situation.html?d2=diet">다이어트</a></li>
+                        <li><a href="situation.html?d2=hangover">해장</a></li>
+                        <li><a href="situation.html?d2=late-night">야식</a></li>
+                        <li><strong class="ctg_title">건강식단</strong></li>
+                        <li><a href="health.html?d2=stomach">위 건강</a></li>
+                        <li><a href="health.html?d2=intestine">장 건강</a></li>
+                        <li><a href="health.html?d2=liver">간 건강</a></li>
+                        <li><a href="health.html?d2=blood-sugar">혈당조절</a></li>
+                        <li><a href="health.html?d2=anti-cancer">암 예방</a></li>
+                    </ul>
+                    </div>
+                    <h2 class="hide">주요 메뉴</h2>
+                    <ul class="main_menu">    
+                        <li><a href="today_menu.html">오늘 뭐 먹지?</a></li>
+                        <li class="best"><a href="coming-soon.html">베스트</a></li>
+                        <li class="event"><a href="coming-soon.html">이벤트</a></li>
+                        <li class="chef"><a href="coming-soon.html">셰프</a></li>
+                        <li class="comm">
+                            <a href="#" class="comm_toggle" aria-expanded="false">커뮤니티</a>
+                                <ul class="comm_panel">
+                                    <li><a href="coming-soon.html">공지사항</a></li>
+                                    <li><a href="coming-soon.html">자주 묻는 질문</a></li>
+                                    <li><a href="coming-soon.html">레시피 후기</a></li>
+                                </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!--main-->
+        <main id="main" class="main">
+            <section class="balanceGame">
+                <div class="balanceGame_wrap">
+                    <h2 class="hide">레시피 밸런스 게임</h2>
+                        <div class="balanceGame_deco">
+                            <ul class="balanceGame_list">
+                                <li>
+                                    <a href="recipe-detail.html?id=1083"><img src="images_10000_recipes/main_img/shabu_img.png" alt="샤브샤브 레시피"></a>
+                                </li>
+                                <li>
+                                    <a href="recipe-detail.html?id=1084"><img src="images_10000_recipes/main_img/pajeon_img.png" alt="해물 파전 레시피"></a>
+                                </li>
+                            </ul>
+                            <div class="bubble bubble_01">
+                                <img src="images_10000_recipes/main_img/bubble_01.png" alt="비 오는 날 뜨끈한 샤브샤브">
+                                <span class="hide">비 오는 날 뜨끈한 샤브샤브</span>
+                            </div>
+                            <div class="bubble bubble_02">
+                                <img src="images_10000_recipes/main_img/bubble_02.png" alt="비 오는 날 바삭한 해물 파전">
+                                <span class="hide">비 오는 날 바삭한 해물 파전</span>
+                            </div>
+                            <img class="green_onion" src="images_10000_recipes/main_img/green_onion_img.png" alt="">
+                            <p class="balanceGame_cta"> <span class="highlight">비 오는 날 땡기는 메뉴는?</span>
+                                <!-- <img src="images_10000_recipes/click_img.png">--></p> 
+                        </div>
+                </div>
+            </section>
+            <section class="today_menu">
+                <div class="today_menu_inner">
+                    <h3>오늘 뭐 먹지? 고민을 단번에 해결!</h3>
+                    <div class="menu_area">
+                        <div class="menu_view">
+                            <ul class="menu_list">
+                                <li>
+                                    <a href="category.html?d2=guk-jjigae">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_01.svg" alt="" width="77"></span>
+                                        <span class="menu_label">국</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="category.html?d2=banchan">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_02.svg" alt="" width="77"></span>
+                                        <span class="menu_label">반찬</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="category.html?d2=bap-juk-tteok&d3=bap">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_03.svg" alt="" width="77"></span>
+                                        <span class="menu_label">밥</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="category.html?d2=salad">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_04.svg" alt="" width="77"></span>
+                                        <span class="menu_label">샐러드</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="category.html?d2=noodle">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_05.svg" alt="" width="77"></span>
+                                        <span class="menu_label">면</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="situation.html?d2=quick&d3=snack">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_06.svg" alt="" width="77"></span>
+                                        <span class="menu_label">간식</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="situation.html?d2=late-night">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_07.svg" alt="" width="77"></span>
+                                        <span class="menu_label">야식</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="category.html?d2=western">
+                                        <span class="circle_bg"><img src="images_10000_recipes/menu_icons/menu_08.svg" alt="" width="77"></span>
+                                        <span class="menu_label">양식</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <button type="button" class="btn prev"><img src="images_10000_recipes/prev.png" alt="이전"></button>
+                            <button type="button" class="btn next"><img src="images_10000_recipes/next.png" alt="다음"></button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="best_menu">
+                <div class="best_menu_header">
+                    <h3>이 주의 베스트 요리<span>👍</span></h3>
+                    <div class="best_menu_more">
+                        <a class="non-click" href="coming-soon.html">-> 전체보기</a>
+                    </div>
+                </div>
+                    <div class="best_menu_inner">
+                        <ol>  <!--CSS로 숨김-->
+                            <li>
+                                <a href="recipe-detail.html?id=1013">
+                                    <img src="images_10000_recipes/best_recipes/best_recipes_01.jpg" alt="콩나물국 레시피 보기">
+                                    <span>콩나물국</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipe-detail.html?id=1004">
+                                    <img src="images_10000_recipes/recipe_card_img/banchan_04.png" alt="봄동 겉절이 레시피 보기">
+                                    <span>봄동 겉절이</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipe-detail.html?id=1074">
+                                    <img src="images_10000_recipes/recipe_card_img/western_02.png" alt="오므라이스 레시피 보기">
+                                    <span>오므라이스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipe-detail.html?id=1017">
+                                    <img src="images_10000_recipes/recipe_card_img/guk_05.png" alt="부대찌개 레시피 보기">
+                                    <span>부대찌개</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipe-detail.html?id=1021">
+                                    <img src="images_10000_recipes/recipe_card_img/guk_09.png" alt="김치짜글이 레시피 보기">
+                                    <span>김치짜글이</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipe-detail.html?id=1003">
+                                    <img src="images_10000_recipes/recipe_card_img/banchan_03.png" alt="계란말이 레시피 보기">
+                                    <span>계란말이</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipe-detail.html?id=1040">
+                                    <img src="images_10000_recipes/recipe_card_img/noodle_04.png" alt="해장라면 레시피 보기">
+                                    <span>해장라면</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="recipe-detail.html?id=1044">
+                                    <img src="images_10000_recipes/recipe_card_img/noodle_08.png" alt="열무비빔국수 레시피 보기">
+                                    <span>열무비빔국수</span>
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
+                
+            </section>
+        
+            <section class="viral_food">
+                <div class="viral_food_header">
+                    <h3 class="viral_food_title">지금 가장 핫한 음식<span>🔥</span></h3>
+                    <p class="viral_food_subtitle">요즘 가장 많이 공유되는 음식들을 만나보세요</p>
+                    <div class="viral_food_more">
+                        <a href="coming-soon.html" class="non-click more_btn">-> 전체보기</a>
+                    </div>
+                </div>
+                
+                <div class="viral_food_inner">
+                    <ul class="viral_food_list">
+                        <!-- 음식 1: 두쫀쿠 -->
+                        <li class="viral_food_item">
+                            <div class="viral_food_image_wrapper">
+                                <a href="recipe-detail.html?id=3001"><img src="images_10000_recipes/viral_food_img/viral_food_img01.png" alt="두바이 쫀득 쿠키 두쫀쿠"></a>
+                                <span class="viral_badge hot">🔥 HOT</span>
+                            </div>
+                            <div class="viral_food_content">
+                                <h4 class="viral_food_name">두바이 쫀득 쿠키 (두쫀쿠)</h4>
+                                <p class="viral_food_description">SNS에서 가장 핫한 디저트</p>
+                                <div class="viral_food_tags">
+                                    <span class="tag">#겉쫀속바</span>
+                                    <span class="tag">#간식</span>
+                                    <span class="tag">#디저트</span>
+                                </div>
+                                <div class="viral_food_stats">
+                                    <span class="stat">👁️ 45.2K</span>
+                                    <span class="stat">💚 8.7K</span>
+                                    <span class="stat">💬 234</span>
+                                </div>
+                                <div class="viral_food_chef">
+                                    <a href="#none"><img src="images_10000_recipes/chef_images/chef_01.jpg" alt="셰프 프로필" class="chef_avatar"></a>
+                                    <span class="chef_name">시크제이맘</span>
+                                </div>
+                                <a href="recipe-detail.html?id=3001" class="viral_food_btn">레시피 보기</a>
+                            </div>
+                        </li>
+                        <!-- 음식 2: 길감자 -->
+                        <li class="viral_food_item">
+                            <div class="viral_food_image_wrapper">
+                                <a href="recipe-detail.html?id=3002"><img src="images_10000_recipes/viral_food_img/viral_food_img02.png" alt="길감자 튀김"></a>
+                                <span class="viral_badge trending">📈 TRENDING</span>
+                            </div>
+                            <div class="viral_food_content">
+                                <h4 class="viral_food_name">길감자 튀김</h4>
+                                <p class="viral_food_description">바삭한 식감의 인기 간식</p>
+                                <div class="viral_food_tags">
+                                    <span class="tag">#간식</span>
+                                    <span class="tag">#바삭쫀득</span>
+                                    <span class="tag">#강릉 먹거리</span>
+                                </div>
+                                <div class="viral_food_stats">
+                                    <span class="stat">👁️ 32.8K</span>
+                                    <span class="stat">💚 6.5K</span>
+                                    <span class="stat">💬 189</span>
+                                </div>
+                                <div class="viral_food_chef">
+                                    <a href="#none"><img src="images_10000_recipes/chef_images/chef_02.jpg" alt="셰프 프로필" class="chef_avatar"></a>
+                                    <span class="chef_name">조밍키♥</span>
+                                </div>
+                                <a href="recipe-detail.html?id=3002" class="viral_food_btn">레시피 보기</a>
+                            </div>
+                        </li>
+                        <!-- 음식 3: 라이스페이퍼 떡볶이 -->
+                        <li class="viral_food_item">
+                            <div class="viral_food_image_wrapper">
+                                <a href="recipe-detail.html?id=1033"><img src="images_10000_recipes/viral_food_img/viral_food_img03.png" alt="라이스페이퍼 떡볶이"></a>
+                                <span class="viral_badge new">⭐ NEW</span>
+                            </div>
+                            <div class="viral_food_content">
+                                <h4 class="viral_food_name">라이스페이퍼 떡볶이</h4>
+                                <p class="viral_food_description">건강한 한끼의 새로운 버전</p>
+                                <div class="viral_food_tags">
+                                    <span class="tag">#저칼로리</span>
+                                    <span class="tag">#쫀득식감</span>
+                                    <span class="tag">#다이어트식</span>
+                                </div>
+                                <div class="viral_food_stats">
+                                    <span class="stat">👁️ 28.5K</span>
+                                    <span class="stat">💚 5.2K</span>
+                                    <span class="stat">💬 156</span>
+                                </div>
+                                <div class="viral_food_chef">
+                                    <a href="#none"><img src="images_10000_recipes/chef_images/chef_03.jpg" alt="셰프 프로필" class="chef_avatar"></a>
+                                    <span class="chef_name">김진옥요리가좋다</span>
+                                </div>
+                                <a href="recipe-detail.html?id=1033" class="viral_food_btn">레시피 보기</a>
+                            </div>
+                        </li>
+                        <!-- 음식 4: 연어깍두기 -->
+                        <li class="viral_food_item">
+                            <div class="viral_food_image_wrapper">
+                                <a href="recipe-detail.html?id=2013"><img src="images_10000_recipes/viral_food_img/viral_food_img04.png" alt="연어깍두기"></a>
+                                <span class="viral_badge pick">💚 PICK</span>
+                            </div>
+                            <div class="viral_food_content">
+                                <h4 class="viral_food_name">연어깍두기</h4>
+                                <p class="viral_food_description">요즘 핫한 스리라차날치알 연어깍두기</p>
+                                <div class="viral_food_tags">
+                                    <span class="tag">#강민경</span>
+                                    <span class="tag">#연어</span>
+                                    <span class="tag">#스리라차</span>
+                                </div>
+                                <div class="viral_food_stats">
+                                    <span class="stat">👁️ 21.3K</span>
+                                    <span class="stat">💚 4.1K</span>
+                                    <span class="stat">💬 98</span>
+                                </div>
+                                <div class="viral_food_chef">
+                                    <a href="#none"><img src="images_10000_recipes/chef_images/chef_04.png" alt="셰프 프로필" class="chef_avatar"></a>
+                                    <span class="chef_name">뿅림이</span>
+                                </div>
+                                <a href="recipe-detail.html?id=2013" class="viral_food_btn">레시피 보기</a>
+                            </div>
+                        </li>
+                    </ul>
+                    
+                </div>
+            </section>
+        </main>
+        <!--footer-->
+        <footer id="footer" class="footer">
+            <div class="footer_inner">
+                <div class="footer_left">
+                    <h2>(주)만개의 레시피</h2>
+                    <div class="footer_link">
+                        <h3 class="hide">푸터 주요 메뉴</h3>
+                            <ul>
+                                <li><a href="https://www.10000recipe.com/company/intro.html">회사소개 · 광고 제휴</a></li>
+                                <li><a href="#">개인정보처리방침</a></li>
+                                <li><a href="#">이용약관</a></li>
+                                <li><a href="#">고객센터</a></li>
+                            </ul>
+                    </div>
+                    <div class="footer_address">
+                        <ul>
+                            <li>대표 : 이인경</li>
+                            <li>이메일 : <a href="mailto:help@10000recipe.com">help@10000recipe.com</a></li>
+                            <li>Fax : 02-323-5049</li>
+                        </ul>
+                        <address>주소: 서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호 </address>
+                        <p>사업자등록번호 291-81-02485 </p>
+                        <p>통신판매업신고 2022-서울금천-3089
+                            <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2918102485"><span>사업자정보확인</span></a>
+                        </p>
+                        <p>서울지방중소기업청 제 031134233-1-01643호</p>
+                    </div>
+                </div>
+                <div class="footer_divider" aria-hidden="true"></div>
+                <div class="footer_right">
+                    <div class="footer_cs">
+                        <p>쇼핑문의(만개의 레시피)<span>02-6953-4433</span></p>
+                        <p>운영시간<span>평일 10:00부터 18:00</span></p>
+                        <p>서비스 이용문의<span>070-4896-6416</span></p>
+                    </div>
+                    <ul class="footer_sns">
+                        <li class="sns_insta"><a href="https://www.instagram.com/10000recipe/"><span class="hide">인스타그램 바로가기</span></a></li>  <!--IR-->
+                        <li class="sns_fb"><a href="https://www.facebook.com/10000recipe"><span class="hide">페이스북 바로가기</span></a></li>  <!--IR-->
+                        <li class="sns_yout"><a href="https://www.youtube.com/channel/UCKA_6r3CWC76x_EaFO6jsPA"><span class="hide">유튜브 바로가기</span></a></li>  <!--IR-->
+                        <li class="sns_bl"><a href="https://blog.naver.com/ezday1"><span class="hide">네이버 블로그 바로가기</span></a></li>  <!--IR-->
+                        <li class="sns_kko"><a href="https://tv.kakao.com/channel/2134164/video"><span class="hide">카카오티비 바로가기</span></a></li>  <!--IR-->
+                    </ul>
+                </div>
+            </div>
+            <p class="footer_copy">Copyright 만개의레시피 Inc. All Rights Reserved</p>
+            <div class="top_bt"><a href="#"><span class="hide">위로 바로가기</span></a></div>
+        </footer>
+    </div>
+    <script src="js/popup.js"></script>
+    <script src="js/recipe-data.js"></script>
+    <script src="js/recipe-card-link.js"></script>
+</body>
+</html>

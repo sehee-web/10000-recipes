@@ -1,0 +1,30 @@
+ @import url('https://cdn.jsdelivr.net/npm/pretendard@latest/dist/web/static/pretendard.css');
+        *, *::before, *::after { box-sizing: border-box;}
+        
+        body,  h1, h2, h3, p,div, ul, li, dl, dt, dd {
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: "Pretendard", sans-serif;
+            font-size: 14px;
+            line-height: 1;
+        }
+        input, button, select, textarea{
+            font-family: inherit;
+        }
+        button{
+            border: none;
+        }
+        ul, li, ol {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        
+        }
+        address {
+            font-style: normal;
+        }
+        
