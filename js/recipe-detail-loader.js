@@ -244,3 +244,40 @@
     }
   });
 })();
+/* ── 최근 본 레시피 localStorage 저장 ── */
+(function () {
+  var MAX = 10;
+  var KEY = 'recentlyViewed';
+ 
+  function saveRecent(recipe) {
+    var list = [];
+    try { list = JSON.parse(localStorage.getItem(KEY)) || []; } catch(e) {}
+ 
+    // 중복 제거
+    list = list.filter(function(item) { return item.id !== recipe.id; });
+ 
+    // 맨 앞에 추가
+    list.unshift({
+      id:        recipe.id,
+      title:     recipe.title    || '',
+      subtitle:  recipe.subtitle || '',
+      image:     recipe.image    || '',
+      category:  recipe.category || '',
+      viewedAt:  Date.now()
+    });
+ 
+    // 최대 10개
+    if (list.length > MAX) list = list.slice(0, MAX);
+ 
+    try { localStorage.setItem(KEY, JSON.stringify(list)); } catch(e) {}
+  }
+ 
+  // run()이 실행된 뒤 recipe가 로드된 시점에 저장
+  var _origRun = window._recentlyViewedRun;
+  document.addEventListener('DOMContentLoaded', function () {
+    var id = new URLSearchParams(window.location.search).get('id');
+    if (!id || typeof RECIPES === 'undefined') return;
+    var recipe = RECIPES[Number(id)];
+    if (recipe) saveRecent(recipe);
+  });
+})();

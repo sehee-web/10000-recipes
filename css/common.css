@@ -517,9 +517,13 @@ body{
     border-top: 1px solid #b3b3b3;
 }
 .top_bt {
+    display: flex;
     position: fixed;
     right: 40px;
     bottom: 40px;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
     z-index: 1000;
 }
 
@@ -540,6 +544,234 @@ body{
     color: #fff;
     font-weight: bold;
 }
+.recently_viewed{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+    order: -1;
+   
+}
+.recently_viewed img {
+    width: 50px;
+    height: 50px;
+    display: block;
+    border-radius: 50%;
+}
+/* 최근 본 레시피 사이드 패널 */
+.rv_panel_overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1100;
+}
+.rv_panel_overlay.is-open {
+    display: block;
+}
+.rv_panel {
+    position: fixed;
+    top: 0;
+    right: -340px;
+    width: 320px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.12);
+    z-index: 1101;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease;
+}
+.rv_panel.is-open {
+    right: 0;
+}
+ 
+/* 패널 헤더 */
+.rv_panel_head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    border-bottom: 1px solid #ebebeb;
+    flex-shrink: 0;
+}
+.rv_panel_title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+.rv_panel_head_right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.rv_panel_all {
+    font-size: 12px;
+    color: #74B243;
+    text-decoration: none;
+    font-weight: 600;
+}
+.rv_panel_all:hover {
+    text-decoration: underline;
+}
+.rv_panel_close {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 1px solid #d5d5d5;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    color: #999;
+    transition: border-color 0.15s, color 0.15s;
+}
+.rv_panel_close:hover {
+    border-color: #555;
+    color: #555;
+}
+ 
+/* 패널 본문 */
+.rv_panel_body {
+    flex: 1;
+    overflow-y: auto;
+}
+.rv_panel_body::-webkit-scrollbar { width: 4px; }
+.rv_panel_body::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.rv_panel_body::-webkit-scrollbar-track { background: transparent; }
+ 
+/* 그룹 헤더 */
+.rv_panel_group {
+    padding: 10px 20px 6px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #999;
+    letter-spacing: 0.04em;
+    background: #f7f7f7;
+    border-bottom: 1px solid #ebebeb;
+}
+ 
+/* 항목 */
+.rv_panel_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    position: relative;
+    transition: background 0.12s;
+}
+.rv_panel_item:hover {
+    background: #fafafa;
+}
+.rv_panel_item a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+}
+.rv_panel_img {
+    width: 56px;
+    height: 46px;
+    border-radius: 6px;
+    object-fit: cover;
+    background: #f0ede8;
+    flex-shrink: 0;
+}
+.rv_panel_info {
+    flex: 1;
+    min-width: 0;
+}
+.rv_panel_name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 3px;
+}
+.rv_panel_time {
+    font-size: 12px;
+    color: #aaa;
+}
+.rv_panel_del {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #d5d5d5;
+    background: #fff;
+    font-size: 9px;
+    color: #aaa;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: border-color 0.15s, color 0.15s;
+}
+.rv_panel_del:hover {
+    border-color: #e03e3e;
+    color: #e03e3e;
+}
+ 
+/* 빈 상태 */
+.rv_panel_empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 40px 20px;
+    text-align: center;
+    color: #aaa;
+}
+.rv_panel_empty p:first-child {
+    font-size: 14px;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 8px;
+}
+.rv_panel_empty p:last-child {
+    font-size: 12px;
+}
+ 
+/* 패널 하단 */
+.rv_panel_foot {
+    padding: 12px 20px;
+    border-top: 1px solid #ebebeb;
+    flex-shrink: 0;
+}
+.rv_panel_clear {
+    width: 100%;
+    padding: 9px;
+    font-size: 13px;
+    color: #999;
+    background: none;
+    border: 1px solid #d5d5d5;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    font-family: inherit;
+}
+.rv_panel_clear:hover {
+    color: #e03e3e;
+    border-color: #e03e3e;
+}
+
+
+
+
+
+
+
+
 
 /* tag */
 /* .tag {

@@ -515,8 +515,27 @@
             </div>
         </div>
         <p class="footer_copy">Copyright 만개의레시피 Inc. All Rights Reserved</p>
-        <div class="top_bt"><a href="#"><span class="hide">위로 바로가기</span></a></div>
     </footer>
+    <div class="top_bt">
+        <button class="recently_viewed" aria-label="최근 본 레시피">
+            <img src="images_10000_recipes/recently_viewed.png" alt="최근 본 레시피">
+        </button>
+        <a href="#"><span class="hide">위로 바로가기</span></a>
+    </div>
+    <div class="rv_panel_overlay"></div>
+    <div class="rv_panel" role="dialog" aria-label="최근 본 레시피">
+        <div class="rv_panel_head">
+            <span class="rv_panel_title">최근 본 레시피</span>
+            <div class="rv_panel_head_right">
+                <a href="recently-viewed.html" class="rv_panel_all">전체보기</a>
+                <button class="rv_panel_close" aria-label="닫기">✕</button>
+            </div>
+        </div>
+        <div class="rv_panel_body"></div>
+        <div class="rv_panel_foot">
+            <button class="rv_panel_clear">전체 삭제</button>
+        </div>
+    </div>
 
 <script src="js/recipe-data.js"></script>
 <script src="js/recipe-detail-loader.js"></script>

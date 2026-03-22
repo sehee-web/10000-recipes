@@ -1,471 +1,546 @@
 <!DOCTYPE html>
 
 <html lang="ko">
+
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>상황별 레시피 | 만개의 레시피</title>
-<link href="css/reset.css" rel="stylesheet"/>
-<link href="css/common.css" rel="stylesheet"/>
-<link href="css/category.css" rel="stylesheet"/>
-<link href="images_10000_recipes/favicon.png" rel="icon" sizes="32x32" type="image/png"/>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>상황별 레시피 | 만개의 레시피</title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <link href="css/common.css" rel="stylesheet" />
+    <link href="css/category.css" rel="stylesheet" />
+    <link href="images_10000_recipes/favicon.png" rel="icon" sizes="32x32" type="image/png" />
 </head>
+
 <body data-page="situation">
-<!-- header -->
-<header class="header" id="header">
-<div class="header_inner">
-<h1 class="logo">
-<a href="index.html">
-<img alt="만개의 레시피" src="images_10000_recipes/10000_recipes_logo.png"/>
-</a>
-</h1>
-<h2 class="hide">사용자 메뉴</h2>
-<ul class="top_menu">
-<li class="join"><a href="login.html">로그인 / 회원가입</a></li>
-<li><a href="coming-soon.html">최근 본 레시피</a></li>
-</ul>
-<div class="header_row">
-<ul class="bottom_top_menu">
-<li>
-<a href="coming-soon.html">
-<img alt="마이페이지" height="42" src="images_10000_recipes/myPage.svg"/>
-<span>마이페이지</span>
-</a>
-</li>
-<li>
-<a href="coming-soon.html">
-<img alt="스크랩한 레시피" height="42" src="images_10000_recipes/scrap.svg"/>
-<span>스크랩한 레시피</span>
-</a>
-</li>
-<li>
-<a href="coming-soon.html">
-<img alt="레시피 등록" height="42" src="images_10000_recipes/recipe_upload.svg"/>
-<span>레시피 등록</span>
-</a>
-</li>
-</ul>
-<form action="#" class="search-box" method="get">
-<fieldset> <!--hidden-->
-<legend class="hide">통합검색</legend>
-<label for="topSch" hidden="">입력</label>
-<input id="topSch" name="topSch" placeholder="오늘 저녁은 시원한 콩나물국 어때요?" type="search"/>
-<button type="submit">
-<img alt="검색" src="images_10000_recipes/search.png"/>
-</button>
-</fieldset>
-</form>
-</div>
-<!-- GNB -->
-<nav aria-label="메인 메뉴" class="gnb" id="gnb">
-<div class="ctg_wrap">
-<a aria-expanded="false" class="ctg_toggle" href="#none">
-<span class="ctg">
-<img alt="" src="images_10000_recipes/ctg_icon.png"/>카테고리
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="header_inner">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img alt="만개의 레시피" src="images_10000_recipes/10000_recipes_logo.png" />
+                </a>
+            </h1>
+            <h2 class="hide">사용자 메뉴</h2>
+            <ul class="top_menu">
+                <li class="join"><a href="login.html">로그인 / 회원가입</a></li>
+                <li><a href="coming-soon.html">최근 본 레시피</a></li>
+            </ul>
+            <div class="header_row">
+                <ul class="bottom_top_menu">
+                    <li>
+                        <a href="coming-soon.html">
+                            <img alt="마이페이지" height="42" src="images_10000_recipes/myPage.svg" />
+                            <span>마이페이지</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="coming-soon.html">
+                            <img alt="스크랩한 레시피" height="42" src="images_10000_recipes/scrap.svg" />
+                            <span>스크랩한 레시피</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="coming-soon.html">
+                            <img alt="레시피 등록" height="42" src="images_10000_recipes/recipe_upload.svg" />
+                            <span>레시피 등록</span>
+                        </a>
+                    </li>
+                </ul>
+                <form action="#" class="search-box" method="get">
+                    <fieldset> <!--hidden-->
+                        <legend class="hide">통합검색</legend>
+                        <label for="topSch" hidden="">입력</label>
+                        <input id="topSch" name="topSch" placeholder="오늘 저녁은 시원한 콩나물국 어때요?" type="search" />
+                        <button type="submit">
+                            <img alt="검색" src="images_10000_recipes/search.png" />
+                        </button>
+                    </fieldset>
+                </form>
+            </div>
+            <!-- GNB -->
+            <nav aria-label="메인 메뉴" class="gnb" id="gnb">
+                <div class="ctg_wrap">
+                    <a aria-expanded="false" class="ctg_toggle" href="#none">
+                        <span class="ctg">
+                            <img alt="" src="images_10000_recipes/ctg_icon.png" />카테고리
                         </span>
-</a>
-<ul class="ctg_panel">
-<li><strong class="ctg_title">종류</strong></li>
-<li><a href="category.html?d2=banchan">반찬</a></li>
-<li><a href="category.html?d2=guk-jjigae">국/찌개</a></li>
-<li><a href="category.html?d2=bap-juk-tteok">밥/죽/떡</a></li>
-<li><a href="category.html?d2=noodle">면</a></li>
-<li><a href="category.html?d2=jang-yangnyeom">장류/양념</a></li>
-<li><a href="category.html?d2=salad">샐러드</a></li>
-<li><a href="category.html?d2=western">양식</a></li>
-<li><strong class="ctg_title">재료</strong></li>
-<li><a href="ingredient.html?d2=meat">육류</a></li>
-<li><a href="ingredient.html?d2=seafood">해산물</a></li>
-<li><a href="ingredient.html?d2=vegetable">채소</a></li>
-<li><a href="ingredient.html?d2=egg-dairy">달걀/유제품</a></li>
-<li><a href="ingredient.html?d2=flour">밀가루</a></li>
-<li><a href="ingredient.html?d2=grain-nuts">곡류/견과류</a></li>
-<li><a href="ingredient.html?d2=fruit">과일</a></li>
-<li><strong class="ctg_title">방법</strong></li>
-<li><a href="method.html?d2=boil-simmer">끓이기/조리기</a></li>
-<li><a href="method.html?d2=stir-grill">볶기/굽기</a></li>
-<li><a href="method.html?d2=fry-pan">튀김/부침</a></li>
-<li><a href="method.html?d2=steam-boil-blanch">찜/삶기/데치기</a></li>
-<li><a href="method.html?d2=mix-toss">무침/비빔</a></li>
-<li><a href="method.html?d2=pickle">절임</a></li>
-<li><a href="method.html?d2=raw">회</a></li>
-<li><strong class="ctg_title">상황</strong></li>
-<li><a href="situation.html?d2=quick">간편식</a></li>
-<li><a href="situation.html?d2=special">특별식</a></li>
-<li><a href="situation.html?d2=holiday">명절</a></li>
-<li><a href="situation.html?d2=pregnancy-baby">임산부/이유식</a></li>
-<li><a href="situation.html?d2=diet">다이어트</a></li>
-<li><a href="situation.html?d2=hangover">해장</a></li>
-<li><a href="situation.html?d2=late-night">야식</a></li>
-<li><strong class="ctg_title">건강식단</strong></li>
-<li><a href="health.html?d2=stomach">위 건강</a></li>
-<li><a href="health.html?d2=intestine">장 건강</a></li>
-<li><a href="health.html?d2=liver">간 건강</a></li>
-<li><a href="health.html?d2=blood-sugar">혈당조절</a></li>
-<li><a href="health.html?d2=anti-cancer">암 예방</a></li>
-</ul>
-</div>
-<h2 class="hide">주요 메뉴</h2>
-<ul class="main_menu">
-<li><a href="today_menu.html">오늘 뭐 먹지?</a></li>
-<li><a href="coming-soon.html">베스트</a></li>
-<li><a href="coming-soon.html">이벤트</a></li>
-<li><a href="coming-soon.html">셰프</a></li>
-<li class="comm">
-<a aria-expanded="false" class="comm_toggle" href="#">커뮤니티</a>
-<ul class="comm_panel">
-<li><a href="coming-soon.html">공지사항</a></li>
-<li><a href="coming-soon.html">자주 묻는 질문</a></li>
-<li><a href="coming-soon.html">레시피 후기</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</header>
-<!-- main -->
-<div class="category-page">
-<!-- 브레드크럼 + depth1 switcher -->
-<div class="breadcrumb-wrap">
-<div class="category-inner">
-<nav aria-label="현재 위치">
-<ol class="breadcrumb">
-<li class="breadcrumb__item">
-<a href="index.html">홈</a>
-</li>
-<li aria-hidden="true">
-<span class="breadcrumb__sep">›</span>
-</li>
-<!-- depth1 switcher -->
-<li class="breadcrumb__item">
-<div class="depth1-switcher" id="depth1-switcher">
-<button aria-controls="switcher-menu-list" aria-expanded="false" aria-haspopup="true" class="switcher-trigger" id="switcher-trigger-btn" type="button">
-<span id="switcher-label">상황</span>
-<span aria-hidden="true" class="switcher-trigger__arrow">
-<svg fill="none" viewbox="0 0 9 6" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L4.5 5L8 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<ul aria-label="카테고리 대분류 선택" class="switcher-menu" id="switcher-menu-list" role="menu">
-<li role="none">
-<a class="switcher-item" data-d1="type" data-label="종류" href="category.html" role="menuitem">종류</a>
-</li>
-<li role="none">
-<a class="switcher-item" data-d1="ingredient" data-label="재료" href="ingredient.html" role="menuitem">재료</a>
-</li>
-<li role="none">
-<a class="switcher-item" data-d1="method" data-label="방법" href="method.html" role="menuitem">방법</a>
-</li>
-<li role="none">
-<a aria-current="page" class="switcher-item is-active" data-d1="situation" data-label="상황" href="situation.html" role="menuitem">상황</a>
-</li>
-<li role="none">
-<a class="switcher-item" data-d1="health" data-label="건강식단" href="health.html" role="menuitem">건강식단</a>
-</li>
-</ul>
-</div>
-</li>
-<!-- depth2 — JS가 is-visible 클래스 추가/제거 -->
-<li aria-hidden="true" class="bc-dynamic" id="bc-sep-d2">
-<span class="breadcrumb__sep">›</span>
-</li>
-<li class="bc-dynamic breadcrumb__item breadcrumb__item--current" id="bc-d2"></li>
-<!-- depth3 — JS가 is-visible 클래스 추가/제거 -->
-<li aria-hidden="true" class="bc-dynamic" id="bc-sep-d3">
-<span class="breadcrumb__sep">›</span>
-</li>
-<li aria-current="page" class="bc-dynamic breadcrumb__item breadcrumb__item--current" id="bc-d3"></li>
-</ol>
-</nav>
-</div>
-</div>
-<!-- depth2 필터 바 -->
-<div class="depth2-filter-wrap">
-<div class="category-inner">
-<nav aria-label="상황 카테고리 필터" class="depth2-filter" role="tablist">
-<button aria-pressed="true" class="depth2-filter__btn depth2-filter__btn--all is-active" data-d2="all" data-label="전체" type="button">
+                    </a>
+                    <ul class="ctg_panel">
+                        <li><strong class="ctg_title">종류</strong></li>
+                        <li><a href="category.html?d2=banchan">반찬</a></li>
+                        <li><a href="category.html?d2=guk-jjigae">국/찌개</a></li>
+                        <li><a href="category.html?d2=bap-juk-tteok">밥/죽/떡</a></li>
+                        <li><a href="category.html?d2=noodle">면</a></li>
+                        <li><a href="category.html?d2=jang-yangnyeom">장류/양념</a></li>
+                        <li><a href="category.html?d2=salad">샐러드</a></li>
+                        <li><a href="category.html?d2=western">양식</a></li>
+                        <li><strong class="ctg_title">재료</strong></li>
+                        <li><a href="ingredient.html?d2=meat">육류</a></li>
+                        <li><a href="ingredient.html?d2=seafood">해산물</a></li>
+                        <li><a href="ingredient.html?d2=vegetable">채소</a></li>
+                        <li><a href="ingredient.html?d2=egg-dairy">달걀/유제품</a></li>
+                        <li><a href="ingredient.html?d2=flour">밀가루</a></li>
+                        <li><a href="ingredient.html?d2=grain-nuts">곡류/견과류</a></li>
+                        <li><a href="ingredient.html?d2=fruit">과일</a></li>
+                        <li><strong class="ctg_title">방법</strong></li>
+                        <li><a href="method.html?d2=boil-simmer">끓이기/조리기</a></li>
+                        <li><a href="method.html?d2=stir-grill">볶기/굽기</a></li>
+                        <li><a href="method.html?d2=fry-pan">튀김/부침</a></li>
+                        <li><a href="method.html?d2=steam-boil-blanch">찜/삶기/데치기</a></li>
+                        <li><a href="method.html?d2=mix-toss">무침/비빔</a></li>
+                        <li><a href="method.html?d2=pickle">절임</a></li>
+                        <li><a href="method.html?d2=raw">회</a></li>
+                        <li><strong class="ctg_title">상황</strong></li>
+                        <li><a href="situation.html?d2=quick">간편식</a></li>
+                        <li><a href="situation.html?d2=special">특별식</a></li>
+                        <li><a href="situation.html?d2=holiday">명절</a></li>
+                        <li><a href="situation.html?d2=pregnancy-baby">임산부/이유식</a></li>
+                        <li><a href="situation.html?d2=diet">다이어트</a></li>
+                        <li><a href="situation.html?d2=hangover">해장</a></li>
+                        <li><a href="situation.html?d2=late-night">야식</a></li>
+                        <li><strong class="ctg_title">건강식단</strong></li>
+                        <li><a href="health.html?d2=stomach">위 건강</a></li>
+                        <li><a href="health.html?d2=intestine">장 건강</a></li>
+                        <li><a href="health.html?d2=liver">간 건강</a></li>
+                        <li><a href="health.html?d2=blood-sugar">혈당조절</a></li>
+                        <li><a href="health.html?d2=anti-cancer">암 예방</a></li>
+                    </ul>
+                </div>
+                <h2 class="hide">주요 메뉴</h2>
+                <ul class="main_menu">
+                    <li><a href="today_menu.html">오늘 뭐 먹지?</a></li>
+                    <li><a href="coming-soon.html">베스트</a></li>
+                    <li><a href="coming-soon.html">이벤트</a></li>
+                    <li><a href="coming-soon.html">셰프</a></li>
+                    <li class="comm">
+                        <a aria-expanded="false" class="comm_toggle" href="#">커뮤니티</a>
+                        <ul class="comm_panel">
+                            <li><a href="coming-soon.html">공지사항</a></li>
+                            <li><a href="coming-soon.html">자주 묻는 질문</a></li>
+                            <li><a href="coming-soon.html">레시피 후기</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- main -->
+    <div class="category-page">
+        <!-- 브레드크럼 + depth1 switcher -->
+        <div class="breadcrumb-wrap">
+            <div class="category-inner">
+                <nav aria-label="현재 위치">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb__item">
+                            <a href="index.html">홈</a>
+                        </li>
+                        <li aria-hidden="true">
+                            <span class="breadcrumb__sep">›</span>
+                        </li>
+                        <!-- depth1 switcher -->
+                        <li class="breadcrumb__item">
+                            <div class="depth1-switcher" id="depth1-switcher">
+                                <button aria-controls="switcher-menu-list" aria-expanded="false" aria-haspopup="true"
+                                    class="switcher-trigger" id="switcher-trigger-btn" type="button">
+                                    <span id="switcher-label">상황</span>
+                                    <span aria-hidden="true" class="switcher-trigger__arrow">
+                                        <svg fill="none" viewbox="0 0 9 6" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M1 1L4.5 5L8 1" stroke="currentColor" stroke-linecap="round"
+                                                stroke-linejoin="round" stroke-width="1.6"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <ul aria-label="카테고리 대분류 선택" class="switcher-menu" id="switcher-menu-list" role="menu">
+                                    <li role="none">
+                                        <a class="switcher-item" data-d1="type" data-label="종류" href="category.html"
+                                            role="menuitem">종류</a>
+                                    </li>
+                                    <li role="none">
+                                        <a class="switcher-item" data-d1="ingredient" data-label="재료"
+                                            href="ingredient.html" role="menuitem">재료</a>
+                                    </li>
+                                    <li role="none">
+                                        <a class="switcher-item" data-d1="method" data-label="방법" href="method.html"
+                                            role="menuitem">방법</a>
+                                    </li>
+                                    <li role="none">
+                                        <a aria-current="page" class="switcher-item is-active" data-d1="situation"
+                                            data-label="상황" href="situation.html" role="menuitem">상황</a>
+                                    </li>
+                                    <li role="none">
+                                        <a class="switcher-item" data-d1="health" data-label="건강식단" href="health.html"
+                                            role="menuitem">건강식단</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <!-- depth2 — JS가 is-visible 클래스 추가/제거 -->
+                        <li aria-hidden="true" class="bc-dynamic" id="bc-sep-d2">
+                            <span class="breadcrumb__sep">›</span>
+                        </li>
+                        <li class="bc-dynamic breadcrumb__item breadcrumb__item--current" id="bc-d2"></li>
+                        <!-- depth3 — JS가 is-visible 클래스 추가/제거 -->
+                        <li aria-hidden="true" class="bc-dynamic" id="bc-sep-d3">
+                            <span class="breadcrumb__sep">›</span>
+                        </li>
+                        <li aria-current="page" class="bc-dynamic breadcrumb__item breadcrumb__item--current"
+                            id="bc-d3"></li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- depth2 필터 바 -->
+        <div class="depth2-filter-wrap">
+            <div class="category-inner">
+                <nav aria-label="상황 카테고리 필터" class="depth2-filter" role="tablist">
+                    <button aria-pressed="true" class="depth2-filter__btn depth2-filter__btn--all is-active"
+                        data-d2="all" data-label="전체" type="button">
                         전체
                     </button>
-<button aria-pressed="false" class="depth2-filter__btn" data-d2="quick" data-label="간편식" type="button">
+                    <button aria-pressed="false" class="depth2-filter__btn" data-d2="quick" data-label="간편식"
+                        type="button">
                         간편식
                     </button>
-<button aria-pressed="false" class="depth2-filter__btn" data-d2="special" data-label="특별식" type="button">
+                    <button aria-pressed="false" class="depth2-filter__btn" data-d2="special" data-label="특별식"
+                        type="button">
                         특별식
                     </button>
-<button aria-pressed="false" class="depth2-filter__btn" data-d2="holiday" data-label="명절" type="button">
+                    <button aria-pressed="false" class="depth2-filter__btn" data-d2="holiday" data-label="명절"
+                        type="button">
                         명절
                     </button>
-<button aria-pressed="false" class="depth2-filter__btn" data-d2="pregnancy-baby" data-label="임산부/이유식" type="button">
+                    <button aria-pressed="false" class="depth2-filter__btn" data-d2="pregnancy-baby"
+                        data-label="임산부/이유식" type="button">
                         임산부/이유식
                     </button>
-<button aria-pressed="false" class="depth2-filter__btn" data-d2="diet" data-label="다이어트" type="button">
+                    <button aria-pressed="false" class="depth2-filter__btn" data-d2="diet" data-label="다이어트"
+                        type="button">
                         다이어트
                     </button>
-<button aria-pressed="false" class="depth2-filter__btn" data-d2="hangover" data-label="해장" type="button">
+                    <button aria-pressed="false" class="depth2-filter__btn" data-d2="hangover" data-label="해장"
+                        type="button">
                         해장
                     </button>
-<button aria-pressed="false" class="depth2-filter__btn" data-d2="late-night" data-label="야식" type="button">
+                    <button aria-pressed="false" class="depth2-filter__btn" data-d2="late-night" data-label="야식"
+                        type="button">
                         야식
                     </button>
-</nav>
-</div>
-</div>
-<!-- 2열 레이아웃: 사이드바 + 콘텐츠 -->
-<div class="category-inner">
-<div class="category-layout">
-<!-- SIDEBAR — depth3 아코디언 -->
-<aside aria-label="세부 카테고리" class="category-sidebar">
-<p class="sidebar__heading">상황별</p>
-<nav aria-label="세부 카테고리 필터" class="depth3-accordion">
-<!-- 간편식 -->
-<div class="accordion-item" data-d2="quick">
-<button aria-controls="panel-quick" aria-expanded="false" class="accordion-trigger" type="button">
-<span class="accordion-trigger__label">간편식</span>
-<span aria-hidden="true" class="accordion-trigger__icon">
-<svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<div aria-label="간편식 세부 분류" class="accordion-panel" id="panel-quick" role="region">
-<ul class="accordion-panel__list">
-<li>
-<button class="accordion-panel__btn is-active" data-d3="all" data-label="전체" type="button">전체</button>
-</li>
-<li>
-<button class="accordion-panel__btn" data-d3="snack" data-label="간식" type="button">간식</button>
-</li>
-<li>
-<button class="accordion-panel__btn" data-d3="speed" data-label="초스피드" type="button">초스피드</button>
-</li>
-<li>
-<button class="accordion-panel__btn" data-d3="lunchbox" data-label="도시락" type="button">도시락</button>
-</li>
-</ul>
-</div>
-</div>
-<!-- 특별식 -->
-<div class="accordion-item" data-d2="special">
-<button aria-controls="panel-special" aria-expanded="false" class="accordion-trigger" type="button">
-<span class="accordion-trigger__label">특별식</span>
-<span aria-hidden="true" class="accordion-trigger__icon">
-<svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<div aria-label="특별식 세부 분류" class="accordion-panel" id="panel-special" role="region">
-<ul class="accordion-panel__list">
-<li>
-<button class="accordion-panel__btn is-active" data-d3="all" data-label="전체" type="button">전체</button>
-</li>
-</ul>
-</div>
-</div>
-<!-- 명절 -->
-<div class="accordion-item" data-d2="holiday">
-<button aria-controls="panel-holiday" aria-expanded="false" class="accordion-trigger" type="button">
-<span class="accordion-trigger__label">명절</span>
-<span aria-hidden="true" class="accordion-trigger__icon">
-<svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<div aria-label="명절 세부 분류" class="accordion-panel" id="panel-holiday" role="region">
-<ul class="accordion-panel__list">
-<li>
-<button class="accordion-panel__btn is-active" data-d3="all" data-label="전체" type="button">전체</button>
-</li>
-</ul>
-</div>
-</div>
-<!-- 임산부/이유식 -->
-<div class="accordion-item" data-d2="pregnancy-baby">
-<button aria-controls="panel-pregnancy-baby" aria-expanded="false" class="accordion-trigger" type="button">
-<span class="accordion-trigger__label">임산부/이유식</span>
-<span aria-hidden="true" class="accordion-trigger__icon">
-<svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<div aria-label="임산부/이유식 세부 분류" class="accordion-panel" id="panel-pregnancy-baby" role="region">
-<ul class="accordion-panel__list">
-<li>
-<button class="accordion-panel__btn is-active" data-d3="all" data-label="전체" type="button">전체</button>
-</li>
-<li>
-<button class="accordion-panel__btn" data-d3="pregnancy" data-label="임산부" type="button">임산부</button>
-</li>
-<li>
-<button class="accordion-panel__btn" data-d3="baby" data-label="이유식" type="button">이유식</button>
-</li>
-</ul>
-</div>
-</div>
-<!-- 다이어트 -->
-<div class="accordion-item" data-d2="diet">
-<button aria-controls="panel-diet" aria-expanded="false" class="accordion-trigger" type="button">
-<span class="accordion-trigger__label">다이어트</span>
-<span aria-hidden="true" class="accordion-trigger__icon">
-<svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<div aria-label="다이어트 세부 분류" class="accordion-panel" id="panel-diet" role="region">
-<ul class="accordion-panel__list">
-<li>
-<button class="accordion-panel__btn is-active" data-d3="all" data-label="전체" type="button">전체</button>
-</li>
-</ul>
-</div>
-</div>
-<!-- 해장 -->
-<div class="accordion-item" data-d2="hangover">
-<button aria-controls="panel-hangover" aria-expanded="false" class="accordion-trigger" type="button">
-<span class="accordion-trigger__label">해장</span>
-<span aria-hidden="true" class="accordion-trigger__icon">
-<svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<div aria-label="해장 세부 분류" class="accordion-panel" id="panel-hangover" role="region">
-<ul class="accordion-panel__list">
-<li>
-<button class="accordion-panel__btn is-active" data-d3="all" data-label="전체" type="button">전체</button>
-</li>
-</ul>
-</div>
-</div>
-<!-- 야식 -->
-<div class="accordion-item" data-d2="late-night">
-<button aria-controls="panel-late-night" aria-expanded="false" class="accordion-trigger" type="button">
-<span class="accordion-trigger__label">야식</span>
-<span aria-hidden="true" class="accordion-trigger__icon">
-<svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
-<path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6"></path>
-</svg>
-</span>
-</button>
-<div aria-label="야식 세부 분류" class="accordion-panel" id="panel-late-night" role="region">
-<ul class="accordion-panel__list">
-<li>
-<button class="accordion-panel__btn is-active" data-d3="all" data-label="전체" type="button">전체</button>
-</li>
-</ul>
-</div>
-</div>
-</nav>
-</aside>
-<!-- 콘텐츠 영역 -->
-<main class="content-area" id="main-content">
-<!-- 툴바 -->
-<div class="recipe-toolbar">
-<p class="recipe-toolbar__count">
+                </nav>
+            </div>
+        </div>
+        <!-- 2열 레이아웃: 사이드바 + 콘텐츠 -->
+        <div class="category-inner">
+            <div class="category-layout">
+                <!-- SIDEBAR — depth3 아코디언 -->
+                <aside aria-label="세부 카테고리" class="category-sidebar">
+                    <p class="sidebar__heading">상황별</p>
+                    <nav aria-label="세부 카테고리 필터" class="depth3-accordion">
+                        <!-- 간편식 -->
+                        <div class="accordion-item" data-d2="quick">
+                            <button aria-controls="panel-quick" aria-expanded="false" class="accordion-trigger"
+                                type="button">
+                                <span class="accordion-trigger__label">간편식</span>
+                                <span aria-hidden="true" class="accordion-trigger__icon">
+                                    <svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div aria-label="간편식 세부 분류" class="accordion-panel" id="panel-quick" role="region">
+                                <ul class="accordion-panel__list">
+                                    <li>
+                                        <button class="accordion-panel__btn is-active" data-d3="all" data-label="전체"
+                                            type="button">전체</button>
+                                    </li>
+                                    <li>
+                                        <button class="accordion-panel__btn" data-d3="snack" data-label="간식"
+                                            type="button">간식</button>
+                                    </li>
+                                    <li>
+                                        <button class="accordion-panel__btn" data-d3="speed" data-label="초스피드"
+                                            type="button">초스피드</button>
+                                    </li>
+                                    <li>
+                                        <button class="accordion-panel__btn" data-d3="lunchbox" data-label="도시락"
+                                            type="button">도시락</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 특별식 -->
+                        <div class="accordion-item" data-d2="special">
+                            <button aria-controls="panel-special" aria-expanded="false" class="accordion-trigger"
+                                type="button">
+                                <span class="accordion-trigger__label">특별식</span>
+                                <span aria-hidden="true" class="accordion-trigger__icon">
+                                    <svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div aria-label="특별식 세부 분류" class="accordion-panel" id="panel-special" role="region">
+                                <ul class="accordion-panel__list">
+                                    <li>
+                                        <button class="accordion-panel__btn is-active" data-d3="all" data-label="전체"
+                                            type="button">전체</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 명절 -->
+                        <div class="accordion-item" data-d2="holiday">
+                            <button aria-controls="panel-holiday" aria-expanded="false" class="accordion-trigger"
+                                type="button">
+                                <span class="accordion-trigger__label">명절</span>
+                                <span aria-hidden="true" class="accordion-trigger__icon">
+                                    <svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div aria-label="명절 세부 분류" class="accordion-panel" id="panel-holiday" role="region">
+                                <ul class="accordion-panel__list">
+                                    <li>
+                                        <button class="accordion-panel__btn is-active" data-d3="all" data-label="전체"
+                                            type="button">전체</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 임산부/이유식 -->
+                        <div class="accordion-item" data-d2="pregnancy-baby">
+                            <button aria-controls="panel-pregnancy-baby" aria-expanded="false" class="accordion-trigger"
+                                type="button">
+                                <span class="accordion-trigger__label">임산부/이유식</span>
+                                <span aria-hidden="true" class="accordion-trigger__icon">
+                                    <svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div aria-label="임산부/이유식 세부 분류" class="accordion-panel" id="panel-pregnancy-baby"
+                                role="region">
+                                <ul class="accordion-panel__list">
+                                    <li>
+                                        <button class="accordion-panel__btn is-active" data-d3="all" data-label="전체"
+                                            type="button">전체</button>
+                                    </li>
+                                    <li>
+                                        <button class="accordion-panel__btn" data-d3="pregnancy" data-label="임산부"
+                                            type="button">임산부</button>
+                                    </li>
+                                    <li>
+                                        <button class="accordion-panel__btn" data-d3="baby" data-label="이유식"
+                                            type="button">이유식</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 다이어트 -->
+                        <div class="accordion-item" data-d2="diet">
+                            <button aria-controls="panel-diet" aria-expanded="false" class="accordion-trigger"
+                                type="button">
+                                <span class="accordion-trigger__label">다이어트</span>
+                                <span aria-hidden="true" class="accordion-trigger__icon">
+                                    <svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div aria-label="다이어트 세부 분류" class="accordion-panel" id="panel-diet" role="region">
+                                <ul class="accordion-panel__list">
+                                    <li>
+                                        <button class="accordion-panel__btn is-active" data-d3="all" data-label="전체"
+                                            type="button">전체</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 해장 -->
+                        <div class="accordion-item" data-d2="hangover">
+                            <button aria-controls="panel-hangover" aria-expanded="false" class="accordion-trigger"
+                                type="button">
+                                <span class="accordion-trigger__label">해장</span>
+                                <span aria-hidden="true" class="accordion-trigger__icon">
+                                    <svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div aria-label="해장 세부 분류" class="accordion-panel" id="panel-hangover" role="region">
+                                <ul class="accordion-panel__list">
+                                    <li>
+                                        <button class="accordion-panel__btn is-active" data-d3="all" data-label="전체"
+                                            type="button">전체</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- 야식 -->
+                        <div class="accordion-item" data-d2="late-night">
+                            <button aria-controls="panel-late-night" aria-expanded="false" class="accordion-trigger"
+                                type="button">
+                                <span class="accordion-trigger__label">야식</span>
+                                <span aria-hidden="true" class="accordion-trigger__icon">
+                                    <svg fill="none" viewbox="0 0 11 7" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1 1L5.5 6L10 1" stroke="currentColor" stroke-linecap="round"
+                                            stroke-linejoin="round" stroke-width="1.6"></path>
+                                    </svg>
+                                </span>
+                            </button>
+                            <div aria-label="야식 세부 분류" class="accordion-panel" id="panel-late-night" role="region">
+                                <ul class="accordion-panel__list">
+                                    <li>
+                                        <button class="accordion-panel__btn is-active" data-d3="all" data-label="전체"
+                                            type="button">전체</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </aside>
+                <!-- 콘텐츠 영역 -->
+                <main class="content-area" id="main-content">
+                    <!-- 툴바 -->
+                    <div class="recipe-toolbar">
+                        <p class="recipe-toolbar__count">
                             총 <strong id="result-count">0</strong>개의 레시피
                         </p>
-<select aria-label="정렬 기준" class="sort-select" id="sort-select">
-<option value="popular">추천순</option>
-<option value="latest">최신순</option>
-<option value="views">조리시간순</option>
-<option value="rating">후기순</option>
-</select>
-</div>
-<!-- 레시피 리스트 -->
-<section aria-label="레시피 목록" class="recipe-list" id="recipe-list">
-<!-- 간편식 - 간식 -->
+                        <select aria-label="정렬 기준" class="sort-select" id="sort-select">
+                            <option value="popular">추천순</option>
+                            <option value="latest">최신순</option>
+                            <option value="views">조리시간순</option>
+                            <option value="rating">후기순</option>
+                        </select>
+                    </div>
+                    <!-- 레시피 리스트 -->
+                    <section aria-label="레시피 목록" class="recipe-list" id="recipe-list">
+                        <!-- 간편식 - 간식 -->
 
 
-<!-- 간편식 - 초스피드 -->
-<!-- 간편식 - 도시락 -->
+                        <!-- 간편식 - 초스피드 -->
+                        <!-- 간편식 - 도시락 -->
 
-<!-- 특별식 -->
+                        <!-- 특별식 -->
 
-<!-- 명절 -->
+                        <!-- 명절 -->
 
-<!-- 임산부/이유식 -->
+                        <!-- 임산부/이유식 -->
 
-<!-- 다이어트 -->
+                        <!-- 다이어트 -->
 
-<!-- 해장 -->
+                        <!-- 해장 -->
 
-<!-- 야식 -->
-
-
+                        <!-- 야식 -->
 
 
-</section>
-<!-- 페이지네이션 -->
-<nav aria-label="페이지 탐색" class="pagination-wrap">
-<div class="pagination">
-<button aria-label="이전 페이지" class="pagination__btn pagination__btn--arrow" disabled="" type="button">&lt;</button>
-<button aria-current="page" class="pagination__btn is-active" type="button">1</button>
-<button class="pagination__btn" type="button">2</button>
-<button class="pagination__btn" type="button">3</button>
-<button class="pagination__btn" type="button">4</button>
-<button class="pagination__btn" type="button">5</button>
-<button aria-label="다음 페이지" class="pagination__btn pagination__btn--arrow" type="button">&gt;</button>
-</div>
-</nav>
-</main>
-</div>
-</div>
-</div>
-<!-- footer -->
-<footer class="footer" id="footer">
-<div class="footer_inner">
-<div class="footer_left">
-<h2>(주)만개의 레시피</h2>
-<div class="footer_link">
-<h3 class="hide">푸터 주요 메뉴</h3>
-<ul>
-<li><a href="https://www.10000recipe.com/company/intro.html">회사소개 · 광고 제휴</a></li>
-<li><a href="#">개인정보처리방침</a></li>
-<li><a href="#">이용약관</a></li>
-<li><a href="#">고객센터</a></li>
-</ul>
-</div>
-<div class="footer_address">
-<ul>
-<li>대표 : 이인경</li>
-<li>이메일 : <a href="#">[email protected]</a></li>
-<li>Fax : 02-323-5049</li>
-</ul>
-<address>주소: 서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호</address>
-<p>사업자등록번호 291-81-02485</p>
-<p>통신판매업신고 2022-서울금천-3089
+
+
+                    </section>
+                    <!-- 페이지네이션 -->
+                    <nav aria-label="페이지 탐색" class="pagination-wrap">
+                        <div class="pagination">
+                            <button aria-label="이전 페이지" class="pagination__btn pagination__btn--arrow" disabled=""
+                                type="button">&lt;</button>
+                            <button aria-current="page" class="pagination__btn is-active" type="button">1</button>
+                            <button class="pagination__btn" type="button">2</button>
+                            <button class="pagination__btn" type="button">3</button>
+                            <button class="pagination__btn" type="button">4</button>
+                            <button class="pagination__btn" type="button">5</button>
+                            <button aria-label="다음 페이지" class="pagination__btn pagination__btn--arrow"
+                                type="button">&gt;</button>
+                        </div>
+                    </nav>
+                </main>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <footer class="footer" id="footer">
+        <div class="footer_inner">
+            <div class="footer_left">
+                <h2>(주)만개의 레시피</h2>
+                <div class="footer_link">
+                    <h3 class="hide">푸터 주요 메뉴</h3>
+                    <ul>
+                        <li><a href="https://www.10000recipe.com/company/intro.html">회사소개 · 광고 제휴</a></li>
+                        <li><a href="#">개인정보처리방침</a></li>
+                        <li><a href="#">이용약관</a></li>
+                        <li><a href="#">고객센터</a></li>
+                    </ul>
+                </div>
+                <div class="footer_address">
+                    <ul>
+                        <li>대표 : 이인경</li>
+                        <li>이메일 : <a href="#">[email protected]</a></li>
+                        <li>Fax : 02-323-5049</li>
+                    </ul>
+                    <address>주소: 서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호</address>
+                    <p>사업자등록번호 291-81-02485</p>
+                    <p>통신판매업신고 2022-서울금천-3089
                         <a href="https://www.ftc.go.kr/bizCommPop.do?wrkr_no=2918102485"><span>사업자정보확인</span></a>
-</p>
-<p>서울지방중소기업청 제 031134233-1-01643호</p>
-</div>
-</div>
-<div aria-hidden="true" class="footer_divider"></div>
-<div class="footer_right">
-<div class="footer_cs">
-<p>쇼핑문의(만개의 레시피)<span>02-6953-4433</span></p>
-<p>운영시간<span>평일 10:00부터 18:00</span></p>
-<p>서비스 이용문의<span>070-4896-6416</span></p>
-</div>
-<ul class="footer_sns">
-<li class="sns_insta"><a href="https://www.instagram.com/10000recipe/"><span class="hide">인스타그램 바로가기</span></a></li>
-<li class="sns_fb"><a href="https://www.facebook.com/10000recipe"><span class="hide">페이스북 바로가기</span></a></li>
-<li class="sns_yout"><a href="https://www.youtube.com/channel/UCKA_6r3CWC76x_EaFO6jsPA"><span class="hide">유튜브 바로가기</span></a></li>
-<li class="sns_bl"><a href="https://blog.naver.com/ezday1"><span class="hide">네이버 블로그 바로가기</span></a></li>
-<li class="sns_kko"><a href="https://tv.kakao.com/channel/2134164/video"><span class="hide">카카오티비 바로가기</span></a></li>
-</ul>
-</div>
-</div>
-<p class="footer_copy">Copyright 만개의레시피 Inc. All Rights Reserved</p>
-<div class="top_bt"><a href="#"><span class="hide">위로 바로가기</span></a></div>
-</footer>
-<script src="js/jquery-3.7.1.min.js"></script>
-<script src="js/common.js"></script>
-<script src="js/recipe-data.js"></script><script src="js/recipe-card-render.js"></script><script src="js/situation.js"></script><script src="js/recipe-card-link.js"></script>
+                    </p>
+                    <p>서울지방중소기업청 제 031134233-1-01643호</p>
+                </div>
+            </div>
+            <div aria-hidden="true" class="footer_divider"></div>
+            <div class="footer_right">
+                <div class="footer_cs">
+                    <p>쇼핑문의(만개의 레시피)<span>02-6953-4433</span></p>
+                    <p>운영시간<span>평일 10:00부터 18:00</span></p>
+                    <p>서비스 이용문의<span>070-4896-6416</span></p>
+                </div>
+                <ul class="footer_sns">
+                    <li class="sns_insta"><a href="https://www.instagram.com/10000recipe/"><span class="hide">인스타그램
+                                바로가기</span></a></li>
+                    <li class="sns_fb"><a href="https://www.facebook.com/10000recipe"><span class="hide">페이스북
+                                바로가기</span></a></li>
+                    <li class="sns_yout"><a href="https://www.youtube.com/channel/UCKA_6r3CWC76x_EaFO6jsPA"><span
+                                class="hide">유튜브 바로가기</span></a></li>
+                    <li class="sns_bl"><a href="https://blog.naver.com/ezday1"><span class="hide">네이버 블로그
+                                바로가기</span></a></li>
+                    <li class="sns_kko"><a href="https://tv.kakao.com/channel/2134164/video"><span class="hide">카카오티비
+                                바로가기</span></a></li>
+                </ul>
+            </div>
+        </div>
+        <p class="footer_copy">Copyright 만개의레시피 Inc. All Rights Reserved</p>
+    </footer>
+    <div class="top_bt">
+        <button class="recently_viewed" aria-label="최근 본 레시피">
+            <img src="images_10000_recipes/recently_viewed.png" alt="최근 본 레시피">
+        </button>
+        <a href="#"><span class="hide">위로 바로가기</span></a>
+    </div>
+    <div class="rv_panel_overlay"></div>
+    <div class="rv_panel" role="dialog" aria-label="최근 본 레시피">
+        <div class="rv_panel_head">
+            <span class="rv_panel_title">최근 본 레시피</span>
+            <div class="rv_panel_head_right">
+                <a href="recently-viewed.html" class="rv_panel_all">전체보기</a>
+                <button class="rv_panel_close" aria-label="닫기">✕</button>
+            </div>
+        </div>
+        <div class="rv_panel_body"></div>
+        <div class="rv_panel_foot">
+            <button class="rv_panel_clear">전체 삭제</button>
+        </div>
+    </div>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/recipe-data.js"></script>
+    <script src="js/recipe-card-render.js"></script>
+    <script src="js/situation.js"></script>
+    <script src="js/recipe-card-link.js"></script>
 
 
 </body>
+
 </html>
