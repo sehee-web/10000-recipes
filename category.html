@@ -11,138 +11,118 @@
 </head>
   <body data-page="type">
     <!-- header -->
-    <header class="header" id="header">
-      <div class="header_inner">
-        <h1 class="logo">
-          <a href="index.html">
-            <img alt="만개의 레시피" src="images_10000_recipes/10000_recipes_logo.png"/>
-          </a>
-        </h1>
-        <h2 class="hide">사용자 메뉴</h2>
-        <ul class="top_menu">
-          <li class="join"><a href="login.html">로그인 / 회원가입</a></li>
-          <li><a href="coming-soon.html">최근 본 레시피</a></li>
-        </ul>
-        <div class="header_row">
-          <ul class="bottom_top_menu">
-            <li>
-              <a href="coming-soon.html">
-                <img
-                  alt="마이페이지"
-                  height="42"
-                  src="images_10000_recipes/myPage.svg"
-                />
-                <span>마이페이지</span>
-              </a>
-            </li>
-            <li>
-              <a href="coming-soon.html">
-                <img
-                  alt="스크랩한 레시피"
-                  height="42"
-                  src="images_10000_recipes/scrap.svg"
-                />
-                <span>스크랩한 레시피</span>
-              </a>
-            </li>
-            <li>
-              <a href="coming-soon.html">
-                <img
-                  alt="레시피 등록"
-                  height="42"
-                  src="images_10000_recipes/recipe_upload.svg"
-                />
-                <span>레시피 등록</span>
-              </a>
-            </li>
-          </ul>
-          <form action="#" class="search-box" method="get">
-            <fieldset>
-              <!--hidden-->
-              <legend class="hide">통합검색</legend>
-              <label for="topSch" hidden="">입력</label>
-              <input
-                id="topSch"
-                name="topSch"
-                placeholder="오늘 저녁은 시원한 콩나물국 어때요?"
-                type="search"
-              />
-              <button type="submit">
-                <img alt="검색" src="images_10000_recipes/search.png" />
-              </button>
-            </fieldset>
-          </form>
+    <header id="header" class="header">
+        <div class="header_inner">
+            <h1 class="logo">
+                <a href="index.html">
+                    <img src="images_10000_recipes/10000_recipes_logo.png" alt="만개의 레시피">
+                </a>
+            </h1>
+    
+                <h2 class="hide">사용자 메뉴</h2>
+                    <ul class="top_menu">
+                        <li class="join"><a href="login.html">로그인 / 회원가입</a></li>
+                        <li><a href="recently-viewed.html">최근 본 레시피</a></li>
+                    </ul>
+                    <div class="header_row">
+                        <ul class="bottom_top_menu non-click">
+                            <li>
+                                <a href="coming-soon.html">
+                                    <img src="images_10000_recipes/myPage.svg" alt="마이페이지" height="42">
+                                    <span>마이페이지</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="coming-soon.html">
+                                    <img src="images_10000_recipes/scrap.svg" alt="스크랩한 레시피" height="42">
+                                    <span>스크랩한 레시피</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="coming-soon.html">
+                                    <img src="images_10000_recipes/recipe_upload.svg" alt="레시피 등록" height="42">
+                                    <span>레시피 등록</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <form action="#" method="get" class="search-box">
+                            <fieldset>  <!--hidden-->
+                                <legend class="hide">통합검색</legend>
+                                <label for="topSch" hidden>입력</label>
+                                <input type="search" name="topSch" id="topSch" placeholder="오늘 저녁은 시원한 콩나물국 어때요?">
+                                <button type="submit">
+                                    <img src="images_10000_recipes/search.png" alt="검색">
+                                </button>
+                            </fieldset>
+                        </form>
+                    </div>
+    
+            <!-- gnb -->
+    
+            <nav id="gnb" class="gnb">
+                                        
+                <div class="ctg_wrap">
+                    <a href="category.html" class="ctg_toggle" aria-expanded="false">
+                        <span class="ctg"><img src="images_10000_recipes/ctg_icon.png" alt="">카테고리</span>
+                    </a>
+                    <ul class="ctg_panel">
+                    <li><strong class="ctg_title">종류</strong></li>
+                    <li><a href="category.html?d2=banchan">반찬</a></li>
+                    <li><a href="category.html?d2=guk-jjigae">국/찌개</a></li>
+                    <li><a href="category.html?d2=bap-juk-tteok">밥/죽/떡</a></li>
+                    <li><a href="category.html?d2=noodle">면</a></li>
+                    <li><a href="category.html?d2=jang-yangnyeom">장류/양념</a></li>
+                    <li><a href="category.html?d2=salad">샐러드</a></li>
+                    <li><a href="category.html?d2=western">양식</a></li>
+                    <li><strong class="ctg_title">재료</strong></li>
+                    <li><a href="ingredient.html?d2=meat">육류</a></li>
+                    <li><a href="ingredient.html?d2=seafood">해산물</a></li>
+                    <li><a href="ingredient.html?d2=vegetable">채소</a></li>
+                    <li><a href="ingredient.html?d2=egg-dairy">달걀/유제품</a></li>
+                    <li><a href="ingredient.html?d2=flour">밀가루</a></li>
+                    <li><a href="ingredient.html?d2=grain-nuts">곡류/견과류</a></li>
+                    <li><a href="ingredient.html?d2=fruit">과일</a></li>
+                    <li><strong class="ctg_title">방법</strong></li>
+                    <li><a href="method.html?d2=boil-simmer">끓이기/조리기</a></li>
+                    <li><a href="method.html?d2=stir-grill">볶기/굽기</a></li>
+                    <li><a href="method.html?d2=fry-pan">튀김/부침</a></li>
+                    <li><a href="method.html?d2=steam-boil-blanch">찜/삶기/데치기</a></li>
+                    <li><a href="method.html?d2=mix-toss">무침/비빔</a></li>
+                    <li><a href="method.html?d2=pickle">절임</a></li>
+                    <li><a href="method.html?d2=raw">회</a></li>
+                    <li><strong class="ctg_title">상황</strong></li>
+                    <li><a href="situation.html?d2=quick">간편식</a></li>
+                    <li><a href="situation.html?d2=special">특별식</a></li>
+                    <li><a href="situation.html?d2=holiday">명절</a></li>
+                    <li><a href="situation.html?d2=pregnancy-baby">임산부/이유식</a></li>
+                    <li><a href="situation.html?d2=diet">다이어트</a></li>
+                    <li><a href="situation.html?d2=hangover">해장</a></li>
+                    <li><a href="situation.html?d2=late-night">야식</a></li>
+                    <li><strong class="ctg_title">건강식단</strong></li>
+                    <li><a href="health.html?d2=stomach">위 건강</a></li>
+                    <li><a href="health.html?d2=intestine">장 건강</a></li>
+                    <li><a href="health.html?d2=liver">간 건강</a></li>
+                    <li><a href="health.html?d2=blood-sugar">혈당조절</a></li>
+                    <li><a href="health.html?d2=anti-cancer">암 예방</a></li>
+                </ul>
+                </div>
+                <h2 class="hide">주요 메뉴</h2>
+                <ul class="main_menu">    
+                    <li><a href="today_menu.html">오늘 뭐 먹지?</a></li>
+                    <li class="best"><a href="coming-soon.html">베스트</a></li>
+                    <li class="event"><a href="coming-soon.html">이벤트</a></li>
+                    <li class="chef"><a href="coming-soon.html">셰프</a></li>
+                    <li class="comm">
+                        <a href="#" class="comm_toggle" aria-expanded="false">커뮤니티</a>
+                            <ul class="comm_panel">
+                                <li><a href="coming-soon.html">공지사항</a></li>
+                                <li><a href="coming-soon.html">자주 묻는 질문</a></li>
+                                <li><a href="coming-soon.html">레시피 후기</a></li>
+                            </ul>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <!-- GNB -->
-        <nav aria-label="메인 메뉴" class="gnb" id="gnb">
-          <div class="ctg_wrap">
-            <a aria-expanded="false" class="ctg_toggle" href="#none">
-              <span class="ctg">
-                <img alt="" src="images_10000_recipes/ctg_icon.png" />카테고리
-              </span>
-            </a>
-            <ul class="ctg_panel">
-              <li><strong class="ctg_title">종류</strong></li>
-              <li><a href="category.html?d2=banchan">반찬</a></li>
-              <li><a href="category.html?d2=guk-jjigae">국/찌개</a></li>
-              <li><a href="category.html?d2=bap-juk-tteok">밥/죽/떡</a></li>
-              <li><a href="category.html?d2=noodle">면</a></li>
-              <li><a href="category.html?d2=jang-yangnyeom">장류/양념</a></li>
-              <li><a href="category.html?d2=salad">샐러드</a></li>
-              <li><a href="category.html?d2=western">양식</a></li>
-              <li><strong class="ctg_title">재료</strong></li>
-              <li><a href="ingredient.html?d2=meat">육류</a></li>
-              <li><a href="ingredient.html?d2=seafood">해산물</a></li>
-              <li><a href="ingredient.html?d2=vegetable">채소</a></li>
-              <li><a href="ingredient.html?d2=egg-dairy">달걀/유제품</a></li>
-              <li><a href="ingredient.html?d2=flour">밀가루</a></li>
-              <li><a href="ingredient.html?d2=grain-nuts">곡류/견과류</a></li>
-              <li><a href="ingredient.html?d2=fruit">과일</a></li>
-              <li><strong class="ctg_title">방법</strong></li>
-              <li><a href="method.html?d2=boil-simmer">끓이기/조리기</a></li>
-              <li><a href="method.html?d2=stir-grill">볶기/굽기</a></li>
-              <li><a href="method.html?d2=fry-pan">튀김/부침</a></li>
-              <li>
-                <a href="method.html?d2=steam-boil-blanch">찜/삶기/데치기</a>
-              </li>
-              <li><a href="method.html?d2=mix-toss">무침/비빔</a></li>
-              <li><a href="method.html?d2=pickle">절임</a></li>
-              <li><a href="method.html?d2=raw">회</a></li>
-              <li><strong class="ctg_title">상황</strong></li>
-              <li><a href="situation.html?d2=quick">간편식</a></li>
-              <li><a href="situation.html?d2=special">특별식</a></li>
-              <li><a href="situation.html?d2=holiday">명절</a></li>
-              <li>
-                <a href="situation.html?d2=pregnancy-baby">임산부/이유식</a>
-              </li>
-              <li><a href="situation.html?d2=diet">다이어트</a></li>
-              <li><a href="situation.html?d2=hangover">해장</a></li>
-              <li><a href="situation.html?d2=late-night">야식</a></li>
-              <li><strong class="ctg_title">건강식단</strong></li>
-              <li><a href="health.html?d2=stomach">위 건강</a></li>
-              <li><a href="health.html?d2=intestine">장 건강</a></li>
-              <li><a href="health.html?d2=liver">간 건강</a></li>
-              <li><a href="health.html?d2=blood-sugar">혈당조절</a></li>
-              <li><a href="health.html?d2=anti-cancer">암 예방</a></li>
-            </ul>
-          </div>
-          <h2 class="hide">주요 메뉴</h2>
-          <ul class="main_menu">
-            <li><a href="today_menu.html">오늘 뭐 먹지?</a></li>
-            <li><a href="coming-soon.html">베스트</a></li>
-            <li><a href="coming-soon.html">이벤트</a></li>
-            <li><a href="coming-soon.html">셰프</a></li>
-            <li class="comm">
-              <a aria-expanded="false" class="comm_toggle" href="#">커뮤니티</a>
-              <ul class="comm_panel">
-                <li><a href="coming-soon.html">공지사항</a></li>
-                <li><a href="coming-soon.html">자주 묻는 질문</a></li>
-                <li><a href="coming-soon.html">레시피 후기</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </div>
     </header>
     <!-- main -->
     <div class="category-page">

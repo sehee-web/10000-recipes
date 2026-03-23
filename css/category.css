@@ -473,8 +473,8 @@
     z-index: 2;
 }
 
-.recipe-card__badge--best { background: var(--color-point); }
-.recipe-card__badge--new  { background: #4a9cd4; }
+.recipe-card__badge--best { background: var(--color-primary); }
+.recipe-card__badge--new  { background: var(--color-primary) }
 .recipe-card__badge--easy { background: var(--color-primary); }
 .recipe-card__badge--hot { background: var(--color-point); }
 

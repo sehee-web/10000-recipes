@@ -784,7 +784,7 @@ var RECIPES = {
       situation:  ["speed","lunchbox","diet"],
       health:     ["anti-cancer","intestine","blood-sugar"]
     },
-    badge:        "NEW",
+    badge:        "",
     badge_class:  "",
     rating:       4.8,
     review_count: 38,
@@ -1707,7 +1707,7 @@ var RECIPES = {
       situation:  ["special","late-night"],
       health:     ""
     },
-    badge:        "NEW",
+    badge:        "",
     badge_class:  "",
     rating:       4.8,
     review_count: 38,
@@ -2635,7 +2635,7 @@ var RECIPES = {
       situation:  "snack",
       health:     ""
     },
-    badge:        "NEW",
+    badge:        "",
     badge_class:  "",
     rating:       4.8,
     review_count: 38,
@@ -3597,7 +3597,7 @@ var RECIPES = {
       situation:  ["snack","speed"],
       health:     ""
     },
-    badge:        "NEW",
+    badge:        "",
     badge_class:  "",
     rating:       4.8,
     review_count: 38,
@@ -4549,7 +4549,7 @@ var RECIPES = {
       situation:  "lunchbox",
       health:     ""
     },
-    badge:        "NEW",
+    badge:        "",
     badge_class:  "",
     rating:       4.8,
     review_count: 38,
@@ -5462,7 +5462,7 @@ var RECIPES = {
       situation:  "diet speed lunchbox",
       health:     ["stomach","intestine","liver","blood-sugar","anti-cancer"]
     },
-    badge:        "NEW",
+    badge:        "",
     badge_class:  "",
     rating:       4.8,
     review_count: 38,
@@ -6399,7 +6399,7 @@ var RECIPES = {
       situation:  "snack special pregnancy baby",
       health:     ""
     },
-    badge:        "NEW",
+    badge:        "",
     badge_class:  "",
     rating:       4.8,
     review_count: 38,
