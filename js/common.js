@@ -153,7 +153,7 @@ $(document).ready(function(){
         }
     
         // 플로팅 버튼 클릭
-        $(document).on('click', '.recently_viewed', function () {
+        $(document).on('click', '.recently_viewed_btn', function () {
             $('.rv_panel').hasClass('is-open') ? closePanel() : openPanel();
         });
     

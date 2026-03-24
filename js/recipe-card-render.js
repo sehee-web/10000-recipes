@@ -37,7 +37,11 @@
   /* ── 카드 HTML 생성 ── */
   function buildCard(r, pageType) {
     var catVal = getCatVal(r, pageType);
-
+    var params = new URLSearchParams(window.location.search);
+    var currentD2 = params.get('d2') || 'all';
+    var fromParam = pageType
+      ? '&from=' + pageType + '&d2=' + currentD2
+      : '';
     var badgeHTML = r.badge
       ? '<span class="recipe-card__badge ' + (r.badge_class || '') + '">' + r.badge + '</span>'
       : '';
@@ -51,8 +55,9 @@
       : '<svg class="author-avatar" viewBox="0 0 32 32" fill="none" stroke="#ccc" stroke-width="1.5"><path d="M28 28v-3a8 8 0 0 0-8-8H12a8 8 0 0 0-8 8v3"/><circle cx="16" cy="10" r="6"/></svg>';
 
     return '<article class="recipe-card" data-recipe-id="' + r.id + '" data-category="' + catVal + '">' +
-      '<div class="recipe-card__img-wrap">' +
-        '<a href="recipe-detail.html?id=' + r.id + '">' +
+      '<div class="recipe-card__img-wrap">' +        
+
+        '<a href="recipe-detail.html?id=' + r.id + fromParam + '">' +
           '<img src="' + (r.image||'') + '" alt="' + (r.title||'') + '" loading="lazy">' +
         '</a>' +
         badgeHTML +
@@ -65,8 +70,8 @@
           '<div class="stars__icons" aria-hidden="true">' + starsHTML(r.rating||0) + '</div>' +
           '<span class="review-count" aria-hidden="true">(' + (r.review_count||0) + ')</span>' +
         '</div>' +
-        '<a href="recipe-detail.html?id=' + r.id + '">' +
-          '<h3 class="recipe-card__title">' + (r.title||'') + '</h3>' +
+        '<a href="recipe-detail.html?id=' + r.id + fromParam + '">' +
+            '<h3 class="recipe-card__title">' + (r.title||'') + '</h3>' +
         '</a>' +
         '<p class="recipe-card__desc">' + (r.subtitle||'') + '</p>' +
         '<div class="recipe-card__tags">' + tagsHTML + '</div>' +

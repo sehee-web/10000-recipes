@@ -195,7 +195,69 @@
         '</div>';
     }
   }
+  // recipe-detail에 depth2 필버튼의 클릭 이벤트를 열어주는 함수
+  function initDetailFilter(recipe) {
+    var params = new URLSearchParams(window.location.search);
 
+    var from = params.get('from');
+    var d2   = params.get('d2');
+
+    // ✅ 파라미터 없으면 → recipe 기준으로 세팅
+    if (!from || !d2) {
+      var cats = recipe.categories || {};
+
+      if (cats.type) {
+        from = 'type';
+        d2 = cats.type;
+      } else if (cats.ingredient) {
+        from = 'ingredient';
+        d2 = cats.ingredient;
+      } else if (cats.method) {
+        from = 'method';
+        d2 = cats.method;
+      } else if (cats.situation) {
+        from = 'situation';
+        d2 = cats.situation;
+      } else if (cats.health) {
+        from = 'health';
+        d2 = cats.health;
+      }
+    }
+
+    if (!from || !d2) return;
+
+    var navMap = {
+      'type': 'filter-type',
+      'ingredient': 'filter-ingredient',
+      'method': 'filter-method',
+      'situation': 'filter-situation',
+      'health': 'filter-health',
+    };
+
+    var navId = navMap[from];
+    if (!navId) return;
+
+    document.getElementById('detail-filter-wrap').style.display = 'block';
+    document.getElementById(navId).style.display = 'flex';
+
+    var nav = document.getElementById(navId);
+
+    nav.querySelectorAll('.depth2-filter__btn').forEach(function(btn) {
+      var isActive = btn.getAttribute('data-d2') === d2;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-pressed', String(isActive));
+    });
+
+    nav.querySelectorAll('.depth2-filter__btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var targetD2   = btn.getAttribute('data-d2');
+        var targetPage = btn.getAttribute('data-page');
+        window.location.href = targetD2 === 'all'
+          ? targetPage
+          : targetPage + '?d2=' + targetD2;
+      });
+    });
+  }
   function run() {
     var id = getParam('id');
     if (!id) return;
@@ -208,6 +270,7 @@
     fillSteps(recipe);
     fillReviews(recipe);
     fillQuestions(recipe);
+    initDetailFilter(recipe);
   }
 
   if (document.readyState === 'loading') {

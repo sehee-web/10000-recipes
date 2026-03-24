@@ -47,39 +47,84 @@
     }
   }
 
+  // function init() {
+  //   // .recipe-card 가 있는 모든 카드에 적용
+  //   document.querySelectorAll('.recipe-card').forEach(function (card) {
+  //     var id = card.getAttribute('data-recipe-id');
+  //     if (!id) return;
+
+  //     // recipe-data.js 데이터 동기화
+  //     var recipe = (typeof RECIPES !== 'undefined') ? RECIPES[Number(id)] : null;
+  //     if (recipe) syncCardData(card, recipe);
+
+  //     // 카드 이미지 링크
+  //     var imgLink = card.querySelector('.recipe-card__img-wrap a');
+  //     if (imgLink) {
+  //       imgLink.href = 'recipe-detail.html?id=' + id;
+  //     }
+
+  //     // 카드 제목 링크
+  //     var titleLink = card.querySelector('.recipe-card__body a');
+  //     if (titleLink) {
+  //       titleLink.href = 'recipe-detail.html?id=' + id;
+  //     }
+
+  //     // 카드 전체 클릭 (링크 아닌 빈 영역 클릭시도 이동)
+  //     card.style.cursor = 'pointer';
+  //     card.addEventListener('click', function (e) {
+  //       // 스크랩 버튼 클릭은 페이지 이동 X
+  //       if (e.target.closest('.recipe-card__scrap')) return;
+  //       // 링크 자체 클릭도 자연스럽게 동작
+  //       if (e.target.closest('a')) return;
+  //       window.location.href = 'recipe-detail.html?id=' + id;
+  //     });
+  //   });
+  // }
   function init() {
-    // .recipe-card 가 있는 모든 카드에 적용
-    document.querySelectorAll('.recipe-card').forEach(function (card) {
-      var id = card.getAttribute('data-recipe-id');
-      if (!id) return;
+  // 현재 페이지 상태 가져오기
+  var params = new URLSearchParams(window.location.search);
+  var currentD2 = params.get('d2') || 'all';
+  var pageType = document.body.dataset.page || 'type';
 
-      // recipe-data.js 데이터 동기화
-      var recipe = (typeof RECIPES !== 'undefined') ? RECIPES[Number(id)] : null;
-      if (recipe) syncCardData(card, recipe);
+  // .recipe-card 가 있는 모든 카드에 적용
+  document.querySelectorAll('.recipe-card').forEach(function (card) {
+    var id = card.getAttribute('data-recipe-id');
+    if (!id) return;
 
-      // 카드 이미지 링크
-      var imgLink = card.querySelector('.recipe-card__img-wrap a');
-      if (imgLink) {
-        imgLink.href = 'recipe-detail.html?id=' + id;
-      }
+    // recipe-data.js 데이터 동기화
+    var recipe = (typeof RECIPES !== 'undefined') ? RECIPES[Number(id)] : null;
+    if (recipe) syncCardData(card, recipe);
 
-      // 카드 제목 링크
-      var titleLink = card.querySelector('.recipe-card__body a');
-      if (titleLink) {
-        titleLink.href = 'recipe-detail.html?id=' + id;
-      }
+    // ✅ 상세페이지로 이동할 URL 생성 (핵심)
+    var url = 'recipe-detail.html?id=' + id +
+              '&from=' + pageType +
+              '&d2=' + currentD2;
 
-      // 카드 전체 클릭 (링크 아닌 빈 영역 클릭시도 이동)
-      card.style.cursor = 'pointer';
-      card.addEventListener('click', function (e) {
-        // 스크랩 버튼 클릭은 페이지 이동 X
-        if (e.target.closest('.recipe-card__scrap')) return;
-        // 링크 자체 클릭도 자연스럽게 동작
-        if (e.target.closest('a')) return;
-        window.location.href = 'recipe-detail.html?id=' + id;
-      });
+    // 카드 이미지 링크
+    var imgLink = card.querySelector('.recipe-card__img-wrap a');
+    if (imgLink) {
+      imgLink.href = url;
+    }
+
+    // 카드 제목 링크
+    var titleLink = card.querySelector('.recipe-card__body a');
+    if (titleLink) {
+      titleLink.href = url;
+    }
+
+    // 카드 전체 클릭 (링크 아닌 빈 영역 클릭시도 이동)
+    card.style.cursor = 'pointer';
+    card.addEventListener('click', function (e) {
+      // 스크랩 버튼 클릭은 페이지 이동 X
+      if (e.target.closest('.recipe-card__scrap')) return;
+      // 링크 자체 클릭도 자연스럽게 동작
+      if (e.target.closest('a')) return;
+
+      // ✅ 여기 тоже 수정
+      window.location.href = url;
     });
-  }
+  });
+}
 
   // DOM 준비 후 실행
   if (document.readyState === 'loading') {

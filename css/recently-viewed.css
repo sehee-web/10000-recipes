@@ -62,17 +62,17 @@
   align-items: center;
   gap: 20px;
   padding: 18px 16px;
-  border-bottom: 1px solid #ebebeb;
+  border-bottom: 1px solid #d5d5d5;
   border-radius: 8px;
   transition: background .12s;
   cursor: pointer;
 }
 
-.rv-item:first-child { border-top: 1px solid #ebebeb; }
+.rv-item:first-child { border-top: 1px solid #d5d5d5; }
 .rv-item:hover { background: #fdf9f3; }
 
 .rv-num {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   color: #E97229;
   width: 28px;
@@ -114,7 +114,7 @@
 }
 
 .rv-subtitle {
-  font-size: 13px;
+  font-size: 14px;
   color: #4a4235;
   margin: 0 0 8px;
   white-space: nowrap;
@@ -129,7 +129,7 @@
 }
 
 .rv-category {
-  font-size: 11px;
+  font-size: 12px;
   background: #FDF3EC;
   color: #E97229;
   padding: 3px 8px;
@@ -146,7 +146,7 @@
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  border: 1.5px solid #ebebeb;
+  border: 1.5px solid #9a9595;
   background: #fff;
   display: flex;
   align-items: center;
@@ -154,7 +154,7 @@
   cursor: pointer;
   flex-shrink: 0;
   transition: border-color .12s, background .12s;
-  color: #aaa;
+  color: #9a9595;
   font-size: 13px;
   line-height: 1;
 }
@@ -175,7 +175,7 @@
   width: 64px;
   height: 64px;
   border-radius: 50%;
-  border: 1.5px solid #ebebeb;
+  border: 1.5px solid #d5d5d5;
   margin: 0 auto 16px;
   display: flex;
   align-items: center;

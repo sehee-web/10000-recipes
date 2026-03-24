@@ -28,7 +28,10 @@ body {
     width: 1264px;
     margin: 0 auto;
 }
-
+.category-inner {
+    width: 1264px;
+    margin: 0 auto;
+}
 /* .breadcrumb-wrap {
   max-width: 1060px;
   margin: 0 auto;
@@ -58,7 +61,7 @@ body {
     align-items: center;
     margin: 0;
     padding: 12px 0;
-    font-size: 13px;
+    font-size: 14px;
     color: #999;
     gap: 0;
 }
@@ -204,6 +207,57 @@ body {
     color: var(--color-point);
 }
 
+/* DEPTH2 필터바 */
+.depth2-filter-wrap {
+    background: #fff;
+    border-bottom: 2px solid #ebebeb;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.10);
+}
+
+.depth2-filter {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+/* .depth2-filter::-webkit-scrollbar {
+    display: none;
+} */
+
+.depth2-filter__btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 20px;
+    border-radius: 50px;
+    border: 1.5px solid #d5d5d5;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: border-color 0.15s ease, color 0.15s ease, background 0.15s ease;
+    line-height: 1;
+}
+
+.depth2-filter__btn:hover {
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+}
+
+.depth2-filter__btn.is-active {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    color: #fff;
+    font-weight: 700;
+}
+.depth2-filter__btn--all.is-active {
+    background: var(--color-point);
+    border-color: var(--color-point);
+}
+
 /* MAIN WRAP */
 .main-wrap {
   max-width: 1264px;
@@ -213,7 +267,7 @@ body {
 
 /* HERO */
 .hero {
-  width: 1050px;
+  width: 1264px;
   background: #fff;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -267,7 +321,7 @@ body {
 }
 
 /* 제목 + 작성자 */
-.hero-left { 
+.hero-right{ 
   display: flex;
   flex-direction: column;
 }
@@ -276,7 +330,6 @@ body {
 .author-row {
   display: flex;
   align-items: center;
-  padding: 20px 0 0;
   gap: 8px;
 }
 .author-avatar {
@@ -311,6 +364,11 @@ body {
   padding: 20px 0 0;
 }
 
+.authorMeta{
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+}
 /* 구분선 */
 .hero-divider {
   width: 100%;
@@ -354,7 +412,6 @@ body {
 /* 액션 아이콘 (공유/스크랩/프린트) */
 .action-icons {
   display: flex;
-  margin-bottom: 16px;
   gap: 16px;
 }
 .action-btn {

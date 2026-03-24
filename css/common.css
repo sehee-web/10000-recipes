@@ -544,20 +544,48 @@ body{
     color: #fff;
     font-weight: bold;
 }
-.recently_viewed{
+.recently_viewed_btn{
     width: 50px;
     height: 50px;
+    position: relative;
+    display: flex;
+    align-items: center;
     border-radius: 50%;
     padding: 0;
     cursor: pointer;
     order: -1;
    
 }
-.recently_viewed img {
+.recently_viewed_btn img {
     width: 50px;
     height: 50px;
     display: block;
     border-radius: 50%;
+}
+.rv_tooltip {
+    position: absolute;
+    right: 100%;          /* 버튼 왼쪽에 붙음 */
+    margin-right: 8px;    /* 버튼과 간격 */
+    white-space: nowrap;
+    background: #fff;
+    border: 1.5px solid #74B243;
+    color: #74B243;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 20px;
+    
+    /* 숨김 상태 */
+    opacity: 0;
+    width: 0;
+    padding: 6px 0;
+    overflow: hidden;
+    transition: opacity 0.2s ease, width 0.2s ease, padding 0.2s ease;
+}
+
+.recently_viewed_btn:hover .rv_tooltip {
+    opacity: 1;
+    width: auto;          
+    padding: 6px 14px;
 }
 /* 최근 본 레시피 사이드 패널 */
 .rv_panel_overlay {
