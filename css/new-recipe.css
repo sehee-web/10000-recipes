@@ -1,0 +1,1160 @@
+/* ============================================
+   new-recipe.css
+   만개의 레시피 — 레시피 등록 페이지
+   디자인 토큰은 css/common.css 의 :root 변수를 공유
+============================================ */
+
+/* ---------- 레이아웃 ---------- */
+.new-recipe-page {
+    background: #f7f7f7;
+    padding: 40px 0 80px;
+    min-height: calc(100vh - 160px);
+}
+
+.write-inner {
+    width: 900px;
+    margin: 0 auto;
+}
+
+/* ---------- 페이지 헤더 ---------- */
+.write-page-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+    text-align: center;
+    margin-bottom: 28px;
+
+}
+
+.write-page-header-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 14px;
+    margin-bottom: 10px;
+}
+
+.write-autosave-status {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #999;
+}
+
+.write-autosave-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #74B243;
+    flex-shrink: 0;
+}
+
+.write-btn-draft {
+    padding: 8px 18px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 20px;
+    background: #fff;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.write-btn-draft:hover {
+    border-color: #74B243;
+    color: #74B243;
+}
+
+/* ---------- 스테퍼 ---------- */
+.write-stepper {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.write-stepper__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+}
+
+.write-stepper__item:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 17px;
+    left: 50%;
+    width: 100%;
+    height: 2px;
+    background: #ebebeb;
+    z-index: 0;
+    transition: background 0.3s;
+}
+
+.write-stepper__item.is-done:not(:last-child)::after {
+    background: #74B243;
+}
+
+.write-stepper__circle {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid #ebebeb;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    color: #999;
+    position: relative;
+    z-index: 1;
+    transition: border-color 0.3s, background 0.3s, color 0.3s;
+}
+
+.write-stepper__item.is-done .write-stepper__circle {
+    border-color: #74B243;
+    background: #74B243;
+    color: #fff;
+}
+
+.write-stepper__item.is-active .write-stepper__circle {
+    border-color: #E97229;
+    background: #E97229;
+    color: #fff;
+}
+
+.write-stepper__label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #999;
+    margin-top: 7px;
+    white-space: nowrap;
+}
+
+.write-stepper__item.is-done .write-stepper__label {
+    color: #74B243;
+}
+
+.write-stepper__item.is-active .write-stepper__label {
+    color: #E97229;
+    font-weight: 700;
+}
+
+/* ---------- 진행률 바 ---------- */
+.write-progress-bar-wrap {
+    height: 4px;
+    background: #ebebeb;
+    border-radius: 2px;
+    margin-bottom: 24px;
+    overflow: hidden;
+}
+
+.write-progress-bar {
+    height: 100%;
+    background: #E97229;
+    border-radius: 2px;
+    width: 0%;
+    transition: width 0.4s ease;
+}
+
+/* ---------- 패널 (단계별) ---------- */
+.write-panel {
+    display: none;
+}
+
+.write-panel.is-active {
+    display: block;
+}
+
+/* ---------- 섹션 아코디언 ---------- */
+.write-section {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.write-section__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 15px 20px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.write-section.is-open .write-section__head {
+    border-bottom-color: #ebebeb;
+}
+
+.write-section__num {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: #74B243;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.write-section__num--opt {
+    background: #d5d5d5;
+}
+
+.write-section__name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    flex: 1;
+}
+
+.write-section__status {
+    font-size: 12px;
+    color: #999;
+    white-space: nowrap;
+}
+
+.write-section__status.is-done {
+    color: #74B243;
+    font-weight: 600;
+}
+
+.write-section__arrow {
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 5px solid #999;
+    transition: transform 0.2s;
+    flex-shrink: 0;
+}
+
+.write-section.is-open .write-section__arrow {
+    transform: rotate(180deg);
+}
+
+.write-section__body {
+    display: none;
+    padding: 22px 20px;
+}
+
+.write-section.is-open .write-section__body {
+    display: block;
+}
+
+/* ---------- 공통 폼 요소 ---------- */
+.write-field {
+    margin-bottom: 18px;
+}
+
+.write-field--last {
+    margin-bottom: 0;
+}
+
+.write-field-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.write-req {
+    color: #E97229;
+    font-size: 14px;
+    line-height: 1;
+}
+
+.write-optional {
+    font-size: 11px;
+    font-weight: 400;
+    color: #999;
+    margin-left: 2px;
+}
+
+.write-input {
+    width: 100%;
+    height: 42px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 14px;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.15s;
+    font-family: inherit;
+    background: #fff;
+}
+
+.write-input:focus {
+    border-color: #E97229;
+}
+
+.write-input::placeholder {
+    color: #999;
+}
+
+.write-textarea {
+    width: 100%;
+    height: 80px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.15s;
+    font-family: inherit;
+    background: #fff;
+    resize: none;
+    line-height: 1.6;
+}
+
+.write-textarea:focus {
+    border-color: #E97229;
+}
+
+.write-textarea::placeholder {
+    color: #999;
+}
+
+.write-select {
+    width: 100%;
+    height: 42px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 8px;
+    padding: 0 12px;
+    font-size: 13px;
+    color: #1a1a1a;
+    outline: none;
+    transition: border-color 0.15s;
+    font-family: inherit;
+    background: #fff;
+    cursor: pointer;
+    appearance: auto;
+}
+
+.write-select:focus {
+    border-color: #E97229;
+}
+
+.write-char-count {
+    font-size: 11px;
+    color: #999;
+    text-align: right;
+    margin-top: 4px;
+}
+
+.write-char-count span {
+    color: #E97229;
+}
+
+.write-field-hint {
+    font-size: 11px;
+    color: #999;
+    margin-top: 5px;
+    line-height: 1.5;
+}
+
+/* ---------- 섹션 1: 대표 사진 & 제목 ---------- */
+.write-hero-layout {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.write-img-col {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.write-img-drop {
+    height: 164px;
+    border: 2px dashed #d5d5d5;
+    border-radius: 8px;
+    background: #fafafa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.write-img-drop:hover {
+    border-color: #74B243;
+    background: #DCEAD1;
+}
+
+.write-img-drop.is-uploaded {
+    border-style: solid;
+    border-color: #74B243;
+    padding: 0;
+    overflow: hidden;
+}
+
+.write-img-drop__icon {
+    width: 26px;
+    height: 26px;
+    stroke: #999;
+}
+
+.write-img-drop__label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #999;
+}
+
+.write-img-drop__sub {
+    font-size: 11px;
+    color: #d5d5d5;
+}
+
+.write-img-change {
+    margin-top: 7px;
+    font-size: 11px;
+    color: #555;
+    text-decoration: underline;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+}
+
+.write-img-change:hover {
+    color: #E97229;
+}
+
+.write-info-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* ---------- 영상 레이아웃 ---------- */
+.write-video-layout {
+    display: grid;
+    grid-template-columns: 120px 1fr;
+    gap: 12px;
+    align-items: start;
+}
+.write-video-thumb-wrap {
+    margin-top: 8px;
+}
+.write-video-thumb {
+    width: 120px;
+    height: 82px;
+    border: 1.5px solid #ebebeb;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #f7f7f7;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.write-video-thumb__empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.write-video-thumb__empty svg {
+    width: 22px;
+    height: 22px;
+    stroke: #d5d5d5;
+}
+
+.write-video-thumb__empty span {
+    font-size: 11px;
+    color: #d5d5d5;
+    font-weight: 500;
+}
+
+.write-video-thumb__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.write-video-input-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.write-video-input-row {
+    display: flex;
+    gap: 8px;
+}
+
+.write-video-input-row .write-input {
+    flex: 1;
+}
+
+.write-video-preview-btn {
+    height: 42px;
+    padding: 0 16px;
+    background: #74B243;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s;
+    font-family: inherit;
+    flex-shrink: 0;
+}
+
+.write-video-preview-btn:hover {
+    background: #5a8f32;
+}
+
+.write-video-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.write-video-info__title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.write-video-info__meta {
+    font-size: 11px;
+    color: #999;
+}
+
+.write-video-del-btn {
+    margin-left: auto;
+    background: none;
+    border: 1px solid #d5d5d5;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 11px;
+    color: #999;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.write-video-del-btn:hover {
+    border-color: #E97229;
+    color: #E97229;
+}
+
+/* ---------- 섹션 2: 카테고리 ---------- */
+.write-cat-block {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.write-cat-block--last {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+.write-cat-block__label {
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.write-chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.write-chip {
+    padding: 7px 16px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 500;
+    color: #555;
+    cursor: pointer;
+    transition: border-color 0.15s, color 0.15s, background 0.15s;
+    background: #fff;
+    white-space: nowrap;
+    line-height: 1;
+    font-family: inherit;
+}
+
+.write-chip:hover {
+    border-color: #74B243;
+    color: #74B243;
+}
+
+.write-chip.is-selected {
+    background: #74B243;
+    border-color: #74B243;
+    color: #fff;
+    font-weight: 700;
+}
+
+/* ---------- 섹션 3: 인원/시간/난이도 ---------- */
+.write-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.write-meta-field label.write-field-label {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+    font-weight: 700;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* ---------- 섹션 4: 태그 ---------- */
+.write-tag-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    min-height: 44px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 8px;
+    padding: 8px 10px;
+    cursor: text;
+    background: #fff;
+    transition: border-color 0.15s;
+}
+
+.write-tag-wrap:focus-within {
+    border-color: #E97229;
+}
+
+.write-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 3px 10px;
+    background: #FDF3EC;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #c45e1e;
+    font-weight: 600;
+}
+
+.write-tag__del {
+    cursor: pointer;
+    color: #999;
+    font-size: 13px;
+    line-height: 1;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+}
+
+.write-tag__del:hover {
+    color: #c45e1e;
+}
+
+.write-tag-input {
+    border: none;
+    outline: none;
+    font-size: 13px;
+    color: #1a1a1a;
+    min-width: 90px;
+    background: transparent;
+    flex: 1;
+    font-family: inherit;
+}
+
+/* ---------- 2단계: 재료 ---------- */
+.write-ingr-group {
+    background: #fafafa;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.write-ingr-group__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    border-bottom: 1px solid #ebebeb;
+    background: #fff;
+}
+
+.write-ingr-group__drag {
+    color: #999;
+    cursor: grab;
+    font-size: 16px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.write-ingr-group__name {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    background: transparent;
+    font-family: inherit;
+}
+
+.write-ingr-group__name::placeholder {
+    color: #999;
+    font-weight: 400;
+}
+
+.write-ingr-group__del {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    font-size: 18px;
+    line-height: 1;
+    padding: 2px;
+    font-family: inherit;
+    transition: color 0.15s;
+}
+
+.write-ingr-group__del:hover {
+    color: #e24b4a;
+}
+
+.write-ingr-rows {
+    padding: 12px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.write-ingr-row {
+    display: grid;
+    grid-template-columns: 1fr 90px 100px 36px;
+    gap: 8px;
+    align-items: center;
+}
+
+.write-ingr-row__name,
+.write-ingr-row__qty {
+    height: 38px;
+    font-size: 13px;
+}
+
+.write-ingr-row__unit {
+    height: 38px;
+    font-size: 13px;
+    padding: 0 8px;
+}
+
+.write-ingr-row__del {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #999;
+    font-size: 20px;
+    line-height: 1;
+    padding: 0;
+    font-family: inherit;
+    transition: color 0.15s;
+    text-align: center;
+}
+
+.write-ingr-row__del:hover {
+    color: #e24b4a;
+}
+
+.write-btn-add-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 9px 16px;
+    border: none;
+    background: none;
+    font-size: 13px;
+    color: #74B243;
+    font-weight: 600;
+    cursor: pointer;
+    font-family: inherit;
+    transition: color 0.15s;
+}
+
+.write-btn-add-row:hover {
+    color: #5a8f32;
+}
+
+.write-btn-add-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 14px;
+    border: 2px dashed #DCEAD1;
+    border-radius: 8px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    color: #74B243;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    margin-top: 6px;
+    font-family: inherit;
+}
+
+.write-btn-add-group:hover {
+    background: #DCEAD1;
+    border-color: #74B243;
+}
+
+.write-quick-tip {
+    margin-top: 18px;
+    background: #FDF3EC;
+    border-radius: 8px;
+    padding: 14px 18px;
+    border-left: 3px solid #E97229;
+}
+
+.write-quick-tip__title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #c45e1e;
+    margin-bottom: 5px;
+}
+
+.write-quick-tip__desc {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.write-quick-tip__input {
+    height: 60px;
+    font-size: 13px;
+    border-color: #f0d5bf;
+    background: #fff;
+}
+
+/* ---------- 3단계: 요리 순서 ---------- */
+.write-order-guide {
+    background: #fffbe6;
+    border: 1px solid #ffe58f;
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-size: 13px;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 16px;
+}
+
+.write-order-guide strong {
+    color: #E97229;
+}
+
+.write-order-card {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    margin-bottom: 12px;
+    overflow: hidden;
+}
+
+.write-order-card__head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 16px;
+    background: #f7f7f7;
+}
+
+.write-order-num {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: #74B243;
+    color: #fff;
+    font-size: 13px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.write-order-card__title {
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    flex: 1;
+}
+
+.write-order-drag {
+    color: #999;
+    cursor: grab;
+    font-size: 16px;
+    line-height: 1;
+    margin-left: auto;
+}
+
+.write-order-card__body {
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.write-order-textarea {
+    height: 76px;
+    font-size: 14px;
+}
+
+.write-order-imgs {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.write-order-img-slot {
+    width: 78px;
+    height: 68px;
+    border: 1.5px dashed #d5d5d5;
+    border-radius: 6px;
+    background: #fafafa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s;
+    flex-shrink: 0;
+}
+
+.write-order-img-slot svg {
+    width: 20px;
+    height: 20px;
+    stroke: #999;
+}
+
+.write-order-img-slot:hover {
+    border-color: #74B243;
+    background: #DCEAD1;
+}
+
+.write-order-img-add {
+    width: 78px;
+    height: 68px;
+    border: 1.5px dashed #d5d5d5;
+    border-radius: 6px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #999;
+    font-size: 22px;
+    transition: border-color 0.15s, color 0.15s;
+    font-family: inherit;
+}
+
+.write-order-img-add:hover {
+    border-color: #74B243;
+    color: #74B243;
+}
+
+.write-tip-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #c45e1e;
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: inherit;
+    transition: color 0.15s;
+}
+
+.write-tip-toggle svg {
+    stroke: #E97229;
+}
+
+.write-tip-toggle:hover {
+    color: #a04b16;
+}
+
+.write-tip-input {
+    font-size: 13px;
+    background: #FDF3EC;
+    border-color: #f0d5bf;
+    color: #c45e1e;
+}
+
+.write-tip-input::placeholder {
+    color: #d4a07a;
+}
+
+.write-order-card__foot {
+    display: flex;
+    justify-content: flex-end;
+    padding: 0 16px 12px;
+}
+
+.write-btn-del-order {
+    background: none;
+    border: 1.5px solid #ebebeb;
+    border-radius: 6px;
+    padding: 5px 14px;
+    font-size: 12px;
+    color: #999;
+    cursor: pointer;
+    font-family: inherit;
+    transition: border-color 0.15s, color 0.15s;
+}
+
+.write-btn-del-order:hover {
+    border-color: #e24b4a;
+    color: #e24b4a;
+}
+
+.write-btn-add-order {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    width: 100%;
+    padding: 14px;
+    border: 2px dashed #DCEAD1;
+    border-radius: 8px;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 700;
+    color: #74B243;
+    cursor: pointer;
+    transition: background 0.15s, border-color 0.15s;
+    margin-top: 6px;
+    font-family: inherit;
+}
+
+.write-btn-add-order:hover {
+    background: #DCEAD1;
+    border-color: #74B243;
+}
+
+/* ---------- 하단 폼 푸터 ---------- */
+.write-form-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-top: 4px;
+}
+
+.write-form-footer__right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.write-progress-label {
+    font-size: 12px;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.write-progress-label.is-complete {
+    color: #74B243;
+}
+
+.write-btn-prev {
+    padding: 11px 22px;
+    border: 1.5px solid #d5d5d5;
+    border-radius: 8px;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    font-family: inherit;
+}
+
+.write-btn-prev:hover {
+    border-color: #555;
+}
+
+.write-btn-next {
+    padding: 11px 32px;
+    border: none;
+    border-radius: 8px;
+    background: #74B243;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-family: inherit;
+}
+
+.write-btn-next:hover:not(:disabled) {
+    background: #5a8f32;
+}
+
+.write-btn-next:disabled {
+    background: #d5d5d5;
+    color: #fff;
+    cursor: not-allowed;
+}
+
+.write-btn-publish {
+    padding: 11px 32px;
+    border: none;
+    border-radius: 8px;
+    background: #E97229;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-family: inherit;
+}
+
+.write-btn-publish:hover {
+    background: #c45e1e;
+}

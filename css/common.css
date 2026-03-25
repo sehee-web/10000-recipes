@@ -211,7 +211,7 @@ body{
     height: 65px;
     align-items: flex-start;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 500;
 }
 .ctg{            
     display: flex;
@@ -280,12 +280,12 @@ body{
 .ctg_panel::-webkit-scrollbar-track {
     background: transparent;
 }
-    .main_menu{
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 64px;
+.main_menu{
+position: absolute;
+left: 50%;
+transform: translateX(-50%);
+display: flex;
+gap: 64px;
 }
 .main_menu > li{
     position: relative;
@@ -296,7 +296,7 @@ body{
     align-items: flex-start;
     white-space: nowrap;
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 500;
     transition: none;
     /* outline: 1px solid rgb(0, 255, 47); */
 }
