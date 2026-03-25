@@ -131,7 +131,7 @@
             <h2 class="write-page-title">레시피 등록</h2>
             <div class="write-page-header-right">
                 <span class="write-autosave-status" id="autosave-status">
-                    <span class="write-autosave-dot"></span>자동저장됨 14:32
+                    <span class="write-autosave-dot"></span>자동저장됨 00:00
                 </span>
                 <button type="button" class="write-btn-draft" id="btn-draft">임시저장</button>
             </div>
@@ -182,7 +182,6 @@
                                 </div>
                                 <button type="button" class="write-img-change" id="write-img-change" onclick="writeRemoveImg()" style="display:none;">✕ 사진 제거</button>
 
-                                <div class="write-video-thumb-wrap">
                                     <div class="write-field-label" >
                                         레시피 영상 <span class="write-optional">선택사항</span>
                                     </div>
@@ -196,20 +195,20 @@
                                         </div>
                                         <img class="write-video-thumb__img" id="write-video-thumb-img" src="" alt="영상 썸네일" style="display:none;">
                                     </div>
-                                </div>
+                                
                             </div>
 
                             <!-- 우: 제목·소개·영상 -->
                             <div class="write-info-col">
                                 <div class="write-field">
                                     <label class="write-field-label" for="write-inp-title">레시피 제목 <span class="write-req">*</span></label>
-                                    <input type="text" id="write-inp-title" class="write-input" placeholder="예) 소고기 미역국 끓이기" maxlength="40" oninput="writeOnTitle(this)">
-                                    <div class="write-char-count"><span id="write-title-len">0</span>/40</div>
+                                    <input type="text" id="write-inp-title" class="write-input" placeholder="예) 봄동 겉절이" maxlength="20" oninput="writeOnTitle(this)">
+                                    <div class="write-char-count"><span id="write-title-len">0</span>/20</div>
                                 </div>
                                 <div class="write-field">
                                     <label class="write-field-label" for="write-inp-desc">레시피 소개 <span class="write-req">*</span></label>
-                                    <textarea id="write-inp-desc" class="write-textarea" placeholder="이 레시피의 특별한 점을 짧게 소개해 주세요." maxlength="150" oninput="writeOnDesc(this)"></textarea>
-                                    <div class="write-char-count"><span id="write-desc-len">0</span>/150</div>
+                                    <textarea id="write-inp-desc" class="write-textarea" placeholder="이 레시피의 소개글을 적어주세요." maxlength="100" oninput="writeOnDesc(this)"></textarea>
+                                    <div class="write-char-count"><span id="write-desc-len">0</span>/100</div>
                                 </div>
 
                                 <!-- 영상 (선택) -->
@@ -219,15 +218,14 @@
                                     </label>                                                                          
                                     <!-- URL 입력 + 버튼 -->                        
                                     <div class="write-video-input-row">
-                                        <input type="text" id="write-video-url" class="write-input" placeholder="YouTube URL을 붙여넣어 주세요  예) https://youtu.be/xxxxx">
-                                        <button type="button" class="write-video-preview-btn" onclick="writePreviewVideo()">미리보기</button>
+                                        <input type="text" id="write-video-url" class="write-input" placeholder="레시피 영상은 YouTube URL 형식만 가능합니다.  예) https://www.youtube.com">
+                                        <button type="button" class="write-video-preview-btn" onclick="writePreviewVideo()">영상 등록하기</button>
                                     </div>
                                     <div class="write-video-info" id="write-video-info" style="display:none;">
                                         <p class="write-video-info__title" id="write-video-title">-</p>
                                         <span class="write-video-info__meta" id="write-video-meta">YouTube</span>
                                         <button type="button" class="write-video-del-btn" onclick="writeRemoveVideo()">✕ 영상 제거</button>
-                                    </div>
-                                    <p class="write-field-hint">YouTube URL 입력 시 썸네일이 자동으로 불러와집니다.</p>                                                                          
+                                    </div>                                                                                                              
                                 </div>
                             </div>
                         </div>
@@ -329,8 +327,11 @@
                                 <label class="write-field-label" for="write-sel-serve">인원 <span class="write-req">*</span></label>
                                 <select id="write-sel-serve" class="write-select" onchange="writeCalcProgress()">
                                     <option value="">선택</option>
-                                    <option value="1-4">1~4인분</option>
-                                    <option value="5plus">4인분 이상</option>
+                                    <option value="1">1인분</option>
+                                    <option value="2">2인분</option>
+                                    <option value="3">3인분</option>
+                                    <option value="4">4인분</option>
+                                    <option value="5plus">5인분 이상</option>
                                 </select>
                             </div>
                             <div class="write-meta-field">
