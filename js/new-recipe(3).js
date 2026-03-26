@@ -639,13 +639,13 @@ function writeAddOrderCard() {
     const list     = document.getElementById('write-order-list');
     const addBtn   = document.getElementById('write-btn-add-order');
     const num      = list.querySelectorAll('.write-order-card').length + 1;
-    const ordinals = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
-    const label    = 'step ' + (ordinals[num - 1] || num) ;
+    const ordinals = ['첫', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열'];
+    const label    = (ordinals[num - 1] || num) + ' 번째 순서';
     const card     = document.createElement('div');
     card.className = 'write-order-card';
     card.innerHTML = `
         <div class="write-order-card__head">
-            
+            <div class="write-order-num">${num}</div>
             <span class="write-order-card__title">${label}</span>
             <span class="write-order-drag" aria-hidden="true">⠿</span>
         </div>
@@ -676,7 +676,7 @@ function writeRenumberOrders() {
     const cards    = document.querySelectorAll('#write-order-list .write-order-card');
     const ordinals = ['첫', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열'];
     cards.forEach(function (card, i) {
-        // const numEl   = card.querySelector('.write-order-num');
+        const numEl   = card.querySelector('.write-order-num');
         const titleEl = card.querySelector('.write-order-card__title');
         if (numEl)   numEl.textContent   = i + 1;
         if (titleEl) titleEl.textContent = (ordinals[i] || (i + 1)) + ' 번째 순서';

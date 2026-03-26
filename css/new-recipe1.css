@@ -552,17 +552,16 @@
 }
 
 .write-video-del-btn {
-    height: 42px;
-    background: #fff;
+    margin: 8px 0 0 auto;
+    background: none;
     border: 1px solid #d5d5d5;
-    border-radius: 8px;
-    padding: 0 16px;
-    font-size: 13px;
-    font-weight: 700;
+    border-radius: 4px;
+    padding: 3px 8px;
+    font-size: 12px;
     color: #999;
     cursor: pointer;
-    align-items: center;
-    transition: border-color 0.1s, color 0.1s;
+    font-family: inherit;
+    transition: border-color 0.15s, color 0.15s;
 }
 
 .write-video-del-btn:hover {
@@ -720,50 +719,9 @@
 .write-ingr-group__drag {
     color: #999;
     cursor: grab;
-    user-select: none;
     font-size: 16px;
     line-height: 1;
     flex-shrink: 0;
-}
-.write-ingr-group__drag:active {
-    cursor: grabbing;
-}
-/* 그룹 dragging 상태 */
-.write-ingr-group.is-dragging {
-    opacity: 0.4;
-    background: #f7f7f7;
-    border-radius: 10px;
-}
-.write-ingr-group.drag-over {
-    outline: 2px dashed #74B243;
-    outline-offset: 2px;
-    border-radius: 10px;
-    background: #DCEAD1;
-}
-/* row drag 핸들 */
-.write-ingr-row__drag-handle {
-    cursor: grab;
-    color: #999;
-    font-size: 14px;
-    padding: 0 4px;
-    user-select: none;
-    flex-shrink: 0;
-}
-.write-ingr-row__drag-handle:active {
-    cursor: grabbing;
-}
-
-/* row dragging 상태 */
-.write-ingr-row.is-dragging {
-    opacity: 0.4;
-    background: #f7f7f7;
-    border-radius: 6px;
-}
-.write-ingr-row.drag-over {
-    outline: 2px dashed #74B243;
-    outline-offset: 2px;
-    border-radius: 6px;
-    background: #DCEAD1;
 }
 
 .write-ingr-group__name {
@@ -807,7 +765,7 @@
 
 .write-ingr-row {
     display: grid;
-    grid-template-columns: 20px 1fr 90px 100px 36px;
+    grid-template-columns: 1fr 90px 100px 36px;
     gap: 8px;
     align-items: center;
 }
@@ -839,28 +797,6 @@
 
 .write-ingr-row__del:hover {
     color: #e24b4a;
-}
-
-/* ---------- 재료 행 drag & drop ---------- */
-.write-ingr-row[draggable="true"] {
-    cursor: grab;
-}
-
-.write-ingr-row[draggable="true"]:active {
-    cursor: grabbing;
-}
-
-.write-ingr-row.is-dragging {
-    opacity: 0.4;
-    background: #f7f7f7;
-    border-radius: 6px;
-}
-
-.write-ingr-row.drag-over {
-    outline: 2px dashed #74B243;
-    outline-offset: 2px;
-    border-radius: 6px;
-    background: #DCEAD1;
 }
 
 .write-btn-add-row {

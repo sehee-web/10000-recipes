@@ -220,9 +220,12 @@
                                     <div class="write-video-input-row">
                                         <input type="text" id="write-video-url" class="write-input" placeholder="레시피 영상은 YouTube URL 형식만 가능합니다.  예) https://www.youtube.com">
                                         <button type="button" class="write-video-preview-btn" onclick="writePreviewVideo()">영상 등록하기</button>
-                                        <button type="button" class="write-video-del-btn" id="write-video-del-btn" onclick="writeRemoveVideo()" style="display:none;">✕ 영상 제거</button>
                                     </div>
-                                                                                                                                                  
+                                    <div class="write-video-info" id="write-video-info" style="display:none;">
+                                        <p class="write-video-info__title" id="write-video-title">-</p>
+                                        <span class="write-video-info__meta" id="write-video-meta">YouTube</span>
+                                        <button type="button" class="write-video-del-btn" onclick="writeRemoveVideo()">✕ 영상 제거</button>
+                                    </div>                                                                                                              
                                 </div>
                             </div>
                         </div>
@@ -373,12 +376,14 @@
                 </div>
 
             </div>
+            <!-- // 1단계 end -->
+
             <!-- ========== 2단계: 재료 ========== -->
             <div class="write-panel" id="write-panel-1">
 
                 <div class="write-section is-open" id="write-sec-ingr">
                     <div class="write-section__head" role="button" tabindex="0" aria-expanded="true" onclick="writeToggleSec('write-sec-ingr')">
-                        <div class="write-section__num">5</div>
+                        <div class="write-section__num">1</div>
                         <span class="write-section__name">재료 정보</span>
                         <span class="write-section__status">입력</span>
                         <span class="write-section__arrow" aria-hidden="true"></span>
@@ -387,18 +392,16 @@
                         <div id="write-ingr-groups">
 
                             <!-- 재료 그룹 1 -->
-                            <div class="write-ingr-group" draggable="false">
+                            <div class="write-ingr-group">
                                 <div class="write-ingr-group__head">
-                                    <span class="write-ingr-group__drag" aria-label="그룹 순서 변경" aria-hidden="true">⠿</span>
+                                    <span class="write-ingr-group__drag" aria-hidden="true">⠿</span>
                                     <input type="text" class="write-ingr-group__name" value="주재료" placeholder="그룹명 (예: 주재료)">
                                     <button type="button" class="write-ingr-group__del" aria-label="그룹 삭제">×</button>
                                 </div>
                                 <div class="write-ingr-rows">
-                                    <div class="write-ingr-row" draggable="false">
-                                        <span class="write-ingr-row__drag-handle" aria-hidden="true">⠿</span>
-                                        <input type="text" class="write-input write-ingr-row__name" placeholder="예: 봄동">
-                                        
-                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="예: 1">
+                                    <div class="write-ingr-row">
+                                        <input type="text" class="write-input write-ingr-row__name" placeholder="재료명">
+                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="수량">
                                         <select class="write-select write-ingr-row__unit">
                                             <option value="">단위</option>
                                             <option>g</option><option>ml</option><option>개</option>
@@ -407,10 +410,9 @@
                                         </select>
                                         <button type="button" class="write-ingr-row__del" aria-label="재료 삭제">×</button>
                                     </div>
-                                    <div class="write-ingr-row" draggable="false">
-                                        <span class="write-ingr-row__drag-handle" aria-hidden="true">⠿</span>
-                                        <input type="text" class="write-input write-ingr-row__name" placeholder="재료명">
-                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="수량" >
+                                    <div class="write-ingr-row">
+                                        <input type="text" class="write-input write-ingr-row__name" placeholder="재료명" value="봄동">
+                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="수량" value="1">
                                         <select class="write-select write-ingr-row__unit">
                                             <option value="">단위</option>
                                             <option>g</option><option>ml</option><option selected>개</option>
@@ -423,17 +425,16 @@
                             </div>
 
                             <!-- 재료 그룹 2 -->
-                            <div class="write-ingr-group" draggable="false">
+                            <div class="write-ingr-group">
                                 <div class="write-ingr-group__head">
                                     <span class="write-ingr-group__drag" aria-hidden="true">⠿</span>
                                     <input type="text" class="write-ingr-group__name" value="양념" placeholder="그룹명">
                                     <button type="button" class="write-ingr-group__del" aria-label="그룹 삭제">×</button>
                                 </div>
                                 <div class="write-ingr-rows">
-                                    <div class="write-ingr-row" draggable="false">
-                                        <span class="write-ingr-row__drag-handle" aria-hidden="true">⠿</span>
-                                        <input type="text" class="write-input write-ingr-row__name" placeholder="예: 고춧가루">
-                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="예: 3">
+                                    <div class="write-ingr-row">
+                                        <input type="text" class="write-input write-ingr-row__name" placeholder="재료명" value="고춧가루">
+                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="수량" value="3">
                                         <select class="write-select write-ingr-row__unit">
                                             <option value="">단위</option>
                                             <option>g</option><option>ml</option><option>개</option>
@@ -441,10 +442,9 @@
                                         </select>
                                         <button type="button" class="write-ingr-row__del" aria-label="재료 삭제">×</button>
                                     </div>
-                                    <div class="write-ingr-row" draggable="true">
-                                        <span class="write-ingr-row__drag-handle" aria-hidden="true">⠿</span>
-                                        <input type="text" class="write-input write-ingr-row__name" placeholder="재료명">
-                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="수량">
+                                    <div class="write-ingr-row">
+                                        <input type="text" class="write-input write-ingr-row__name" placeholder="재료명" value="참기름">
+                                        <input type="text" class="write-input write-ingr-row__qty" placeholder="수량" value="2">
                                         <select class="write-select write-ingr-row__unit">
                                             <option value="">단위</option>
                                             <option>g</option><option>ml</option><option>개</option>
@@ -455,37 +455,47 @@
                                 </div>
                                 <button type="button" class="write-btn-add-row">+ 재료 추가</button>
                             </div>
-                            <button type="button" class="write-btn-add-group" id="write-btn-add-group">+ 재료 그룹 추가</button>
+
+                        </div>
+                        <button type="button" class="write-btn-add-group" id="write-btn-add-group">+ 재료 그룹 추가</button>
+
+                        <!-- 빠른 입력 팁 -->
+                        <div class="write-quick-tip">
+                            <div class="write-quick-tip__title">💡 빠른 입력 팁</div>
+                            <p class="write-quick-tip__desc">"소고기 200g", "간장 2큰술" 형식으로 아래에 붙여넣으면 자동으로 파싱돼요.</p>
+                            <textarea class="write-textarea write-quick-tip__input" placeholder="재료를 한 줄씩 붙여넣기 (예: 소고기 200g, 간장 2큰술)"></textarea>
                         </div>
                     </div>
                 </div>
 
             </div>
+            <!-- // 2단계 end -->
+
             <!-- ========== 3단계: 요리 순서 ========== -->
             <div class="write-panel" id="write-panel-2">
 
                 <div class="write-section is-open" id="write-sec-order">
                     <div class="write-section__head" role="button" tabindex="0" aria-expanded="true" onclick="writeToggleSec('write-sec-order')">
-                        <div class="write-section__num">6</div>
+                        <div class="write-section__num">1</div>
                         <span class="write-section__name">요리 순서</span>
                         <span class="write-section__status">입력</span>
                         <span class="write-section__arrow" aria-hidden="true"></span>
                     </div>
                     <div class="write-section__body">
                         <div class="write-order-guide">
-                            요리의 맛이 좌우될 수 있는 중요한 부분은 빠짐없이 적어주세요. 사진은 순서당 최대 5장까지 첨부 가능해요.
+                            요리 방법의 핵심이 되는 부분은 <strong>굵게</strong> 표시해 주세요. 사진은 순서당 최대 5장까지 첨부 가능해요.
                         </div>
                         <div id="write-order-list">
 
                             <!-- 순서 카드 1 -->
                             <div class="write-order-card">
                                 <div class="write-order-card__head">
-                                    <!-- <div class="write-order-num">1</div> -->
-                                    <span class="write-order-card__title">step 1</span>
+                                    <div class="write-order-num">1</div>
+                                    <span class="write-order-card__title">첫 번째 순서</span>
                                     <span class="write-order-drag" aria-hidden="true">⠿</span>
                                 </div>
                                 <div class="write-order-card__body">
-                                    <textarea class="write-textarea write-order-textarea" placeholder="예) 봄동은 잎을 하나씩 떼어 흐르는 물에 여러 번 씻어 주세요."></textarea>
+                                    <textarea class="write-textarea write-order-textarea" placeholder="예) 봄동은 잎을 하나씩 떼어 흐르는 물에 여러 번 씻어 주세요.">봄동은 잎을 하나씩 떼어 흐르는 물에 여러 번 씻어 주세요.</textarea>
                                     <div class="write-order-imgs">
                                         <div class="write-order-img-slot" role="button" tabindex="0" aria-label="사진 추가">
                                             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true">
@@ -511,12 +521,12 @@
                             <!-- 순서 카드 2 -->
                             <div class="write-order-card">
                                 <div class="write-order-card__head">
-                                    <!-- <div class="write-order-num">2</div> -->
-                                    <span class="write-order-card__title">step 2</span>
+                                    <div class="write-order-num">2</div>
+                                    <span class="write-order-card__title">두 번째 순서</span>
                                     <span class="write-order-drag" aria-hidden="true">⠿</span>
                                 </div>
                                 <div class="write-order-card__body">
-                                    <textarea class="write-textarea write-order-textarea" placeholder="순서를 입력해 주세요."></textarea>
+                                    <textarea class="write-textarea write-order-textarea" placeholder="순서를 입력해 주세요.">뿌리쪽은 잘라내고 잎 사이즈에 따라 3등분에서 6등분으로 잘라주세요.</textarea>
                                     <div class="write-order-imgs">
                                         <div class="write-order-img-slot" role="button" tabindex="0" aria-label="사진 추가">
                                             <svg viewBox="0 0 24 24" fill="none" stroke-width="1.5" aria-hidden="true">
@@ -538,9 +548,9 @@
                                     <button type="button" class="write-btn-del-order">삭제</button>
                                 </div>
                             </div>
-                            <button type="button" class="write-btn-add-order" id="write-btn-add-order">+ 요리 순서 추가</button>
+
                         </div>
-                        
+                        <button type="button" class="write-btn-add-order" id="write-btn-add-order">+ 요리 순서 추가</button>
                     </div>
                 </div>
 
@@ -578,7 +588,7 @@
                 <div class="footer_address">
                     <ul>
                         <li>대표 : 이인경</li>
-                        <li>이메일 : <a href="/cdn-cgi/l/email-protection#93fbf6ffe3d3a2a3a3a3a3e1f6f0fae3f6bdf0fcfe"><span class="__cf_email__" data-cfemail="2e464b425e6e1f1e1e1e1e5c4b4d475e4b004d4143">[email&#160;protected]</span></a></li>
+                        <li>이메일 : <a href="mailto:help@10000recipe.com">help@10000recipe.com</a></li>
                         <li>Fax : 02-323-5049</li>
                     </ul>
                     <address>주소: 서울 금천구 가산동 371-50 에이스하이엔드타워 3차 1106-1호</address>
