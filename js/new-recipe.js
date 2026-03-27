@@ -674,7 +674,7 @@ function writeAddOrderCard() {
 ======================================== */
 function writeRenumberOrders() {
     const cards    = document.querySelectorAll('#write-order-list .write-order-card');
-    const ordinals = ['첫', '두', '세', '네', '다섯', '여섯', '일곱', '여덟', '아홉', '열'];
+    const ordinals = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10'];
     cards.forEach(function (card, i) {
         // const numEl   = card.querySelector('.write-order-num');
         const titleEl = card.querySelector('.write-order-card__title');
