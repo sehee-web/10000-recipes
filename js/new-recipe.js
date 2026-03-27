@@ -381,6 +381,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     document.getElementById('write-btn-publish').addEventListener('click', function () {
         alert('레시피가 공개되었습니다! 🎉');
+        window.location.href = '/';
     });
 
     /* ── 재료명 / 순서 입력 시 진행률 갱신 (이벤트 위임) ── */

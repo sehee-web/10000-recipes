@@ -357,8 +357,8 @@
                 </div>
 
                 <!-- 섹션 4: 태그 (선택) -->
-                <div class="write-section" id="write-sec-4">
-                    <div class="write-section__head" role="button" tabindex="0" aria-expanded="false" aria-controls="write-sec-4-body" onclick="writeToggleSec('write-sec-4')">
+                <div class="write-section is-open " id="write-sec-4">
+                    <div class="write-section__head" role="button" tabindex="0" aria-expanded="true" aria-controls="write-sec-4-body" onclick="writeToggleSec('write-sec-4')">
                         <div class="write-section__num write-section__num--opt">4</div>
                         <span class="write-section__name">태그 <span class="write-optional">선택사항</span></span>
                         <span class="write-section__status" id="write-st-4">미입력</span>
@@ -401,7 +401,7 @@
                                         <input type="text" class="write-input write-ingr-row__qty" placeholder="예: 1">
                                         <select class="write-select write-ingr-row__unit">
                                             <option value="">단위</option>
-                                            <option>g</option><option>ml</option><option>개</option>
+                                            <option>g</option><option>ml</option><option selected>개</option>
                                             <option>큰술</option><option>작은술</option><option>컵</option>
                                             <option>줄기</option><option>적당량</option>
                                         </select>
@@ -413,7 +413,7 @@
                                         <input type="text" class="write-input write-ingr-row__qty" placeholder="수량" >
                                         <select class="write-select write-ingr-row__unit">
                                             <option value="">단위</option>
-                                            <option>g</option><option>ml</option><option selected>개</option>
+                                            <option>g</option><option>ml</option><option >개</option>
                                             <option>큰술</option><option>작은술</option><option>컵</option>
                                         </select>
                                         <button type="button" class="write-ingr-row__del" aria-label="재료 삭제">×</button>
@@ -448,7 +448,7 @@
                                         <select class="write-select write-ingr-row__unit">
                                             <option value="">단위</option>
                                             <option>g</option><option>ml</option><option>개</option>
-                                            <option selected>큰술</option><option>작은술</option>
+                                            <option>큰술</option><option>작은술</option>
                                         </select>
                                         <button type="button" class="write-ingr-row__del" aria-label="재료 삭제">×</button>
                                     </div>
