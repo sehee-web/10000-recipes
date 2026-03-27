@@ -1,32 +1,28 @@
-.event-page {
-    background: #f8f7f5;
-    padding-bottom: 80px;
-}
 
 .event-inner {
     max-width: 1264px;
-    margin: 0 auto;
-    padding: 0 20px;
+    margin: 40px auto;
 }
 
 /* ── 페이지 타이틀 ── */
 .event-page-title {
-    padding: 36px 0 28px;
+    margin-bottom: 40px;
     display: flex;
-    align-items: baseline;
-    gap: 10px;
+    align-items: center;
+    flex-direction: column;
 }
 
-.event-page-title h2 {
-    font-size: 26px;
-    font-weight: 700;
+.event-page-title p {
+    font-size: 32px;
+    font-weight: 500;
     color: #1a1a1a;
-    letter-spacing: -0.5px;
+    text-align: center;
+    margin-bottom: 16px;
 }
 
 .event-page-title span {
     font-size: 14px;
-    color: #999;
+    color: #666;
 }
 
 /* ── Swiper 배너 ── */
