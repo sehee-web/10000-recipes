@@ -6,9 +6,9 @@
     <title>이벤트 | 만개의 레시피</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
-    <link rel="stylesheet" href="css/event.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images_10000_recipes/favicon.png">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/event.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/common.js"></script>
 </head>
@@ -138,62 +138,33 @@
 
                         <!-- 슬라이드 1 -->
                         <div class="swiper-slide">
-                            <img src="images_10000_recipes/event_img/event_img1.png" alt="이벤트 배너 1">
-                            <div class="banner-overlay">
-                                <span class="banner-tag">진행중</span>
-                                
-                                <a href="coming-soon.html" class="banner-btn">
-                                    자세히 보기
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                                </a>
-                            </div>
+                            <a href="#"><img src="images_10000_recipes/event_img/event_img1.png" alt="이벤트 배너 1"></a>
+                            
                         </div>
 
                         <!-- 슬라이드 2 -->
                         <div class="swiper-slide">
-                            <img src="images_10000_recipes/event_img/event_img2.png" alt="이벤트 배너 2">
-                            <div class="banner-overlay">
-                                <span class="banner-tag">진행중</span>
-                                <a href="coming-soon.html" class="banner-btn">
-                                    참여하기
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                                </a>
-                            </div>
+                            <a href="#"><img src="images_10000_recipes/event_img/event_img2.png" alt="이벤트 배너 2"></a>
                         </div>
 
                         <!-- 슬라이드 3 -->
                         <div class="swiper-slide">
-                            <img src="images_10000_recipes/event_img/event_img3.png" alt="이벤트 배너 3">
-                            <div class="banner-overlay">
-                                <span class="banner-tag">D-5</span>            
-                                <a href="coming-soon.html" class="banner-btn">
-                                    레시피 보기
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                                </a>
-                            </div>
+                            <a href="#"><img src="images_10000_recipes/event_img/event_img3.png" alt="이벤트 배너 3"></a>
                         </div>
 
                         <!-- 슬라이드 4 -->
                         <div class="swiper-slide">
-                            <img src="images_10000_recipes/event_img/event_img4.png" alt="이벤트 배너 4">
-                            <div class="banner-overlay">
-                                <span class="banner-tag">Coming Soon</span>
-                                <p class="banner-title">여름맞이 냉면·냉국<br>레시피 챌린지</p>
-                                <p class="banner-desc">시원한 여름 레시피를 공유하고 푸짐한 상품 받기</p>
-                                <a href="coming-soon.html" class="banner-btn">
-                                    사전 알림 신청
-                                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                                </a>
-                            </div>
+                            <a href="#"><img src="images_10000_recipes/event_img/event_img4.png" alt="이벤트 배너 4"></a>
                         </div>
 
                     </div>
-                    <!-- 페이지네이션 -->
-                    <div class="swiper-pagination"></div>
+                    
                     <!-- 네비게이션 -->
                     <div class="swiper-button-prev"></div>
                     <div class="swiper-button-next"></div>
                 </div>
+                <!-- 페이지네이션 -->
+                <div class="swiper-pagination"></div>
                 <!-- 슬라이드 카운터 -->
                 <div class="banner-controls">
                     <button class="banner-pause-btn" id="bannerPauseBtn" aria-label="자동재생 일시정지">
@@ -212,7 +183,7 @@
                 <button class="event-tab" data-filter="ing">진행중</button>
                 <button class="event-tab" data-filter="end">종료</button>
             </div>
-
+            <hr class="event-divider">
             <!-- ③ 진행중 이벤트 — 풀너비 배너형 -->
             <div class="event-section-head">
                 <h3>진행 중인 이벤트</h3>
@@ -247,7 +218,7 @@
                 </a>
             </div>
 
-            <hr class="event-divider">
+            
 
             <!-- ④ 종료 이벤트 — 풀너비 배너형 -->
             <div class="event-section-head">
@@ -355,7 +326,7 @@
         /* ── Swiper 초기화 ── */
         const eventSwiper = new Swiper('.event-swiper', {
             slidesPerView: 2,
-            spaceBetween: 0,
+            spaceBetween: 16,
             loop: true,
             autoplay: {
                 delay: 4000,

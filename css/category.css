@@ -434,7 +434,7 @@
 }
 
 .recipe-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: 0 10px 24px rgba(116, 178, 67, 0.15);
     border-color: transparent;
 }
