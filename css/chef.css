@@ -1,0 +1,403 @@
+/* ============================================
+   chef.css
+   만개의 레시피 — 셰프 페이지 스타일
+============================================ */
+:root{
+    --color-primary: #74b243;
+    --color-point: #e9722e;
+}
+/* ── 레이아웃 ── */
+
+.chef-inner {
+    max-width: 1264px;
+    margin: 0 auto;
+}
+
+/* ── 페이지 타이틀 ── */
+.chef-page-head {
+    text-align: center;
+    margin: 40px 0;
+    
+}
+
+.chef-page-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+/* ── 탭 ── */
+.chef-tab-row {
+    display: flex;
+    border-bottom: 1.5px solid #ebebeb;
+    margin-bottom: 40px;
+}
+
+.chef-tab {
+    padding: 10px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #999;
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1.5px;
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.chef-tab:hover {
+    color: var(--color-point);
+}
+
+.chef-tab.is-active {
+    color: var(--color-point);
+    border-bottom-color: var(--color-point);
+}
+
+/* ── TOP3 구분선 헤더 ── */
+.chef-top3-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.chef-top3-divider {
+    flex: 1;
+    height: 1px;
+    background: #ff3636;    
+}
+
+.chef-top3-label {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-point);
+    padding: 0 10px;
+    letter-spacing: 1px;
+}
+
+/* ── TOP3 그리드 ── */
+.chef-top3-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 80px;
+}
+
+/* ── TOP3 카드 ── */
+.chef-top-card {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.chef-top-card__head {
+    padding: 1.25rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.chef-rank-badge {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: 700;
+    align-self: flex-start;
+}
+.chef-rank-badge.r1 { background: linear-gradient(135deg, #F7D774, #E0A800) ; color: #fff; }
+.chef-rank-badge.r2 { background: linear-gradient(135deg, #D5D9E0, #AEB4BE); color: #fff; }
+.chef-rank-badge.r3 { background: linear-gradient(135deg, #D89A5B, #A8652A); color: #fff; }
+
+.chef-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 1px solid #ebebeb;
+    flex-shrink: 0;
+}
+
+.chef-avatar svg,
+.chef-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.chef-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    text-align: center;
+}
+
+/* ── meta 아이콘 ── */
+.chef-stats {
+    display: flex;
+    gap: 14px;
+}
+
+.chef-stat {
+    font-size: 11px;
+    color: #888;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    position: relative;
+    cursor: default;
+}
+
+.chef-stat:hover .chef-tooltip {
+    opacity: 1;
+}
+
+.chef-tooltip {
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 50%;
+    transform: translateX(-50%);
+    background: #b5b5b5;
+    color: #fff;
+    font-size: 10px;
+    padding: 3px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.15s;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.chef-tooltip::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 4px solid transparent;
+    border-top-color: #b5b5b5;
+}
+
+/* ── 레시피 썸네일 ── */
+.chef-recipe-thumbs {
+    display: flex;
+    gap: 4px;
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.chef-recipe-thumb {
+    flex: 1;
+    height: 100px;
+    background: #f5f5f5;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chef-recipe-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chef-recipe-thumb svg {
+    opacity: 0.2;
+}
+
+/* ── 구독 버튼 (TOP3 카드) ── */
+.chef-sub-btn {
+    width: 100%;
+    padding: 16px;
+    font-size: 14px;
+    font-weight: 600;
+    background: #fff;
+    color: var(--color-point);
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.chef-sub-btn:hover {
+    background: var(--color-point);
+    color: #fff;
+}
+
+.chef-sub-btn.is-subbed {
+    background: #f5f5f5;
+    color: #999;
+}
+
+.chef-sub-btn.is-subbed:hover {
+    background: var(--color-point);
+    color: #fff;
+}
+
+/* ── 리스트 섹션 ── */
+.chef-list-section {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.chef-list-head {
+    display: grid;
+    grid-template-columns: 60px 1fr 100px 100px 100px 110px;
+    padding: 15px 20px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.chef-list-head .col-rank { text-align: center; }
+.chef-list-head .col-chef { text-align: left; }
+.chef-list-head .col-val  { text-align: center; }
+.chef-list-head .col-sub  { text-align: center; }
+
+.chef-list-row {
+    display: grid;
+    grid-template-columns: 56px 1fr 100px 100px 100px 110px;
+    padding: 14px 20px;
+    border-bottom: 1px solid #ebebeb;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.chef-list-row:last-child {
+    border-bottom: none;
+}
+
+.chef-list-row:hover {
+    background: #fafafa;
+}
+
+.chef-list-rank {
+    font-size: 16px;
+    font-weight: 600;
+    color: #555;
+    text-align: center;
+}
+
+.chef-list-chef {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* 리스트 아바타 */
+.chef-list-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 1px solid #ebebeb;
+}
+
+.chef-list-avatar svg,
+.chef-list-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.chef-list-name {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+}
+
+.chef-list-val {
+    font-size: 13px;
+    color: #555;
+    text-align: center;
+}
+
+/* ── 구독 버튼 (리스트) ── */
+.chef-list-sub-btn {
+    display: block;
+    margin: 0 auto;
+    padding: 6px 16px;
+    font-size: 12px;
+    font-weight: 600;
+    background: #fff;
+    color: var(--color-point);
+    border: 1px solid var(--color-point);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+
+.chef-list-sub-btn:hover {
+    background: var(--color-point);
+    color: #fff;
+}
+
+.chef-list-sub-btn.is-subbed {
+    background: #f5f5f5;
+    color: #999;
+    border-color: #ebebeb;
+}
+
+.chef-list-sub-btn.is-subbed:hover {
+    background: var(--color-point);
+    color: #fff;
+    border-color: var(--color-point);
+}
+
+/* ── 페이지네이션 ── */
+.chef-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.chef-pg-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid #ebebeb;
+    background: #fff;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.chef-pg-btn:hover {
+    background: #f5f5f5;
+}
+
+.chef-pg-btn.is-active {
+    background: var(--color-point);
+    color: #fff;
+    border-color: var(--color-point);
+}
+
+.chef-pg-btn.is-disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
