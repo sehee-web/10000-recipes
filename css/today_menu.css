@@ -77,6 +77,7 @@
     .center-title {
       position: fixed;
       top: 50%; left: 50%;
+      text-align: center;
       transform: translate(-50%, -50%);
       pointer-events: none;
       z-index: 2;
@@ -258,3 +259,21 @@
       line-height: 1.8;
       animation: subtitleFade 2s ease-in-out infinite alternate;
     }
+.home-btn {
+  display: block;
+  margin: 40px auto 0;
+  padding: 10px 14px;
+  width: fit-content;
+  background: #fff;
+  color: #e9722e;
+  border: 1px solid #e9722e;
+  border-radius: 50px;  
+  font-size: 15px;
+  text-decoration: none;
+  pointer-events: auto;   /* center-title이 pointer-events:none이라 이게 필요 */
+  transition: background 0.1s, transform 0.1s;
+}
+.home-btn:hover {
+  background: #e9722e;
+  color: #fff;
+}

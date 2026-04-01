@@ -18,7 +18,7 @@ var ALL_CHEFS = [
         'images_10000_recipes/recipe_card_img/noodle_02.png',
         'images_10000_recipes/recipe_card_img/noodle_03.png'
     ] },
-    { rank: 2,  name: '조밍키',          subscribers: 21064, recipes: 249,  views: '31.6M', img: 'images_10000_recipes/chef_images/chef_02.jpg', recipeThumbs: [
+    { rank: 2,  name: '조밍키♥',          subscribers: 21064, recipes: 249,  views: '31.6M', img: 'images_10000_recipes/chef_images/chef_02.jpg', recipeThumbs: [
         'images_10000_recipes/recipe_card_img/noodle_04.png',
         'images_10000_recipes/recipe_card_img/noodle_05.png',
         'images_10000_recipes/recipe_card_img/noodle_06.png'
@@ -125,9 +125,7 @@ var ALL_CHEFS = [
     { rank: 98,  name: '보쌈마스터',       subscribers: 14,    recipes: 1,    views: '0.01M', img: '' },
     { rank: 99,  name: '족발요정',         subscribers: 13,    recipes: 1,    views: '0.01M', img: '' },
     { rank: 100, name: '편육달인',         subscribers: 12,    recipes: 1,    views: '0.01M', img: '' },
-    { rank: 101, name: '간장새우장인',     subscribers: 11,    recipes: 1,    views: '0.01M', img: '' },
-    { rank: 102, name: '양념게장마스터',   subscribers: 10,    recipes: 1,    views: '0.01M', img: '' },
-    { rank: 103, name: '낙지볶음요정',     subscribers: 9,     recipes: 1,    views: '0.01M', img: '' }
+
 ];
 
 var TOP3    = ALL_CHEFS.slice(0, 3);

@@ -95,7 +95,7 @@
     var recipe = (typeof RECIPES !== 'undefined') ? RECIPES[Number(id)] : null;
     if (recipe) syncCardData(card, recipe);
 
-    // ✅ 상세페이지로 이동할 URL 생성 (핵심)
+    // 상세페이지로 이동할 URL 생성 (핵심)
     var url = 'recipe-detail.html?id=' + id +
               '&from=' + pageType +
               '&d2=' + currentD2;

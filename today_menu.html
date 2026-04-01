@@ -6,6 +6,7 @@
   <title>today_menu | 만개의 레시피</title>
   <link rel= "stylesheet" href="css/reset.css">
   <link rel= "stylesheet" href="css/today_menu.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="images_10000_recipes/favicon.png">
   
 </head>
 <body>
@@ -16,15 +17,16 @@
   <!-- Center Title -->
   <div class="center-title">
     <h1>원하는 카테고리 공을 잡아보세요!</h1>
+    <a href="index.html" class="home-btn">🏠 홈으로</a>
   </div>
 
   <!-- Toast -->
   <div class="toast" id="toast">레시피 페이지로 이동 중...</div>
 
   <!-- Corner hint -->
-  <div class="corner-hint">
+  <!-- <div class="corner-hint">
     둥둥 떠다니는 공을<br> 잡아보세요!
-  </div>
+  </div> -->
 
   <script>
     // ── RECIPE DATA ──
@@ -33,93 +35,88 @@
         id: 0, label: "국", icon: "menu_01",
         color: "#FFB347",
         urls: [
-          "https://www.10000recipe.com/recipe/7033699",
-          "https://www.10000recipe.com/recipe/7040411",
-          "https://www.10000recipe.com/recipe/3993753",
-          "https://www.10000recipe.com/recipe/2345147",
-          "https://www.10000recipe.com/recipe/6591458",
-          "https://www.10000recipe.com/recipe/6936955",
-          "https://www.10000recipe.com/recipe/6886747",
-          "https://www.10000recipe.com/recipe/7039986",
+          "recipe-detail.html?id=1013&from=type&d2=guk-jjigae",
+          "recipe-detail.html?id=1014&from=type&d2=guk-jjigae",
+          "recipe-detail.html?id=1015&from=type&d2=guk-jjigae",
+          "recipe-detail.html?id=1016&from=type&d2=guk-jjigae",
+          "recipe-detail.html?id=1017&from=type&d2=guk-jjigae",          
         ]
       },
       {
         id: 1, label: "반찬", icon: "menu_02",
         color: "#74C69D",
         urls: [
-          "https://www.10000recipe.com/recipe/7050521",
-          "https://www.10000recipe.com/recipe/6882785",
-          "https://www.10000recipe.com/recipe/6868018",
-          
+          "recipe-detail.html?id=1010&from=type&d2=banchan",
+          "recipe-detail.html?id=1011&from=type&d2=banchan",
+          "recipe-detail.html?id=1012&from=type&d2=banchan",
+          "recipe-detail.html?id=1084&from=type&d2=banchan",
+          "recipe-detail.html?id=1036&from=type&d2=banchan"
         ]
       },
       {
         id: 2, label: "밥", icon: "menu_03",
         color: "#F9D71C",
         urls: [
-          "https://www.10000recipe.com/recipe/6882785",
-          "https://www.10000recipe.com/recipe/6868018",
-          "https://www.10000recipe.com/recipe/6868374",
-          "https://www.10000recipe.com/recipe/7072750",
-          "https://www.10000recipe.com/recipe/6828882",
-          "https://www.10000recipe.com/recipe/6959603",
-          "https://www.10000recipe.com/recipe/6844310",
+          "recipe-detail.html?id=1026&from=type&d2=bap-juk-tteok",
+          "recipe-detail.html?id=1027&from=type&d2=bap-juk-tteok",
+          "recipe-detail.html?id=1028&from=type&d2=bap-juk-tteok",
+          "recipe-detail.html?id=1074&from=type&d2=bap-juk-tteok",
+          "recipe-detail.html?id=1025&from=type&d2=bap-juk-tteok",
+          
         ]
       },
       {
         id: 3, label: "샐러드", icon: "menu_04",
         color: "#FF8C5A",
         urls: [
-          "https://www.10000recipe.com/recipe/6882218",
-          "https://www.10000recipe.com/recipe/6975935",
-          "https://www.10000recipe.com/recipe/6844730",
-          "https://www.10000recipe.com/recipe/7057914",
-          "https://www.10000recipe.com/recipe/7011928",
-          "https://www.10000recipe.com/recipe/6846157",
+          "recipe-detail.html?id=1038&from=type&d2=salad",
+          "recipe-detail.html?id=1061&from=type&d2=salad",
+          "recipe-detail.html?id=1063&from=type&d2=salad",
+          "recipe-detail.html?id=1064&from=type&d2=salad",
+          "recipe-detail.html?id=1065&from=type&d2=salad",
+          
         ]
       },
       {
         id: 4, label: "면", icon: "menu_05",
         color: "#B39DDB",
         urls: [
-          "https://www.10000recipe.com/recipe/6853868",
-          "https://www.10000recipe.com/recipe/6901822",
-          "https://www.10000recipe.com/recipe/7005244",
-          "https://www.10000recipe.com/recipe/6871004",
-          "https://www.10000recipe.com/recipe/1553326",
-          "https://www.10000recipe.com/recipe/6882534",
-          "https://www.10000recipe.com/recipe/6850772",
-          "https://www.10000recipe.com/recipe/6880682",
-
+          "recipe-detail.html?id=1037&from=type&d2=noodle",
+          "recipe-detail.html?id=1040&from=type&d2=noodle",
+          "recipe-detail.html?id=1041&from=type&d2=noodle",
+          "recipe-detail.html?id=1042&from=type&d2=noodle",
+          "recipe-detail.html?id=1045&from=type&d2=noodle",        
         ]
       },
       {
         id: 5, label: "간식", icon: "menu_06",
         color: "#F48FB1",
         urls: [
-          "https://www.10000recipe.com/recipe/7070238",
-          "https://www.10000recipe.com/recipe/6959603",
+          "recipe-detail.html?id=1033&from=situation&d2=quick",          
+          "recipe-detail.html?id=1034&from=situation&d2=quick",          
+          "recipe-detail.html?id=3001&from=situation&d2=quick",
+          "recipe-detail.html?id=3002&from=situation&d2=quick"          
         ]
       },
       {
         id: 6, label: "야식", icon: "menu_07",
         color: "#4FC3F7",
         urls: [
-          "https://www.10000recipe.com/recipe/6882785",
-          "https://www.10000recipe.com/recipe/7005244",
+          "recipe-detail.html?id=1017&from=situation&d2=late-night",
+          "recipe-detail.html?id=1021&from=situation&d2=late-night",
+          "recipe-detail.html?id=1022&from=situation&d2=late-night",
+          "recipe-detail.html?id=1040&from=situation&d2=late-night",
         ]
       },
       {
         id: 7, label: "양식", icon: "menu_08",
         color: "#FF7043",
         urls: [
-          "https://www.10000recipe.com/recipe/6845657",
-          "https://www.10000recipe.com/recipe/6858424",
-          "https://www.10000recipe.com/recipe/6871779",
-          "https://www.10000recipe.com/recipe/6909707",
-          "https://www.10000recipe.com/recipe/6851406",
-          "https://www.10000recipe.com/recipe/6849596",        
-          "https://www.10000recipe.com/recipe/6901822",
+          "recipe-detail.html?id=1075&from=type&d2=western",         
+          "recipe-detail.html?id=1073&from=type&d2=western",         
+          "recipe-detail.html?id=1077&from=type&d2=western",         
+          "recipe-detail.html?id=1080&from=type&d2=western",         
+          "recipe-detail.html?id=1081&from=type&d2=western",         
           
         ]
       }
