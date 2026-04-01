@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트</title>
+    <title>이벤트 | 만개의 레시피</title>
     <link rel= "stylesheet" href="css/reset.css">
     <link rel= "stylesheet" href="css/common.css">
     <link rel= "stylesheet" href="css/event-detail.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images_10000_recipes/favicon.png">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/event-detail.js" defer></script>
 </head>
 <body>
     <!--header-->
@@ -131,166 +132,13 @@
         <div class="breadcrumb">
             <a href="/index.html">홈</a><span>›</span>
             <a href="event.html">이벤트</a><span>›</span>
-            <span>봄나물 레시피 공모전</span>
+            <span id="breadcrumb-title">로딩 중...</span>
         </div>
 
-        <!-- 배너 -->
-        <div class="section">
-            <div class="sec-body" style="padding:1rem">
-            <div class="banner-area">
-                <div class="banner-area-inner">
-                <div class="banner-placeholder">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg>
-                </div>
-                <span class="banner-label">이벤트 대표 이미지</span>
-                </div>
-                <span class="banner-badge">진행중</span>
-            </div>
-            <p class="ev-title">제 194회 만개의 레시피 공모전<br>내 몸을 깨우는 '봄나물 비타민' 레시피를 알려주세요</p>
-            <p class="ev-sub">2026.04.01 – 2026.05.15 · 참여자 181명</p>
-            </div>
+        <div id="event-content">
+            <!-- JS로 렌더링 -->
         </div>
 
-        <!-- 당첨자 발표 -->
-        <div class="section">
-            <div class="sec-head"><div class="sec-head-bar"></div><span class="sec-title">당첨자 발표</span></div>
-            <div class="sec-body">
-            <p class="desc-text">대상 (1명) : 초록잎사귀님<br>우수상 (3명) : 주부9단님, 요리왕님, 밥맛없어님<br>장려상 (5명) : 초보쿡님 외 4명</p>
-            </div>
-        </div>
-
-        <!-- 이벤트 설명 -->
-        <div class="section">
-            <div class="sec-head"><div class="sec-head-bar"></div><span class="sec-title">이벤트 설명</span></div>
-            <div class="sec-body">
-            <p class="desc-text">안녕하세요.~만개의 레시피입니다.<br>벌써 3월의 시작이네요. 나른한 봄날, 당신의 식탁 위로 찾아온 초록빛 활력!<br>겨울을 이겨내고 땅속 영양을 듬뿍 머금은 봄나물은 ‘천연 비타민’과 같아요. 춘곤증으로 무거운 몸과 마음을 깨워줄 봄나물(냉이,달래,쑥, 미나리) 요리 어떠신가요?
-                <br>여러분의 창의적인 요리 아이디어와 특별한 레시피를 만개의레시피와 함께 공유해주세요!<br>즐거움이 가득한 만개의레시피 공모전 주변 분들에게 입소문 많이 내주시길 부탁드려요 :)</p>
-            </div>
-        </div>
-
-        <!-- 기간 -->
-        <div class="section">
-            <div class="sec-head"><div class="sec-head-bar"></div><span class="sec-title">기간</span></div>
-            <div class="sec-body">
-            <div class="meta-grid">
-                <div class="meta-item"><p class="label">이벤트 기간</p><p class="value">2026.04.01 – 2026.05.15</p></div>
-                <div class="meta-item"><p class="label">당첨자 발표일</p><p class="value">2026.05.22</p></div>
-            </div>
-            </div>
-        </div>
-
-        <!-- 당첨자 선정 (텍스트 형식) -->
-        <div class="section">
-            <div class="sec-head"><div class="sec-head-bar"></div><span class="sec-title">당첨자 선정</span></div>
-            <div class="sec-body">
-                <p class="desc-text">경 품 :신세계 상품권 50,000원권<p>
-                <p class="desc-text">당첨인원 : 총 6명</p>
-                <p>주제에 맞는 레시피의 리뷰와 의견, 스크랩 수, 재료계량, 과정 설명, 과정 이미지가 잘 된 레시피와 아이디어가 돋보이는 레시피 대상으로 취합하여 선정 합니다.</p>
-                <p>레시피 제목에 ‘냉이’ 또는 ‘달래’, ‘쑥’, ‘미나리’ 또는 봄나물 연상 문구 포함 되어야 참여 인정.</p>
-                <p> 해당 월에 수상하신 경우, 해당 월에 진행하는 모든 공모전의 수상 대상에서 제외되며, 해당 월 다음 월에 진행하는 공모전부터 수상대상에 포함됩니다.</p>
-            </div>
-        </div>
-
-        <!-- 안내사항 -->
-        <div class="section">
-            <div class="sec-head"><div class="sec-head-bar"></div><span class="sec-title">안내사항</span></div>
-            <div class="sec-body">
-            <div class="notice-list">
-                <div class="notice-item"><div class="notice-dot"></div><p>공모전 요리 주제에 맞는 레시피를 등록해주세요.</p></div>
-                <div class="notice-item"><div class="notice-dot"></div><p>전문레시피(직접등록/블로그 편집)만 응모 가능합니다.<br>(※ 응모일 이전에 등록된 레시피는 제외)</p></div>
-                <div class="notice-item"><div class="notice-dot"></div><p> 주제와 맞지 않는 레시피는 수상 목록에서 제외될 수 있습니다.</p></div>
-                <div class="notice-item"><div class="notice-dot"></div><p>공모전에 응모한 레시피는 재가공하여 만개의레시피 영상 컨텐츠로 제작될 수 있습니다.</p></div>
-                <div class="notice-item"><div class="notice-dot"></div><p>당첨자 발표는 따로 SMS를 전송하지 않습니다. 당첨자 발표일을 확인하시고 이벤트 페이지에서 확인하시기 바랍니다.</p></div>
-                <div class="notice-item"><div class="notice-dot"></div><p>TV레시피는 수상대상에서 제외됩니다.</p></div>
-                <div class="notice-item"><div class="notice-dot"></div><p>본 공모전의 당첨 상품은 기타 소득세 신고대상입니다.</p></div>
-            </div>
-            </div>
-        </div>
-
-        <!-- 참여 버튼 -->        
-        <div class="cta-wrap">
-            <button class="cta-btn">
-                공모전 참여하기
-            </button>
-        </div>
-        
-        <!-- 참여한 레시피 리스트 -->
-        <div class="section">
-            <div class="sec-head">
-            <div class="sec-head-bar"></div>
-            <span class="sec-title">참여한 레시피</span>
-            <span style="margin-left:auto;font-size:12px;color:var(--color-text-tertiary)">총 181개</span>
-            </div>
-            <div class="sec-body">
-            <div class="recipe-grid">
-                <div class="recipe-card"><div class="recipe-thumb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="recipe-info"><p>시금치 된장국</p><p>짱구엄마 · ♥ 142</p></div></div>
-                <div class="recipe-card"><div class="recipe-thumb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="recipe-info"><p>시금치 크림파스타</p><p>요리왕 · ♥ 98</p></div></div>
-                <div class="recipe-card"><div class="recipe-thumb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="recipe-info"><p>시금치 나물 무침</p><p>밥맛없어 · ♥ 76</p></div></div>
-                <div class="recipe-card"><div class="recipe-thumb"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div><div class="recipe-info"><p>시금치 달걀볶음</p><p>초보쿡 · ♥ 54</p></div></div>
-                <button class="recipe-more">더보기 (234개 더)</button>
-            </div>
-            </div>
-        </div>
-
-        <!-- 댓글 -->
-        <div class="section">
-            <div class="sec-head">
-            <div class="sec-head-bar"></div>
-            <span class="sec-title">댓글</span>
-            <span style="margin-left:auto;font-size:12px;color:var(--color-text-tertiary)">12개</span>
-            </div>
-            <div class="sec-body">
-            <div class="comment-input-wrap">
-                <div class="comment-avatar"></div>
-                <div class="comment-input-box">댓글을 입력하세요...</div>
-            </div>
-            <div class="comment-list">
-                <div class="comment-item">
-                <div class="comment-avatar"></div>
-                <div class="comment-body">
-                    <p class="comment-name">초록잎사귀</p>
-                    <p class="comment-text">시금치 레시피 너무 좋아요! 꼭 도전해볼게요</p>
-                    <p class="comment-meta">2026.04.03 · 좋아요 3</p>
-                </div>
-                </div>
-                <div class="comment-item">
-                <div class="comment-avatar"></div>
-                <div class="comment-body">
-                    <p class="comment-name">주부9단</p>
-                    <p class="comment-text">참여 완료했습니다! 당첨되길 기원해요</p>
-                    <p class="comment-meta">2026.04.05 · 좋아요 1</p>
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <!-- 이전글 / 다음글 / 목록 -->
-        <div class="post-nav">
-            <div class="post-nav-item">
-            <span class="post-nav-label">다음글</span>
-            <div class="post-nav-arrow">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7"/></svg>
-            </div>
-            <span class="post-nav-title">제 194회 만개의 레시피 공모전 — 2026 붉은 말의 에너지 붉은색(매운 요리) 레시피를 알려주세요</span>
-            <span class="post-nav-date">2026.05.01</span>
-            </div>
-            <div class="post-nav-item">
-            <span class="post-nav-label">이전글</span>
-            <div class="post-nav-arrow">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
-            </div>
-            <span class="post-nav-title">제 192회 만개의 레시피 공모전 — 겨울 김장 레시피를 알려주세요</span>
-            <span class="post-nav-date">2026.03.01</span>
-            </div>
-        </div>
-
-        <div class="post-nav-list-btn">
-            <button class="list-btn">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
-            목록
-            </button>
-        </div>
 
     </div>
     <!--footer-->
@@ -356,9 +204,4 @@
             </div>
         </div>
         <div class="rv_panel_body"></div>
-        <div class="rv_panel_foot">
-            <button class="rv_panel_clear">전체 삭제</button>
-        </div>
-    </div>
-</body>
-</html>
+        <di
