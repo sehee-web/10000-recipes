@@ -1,0 +1,163 @@
+/* ============================================
+   notice.css
+   만개의 레시피 — 공지사항 페이지 스타일
+============================================ */
+
+.notice-page {
+    background: #f8f7f5;
+}
+
+.notice-inner {
+    max-width: 1264px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── 페이지 타이틀 ── */
+.notice-page-head {
+    text-align: center;
+    padding: 40px 0 40px;
+}
+
+.notice-page-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+/* ── 테이블 ── */
+.notice-table-wrap {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #ebebeb;
+    overflow: hidden;
+    margin-bottom: 80px;
+}
+
+.notice-table-head {
+    display: grid;
+    grid-template-columns: 100px 1fr 120px;
+    padding: 14px 14px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.notice-table-head .col-num   { text-align: center; }
+.notice-table-head .col-title { text-align: center; padding-left: 8px; }
+.notice-table-head .col-date  { text-align: center; }
+
+/* ── 공지 고정 행 ── */
+.notice-row {
+    display: grid;
+    grid-template-columns: 80px 1fr 120px;
+    padding: 20px 24px;
+    border-bottom: 1px solid #ebebeb;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.15s;
+    text-decoration: none;
+}
+
+.notice-row:last-child {
+    border-bottom: none;
+}
+
+.notice-row:hover {
+    background: #fafafa;
+}
+
+.notice-row:hover .notice-row__title {
+    color: #e9722e;
+}
+
+/* ── 번호 셀 ── */
+.notice-row__num {
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.notice-row__num-wrap {
+    display: flex;
+    justify-content: center;
+}
+
+.notice-badge {
+    display: inline-block;
+    background: #e9722e;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+}
+
+.notice-num-text {
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+    text-align: center;
+}
+
+/* ── 제목 셀 ── */
+.notice-row__title {
+    font-size: 14px;
+    font-weight: 500;
+    color: #1a1a1a;
+    padding-left: 8px;
+    transition: color 0.15s;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* ── 날짜 셀 ── */
+.notice-row__date {
+    font-size: 13px;
+    color: #888;
+    text-align: center;
+}
+
+/* ── 페이지네이션 ── */
+.notice-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.notice-pg-btn {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    font-size: 13px;
+    color: #555;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.notice-pg-btn:hover {
+    background: #f5f5f5;
+}
+
+.notice-pg-btn.is-active {
+    background: #e9722e;
+    color: #fff;
+    border-color: #e9722e;
+}
+
+.notice-pg-btn.is-disabled {
+    opacity: 0.35;
+    cursor: default;
+    pointer-events: none;
+}
