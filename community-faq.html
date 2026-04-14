@@ -3,16 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>이벤트 | 만개의 레시피</title>
+    <title>자주 묻는 질문 | 만개의 레시피</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/community-faq.css">
     <link rel="icon" type="image/png" sizes="32x32" href="images_10000_recipes/favicon.png">
-    <link rel="stylesheet" href="css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="css/event.css">
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/common.js"></script>
+    <script src="js/community-faq.js" defer></script>
 </head>
 <body>
+
     <!--header-->
     <header id="header" class="header">
         <div class="header_inner">
@@ -58,6 +59,7 @@
                     </fieldset>
                 </form>
             </div>
+
             <!-- gnb -->
             <nav id="gnb" class="gnb">
                 <div class="ctg_wrap">
@@ -122,132 +124,20 @@
             </nav>
         </div>
     </header>
-    <main class="event-page">
-        <div class="event-inner">
-            <!-- 페이지 타이틀 -->
-            <div class="event-page-title">
-                <p>이벤트</p>
-                <span>만개의 레시피와 함께하는 특별한 혜택을 만나보세요</span>
+
+    <!-- 자주 묻는 질문 메인 -->
+    <main class="faq-page">
+        <div class="faq-inner">
+
+            <div class="faq-page-head">
+                <p class="faq-page-title">자주 묻는 질문</p>
             </div>
 
-            <!-- ① Swiper 배너 (이미지 2개씩, 총 4개) -->
-            <div class="event-banner-wrap">
-                <div class="swiper event-swiper">
-                    <div class="swiper-wrapper">
-
-                        <!-- 슬라이드 1 -->
-                        <div class="swiper-slide">
-                            <a href="event-detail.html?id=4"><img src="images_10000_recipes/event_img/event_img4.png" alt="이벤트 배너 1"></a>
-                            
-                        </div>
-
-                        <!-- 슬라이드 2 -->
-                        <div class="swiper-slide">
-                            <a href="event-detail.html?id=3"><img src="images_10000_recipes/event_img/event_img3.png" alt="이벤트 배너 2"></a>
-                        </div>
-
-                        <!-- 슬라이드 3 -->
-                        <div class="swiper-slide">
-                            <a href="event-detail.html?id=2"><img src="images_10000_recipes/event_img/event_img2.png" alt="이벤트 배너 3"></a>
-                        </div>
-
-                        <!-- 슬라이드 4 -->
-                        <div class="swiper-slide">
-                            <a href="event-detail.html?id=1"><img src="images_10000_recipes/event_img/event_img1.png" alt="이벤트 배너 4"></a>
-                        </div>
-
-                    </div>
-                    
-                    <!-- 네비게이션 -->
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-button-next"></div>
-                </div>
-                <!-- 페이지네이션 -->
-                <div class="swiper-pagination"></div>
-                <!-- 슬라이드 카운터 -->
-                <div class="banner-controls">
-                    <button class="banner-pause-btn" id="bannerPauseBtn" aria-label="자동재생 일시정지">
-                        <!-- pause icon -->
-                        <svg id="iconPause" width="12" height="12" viewBox="0 0 24 24" fill="#fff"><rect x="5" y="3" width="4" height="18" rx="1"/><rect x="15" y="3" width="4" height="18" rx="1"/></svg>
-                        <!-- play icon (hidden) -->
-                        <svg id="iconPlay" width="12" height="12" viewBox="0 0 24 24" fill="#fff" style="display:none"><path d="M6 4l14 8-14 8V4z"/></svg>
-                    </button>
-                    <span class="banner-counter" id="bannerCounter">1 / 4</span>
-                </div>
+            <div class="faq-list" id="faq-list">
+                <!-- JS 렌더링 -->
             </div>
 
-            <!-- ② 탭 필터 -->
-            <div class="event-tabs" role="tablist">
-                <button class="event-tab is-active" data-filter="all">전체</button>
-                <button class="event-tab" data-filter="ing">진행중</button>
-                <button class="event-tab" data-filter="end">종료</button>
-            </div>
-            <hr class="event-divider">
-            <!-- ③ 진행중 이벤트 — 풀너비 배너형 -->
-            <div class="event-section-head">
-                <h3>진행 중인 이벤트</h3>
-            </div>
-
-            <div class="event-banner-list">
-
-                <a href="event-detail.html?id=4" class="event-banner-item" data-status="ing">
-                    <img src="images_10000_recipes/event_img/event_img4.png" alt="봄나물 레시피 이벤트">
-                    <div class="event-banner-item__overlay">
-                        <div class="event-banner-item__text">
-                            <span class="event-banner-item__tag">진행중 · D-12</span>
-                            <p class="event-banner-item__period">2025.04.01 – 2025.05.15</p>
-                        </div>
-                        <div class="event-banner-item__arrow">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="event-detail.html?id=3" class="event-banner-item" data-status="ing">
-                    <img src="images_10000_recipes/event_img/event_img3.png" alt="시금치 레시피 이벤트">
-                    <div class="event-banner-item__overlay">
-                        <div class="event-banner-item__text">
-                            <span class="event-banner-item__tag">진행중 · D-8</span>
-                            <p class="event-banner-item__period">2025.04.10 – 2025.05.11</p>
-                        </div>
-                        <div class="event-banner-item__arrow">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-            
-
-            <!-- ④ 종료 이벤트 — 풀너비 배너형 -->
-            <div class="event-section-head">
-                <h3>종료된 이벤트</h3>
-            </div>
-
-            <div class="event-banner-list">
-
-                <a href="event-detail.html?id=2" class="event-banner-item" data-status="end">
-                    <img src="images_10000_recipes/event_img/event_img2.png" alt="붉은말의 해 이벤트" style="filter:brightness(0.72)">
-                    <div class="event-banner-item__overlay">
-                        
-                        <div class="event-banner-item__arrow">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                        </div>
-                    </div>
-                </a>
-
-                <a href="event-detail.html?id=1" class="event-banner-item" data-status="end">
-                    <img src="images_10000_recipes/event_img/event_img1.png" alt="연말파티 레시피 이벤트" style="filter:brightness(0.72)">
-                    <div class="event-banner-item__overlay">
-                        
-                        <div class="event-banner-item__arrow">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></svg>
-                        </div>
-                    </div>
-                </a>
-            </div>
-
-        </div><!-- /event-inner -->
+        </div>
     </main>
 
     <!--footer-->
@@ -319,88 +209,5 @@
         </div>
     </div>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        /* ── Swiper 초기화 ── */
-        const eventSwiper = new Swiper('.event-swiper', {
-            slidesPerView: 2,
-            spaceBetween: 16,
-            loop: true,
-            autoplay: {
-                delay: 4000,
-                disableOnInteraction: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
-            on: {
-                slideChange: function () {
-                    const real = this.realIndex + 1;
-                    document.getElementById('bannerCounter').textContent = real + ' / 4';
-                }
-            }
-        });
-
-        /* ── 일시정지 버튼 ── */
-        var isPlaying = true;
-        document.getElementById('bannerPauseBtn').addEventListener('click', function () {
-            if (isPlaying) {
-                eventSwiper.autoplay.stop();
-                document.getElementById('iconPause').style.display = 'none';
-                document.getElementById('iconPlay').style.display  = '';
-                this.setAttribute('aria-label', '자동재생 재생');
-            } else {
-                eventSwiper.autoplay.start();
-                document.getElementById('iconPause').style.display = '';
-                document.getElementById('iconPlay').style.display  = 'none';
-                this.setAttribute('aria-label', '자동재생 일시정지');
-            }
-            isPlaying = !isPlaying;
-        });
-
-        /* ── 탭 필터 ── */
-        document.querySelectorAll('.event-tab').forEach(function (tab) {
-            tab.addEventListener('click', function () {
-                document.querySelectorAll('.event-tab').forEach(function (t) {
-                    t.classList.remove('is-active');
-                });
-                tab.classList.add('is-active');
-
-                const filter = tab.dataset.filter;
-                const items  = document.querySelectorAll('.event-banner-item');
-                const sections = document.querySelectorAll('.event-section-head, .event-divider');
-
-                items.forEach(function (item) {
-                    if (filter === 'all' || item.dataset.status === filter) {
-                        item.style.display = '';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-
-                /* 섹션 헤더 가시성: 해당 섹션에 보이는 아이템이 없으면 숨김 */
-                document.querySelectorAll('.event-banner-list').forEach(function (list) {
-                    const visible = Array.from(list.querySelectorAll('.event-banner-item')).some(function (el) {
-                        return el.style.display !== 'none';
-                    });
-                    var head = list.previousElementSibling;
-                    if (head && head.classList.contains('event-section-head')) {
-                        head.style.display = visible ? '' : 'none';
-                    }
-                    /* 구분선 처리 */
-                    var divider = list.nextElementSibling;
-                    if (divider && divider.classList.contains('event-divider')) {
-                        divider.style.display = visible ? '' : 'none';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>

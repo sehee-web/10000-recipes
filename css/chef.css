@@ -391,9 +391,9 @@
 }
 
 .chef-pg-btn.is-active {
-    background: var(--color-point);
+    background: var(--color-primary);
     color: #fff;
-    border-color: var(--color-point);
+    border-color: var(--color-primary);
 }
 
 .chef-pg-btn.is-disabled {

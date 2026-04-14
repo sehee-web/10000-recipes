@@ -16,7 +16,7 @@
 /* ── 페이지 타이틀 ── */
 .notice-page-head {
     text-align: center;
-    padding: 40px 0 40px;
+    padding: 40px 0 80px;
 }
 
 .notice-page-title {
@@ -151,9 +151,9 @@
 }
 
 .notice-pg-btn.is-active {
-    background: #e9722e;
+    background: #74b243;
     color: #fff;
-    border-color: #e9722e;
+    border-color: #74b243;
 }
 
 .notice-pg-btn.is-disabled {

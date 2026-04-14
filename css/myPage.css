@@ -1,0 +1,474 @@
+/*myPage.css 만개의 레시피 — 마이페이지 스타일*/
+
+.mypage-page {
+    background: #f8f7f5;
+}
+
+.mypage-inner {
+    max-width: 1264px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.mypage-layout {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+/* ── 사이드바 ── */
+.mypage-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    position: sticky;
+    top: 20px;
+}
+
+.mypage-profile-card {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    padding: 24px 16px;
+    text-align: center;
+}
+
+.mypage-avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 12px;
+    border: 1px solid #ebebeb;
+}
+
+.mypage-avatar svg,
+.mypage-avatar img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+.mypage-profile-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.mypage-profile-email {
+    font-size: 12px;
+    color: #999;
+}
+
+.mypage-nav {
+    background: #fff;
+    border-top: 1px solid #ebebeb;
+    
+    overflow: hidden;
+}
+
+.mypage-nav-item {
+    display: block;
+    padding: 14px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+    border-left: 3px solid transparent;
+    border-bottom: 1px solid #f2f2f2;
+    text-decoration: none;
+    transition: all 0.15s;
+}
+
+.mypage-nav-item:last-child {
+    border-bottom: none;
+}
+
+.mypage-nav-item:hover {
+    background: #fafafa;
+    color: #1a1a1a;
+}
+
+.mypage-nav-item.is-active {
+    color: #3d6320;
+    border-left-color: #74b243;
+    background: #dcead1;
+    font-weight: 700;
+}
+
+/* ── 메인 콘텐츠 ── */
+.mypage-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mypage-panel {
+    display: none;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.mypage-panel.is-active {
+    display: flex;
+}
+
+/* ── 카드 ── */
+.mypage-card {
+    background: #fff;
+    border: 1px solid #ebebeb;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.mypage-card-head {
+    padding: 18px 24px 14px;
+    border-bottom: 1px solid #ebebeb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mypage-card-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.mypage-card-count {
+    font-size: 13px;
+    color: #999;
+}
+
+.mypage-card-body {
+    padding: 20px 24px;
+}
+
+/* ── 레시피 그리드 ── */
+.mypage-recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.mypage-recipe-card {
+    border: 1px solid #ebebeb;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: border-color 0.15s;
+    text-decoration: none;
+    display: block;
+}
+
+.mypage-recipe-card:hover {
+    border-color: #e9722e;
+}
+
+.mypage-recipe-thumb {
+    height: 100px;
+    background: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.mypage-recipe-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.mypage-recipe-thumb svg {
+    opacity: 0.2;
+}
+
+.mypage-recipe-meta {
+    padding: 10px 12px;
+}
+
+.mypage-recipe-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 7px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.mypage-recipe-badge.is-public {
+    background: #edfaf0;
+    color: #27864a;
+}
+
+.mypage-recipe-badge.is-draft {
+    background: #f5f5f5;
+    color: #888;
+}
+
+.mypage-recipe-name {
+    font-size: 13px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mypage-recipe-date {
+    font-size: 11px;
+    color: #bbb;
+}
+
+/* ── 레시피 등록 버튼 ── */
+.mypage-btn-reg-wrap{
+    text-align: center;
+}
+.mypage-btn-reg {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #e9722e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+
+.mypage-btn-reg:hover {
+    background: #c75e20;
+}
+
+/* ── 빈 상태 ── */
+.mypage-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 20px;
+    gap: 12px;
+}
+
+.mypage-empty-text {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* ── 문의 폼 ── */
+.mypage-form-group {
+    margin-bottom: 16px;
+}
+
+.mypage-form-label {
+    display: block;
+    font-size: 14px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+}
+
+.mypage-form-optional {
+    font-size: 11px;
+    color: #bbb;
+    font-weight: 400;
+}
+
+.mypage-form-input {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1a1a1a;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.15s;
+}
+
+.mypage-form-input:focus {
+    border-color: #e9722e;
+}
+
+.mypage-form-textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1a1a1a;
+    background: #fff;
+    outline: none;
+    resize: vertical;
+    min-height: 120px;
+    transition: border-color 0.15s;
+}
+
+.mypage-form-textarea:focus {
+    border-color: #e9722e;
+}
+
+.mypage-upload-area {
+    border: 1.5px dashed #e0e0e0;
+    border-radius: 8px;
+    padding: 24px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.15s;
+}
+
+.mypage-upload-area:hover {
+    border-color: #e9722e;
+}
+
+.mypage-upload-area p {
+    font-size: 12px;
+    color: #bbb;
+    margin-top: 6px;
+}
+
+.mypage-btn-submit {
+    background: #e9722e;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    display: block; 
+    margin: 0 auto;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+
+.mypage-btn-submit:hover {
+    background: #c75e20;
+}
+
+/* ── 문의 리스트 ── */
+.mypage-qna-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.mypage-qna-item {
+    border: 1px solid #ebebeb;
+    border-radius: 8px;
+    padding: 13px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.mypage-qna-badge {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 9px;
+    border-radius: 10px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.mypage-qna-badge.is-done {
+    background: #edfaf0;
+    color: #27864a;
+}
+
+.mypage-qna-badge.is-wait {
+    background: #fff3e0;
+    color: #e65100;
+}
+
+.mypage-qna-title {
+    font-size: 13px;
+    color: #1a1a1a;
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.mypage-qna-date {
+    font-size: 11px;
+    color: #bbb;
+    flex-shrink: 0;
+}
+
+/* ── 회원정보 ── */
+.mypage-info-row {
+    display: grid;
+    grid-template-columns: 130px 1fr auto;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid #ebebeb;
+}
+
+.mypage-info-row:last-of-type {
+    border-bottom: none;
+}
+
+.mypage-info-label {
+    font-size: 13px;
+    color: #888;
+}
+
+.mypage-info-value {
+    font-size: 14px;
+    color: #1a1a1a;
+}
+
+.mypage-info-edit-btn {
+    font-size: 12px;
+    color: #e9722e;
+    background: none;
+    border: 1px solid #e9722e;
+    border-radius: 6px;
+    padding: 5px 12px;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+    white-space: nowrap;
+}
+
+.mypage-info-edit-btn:hover {
+    background: #e9722e;
+    color: #fff;
+}
+
+/* ── 회원탈퇴 ── */
+.mypage-withdraw-area {
+    margin-top: 44px;
+    text-align: center;
+}
+
+.mypage-withdraw-desc {
+    font-size: 13px;
+    color: #999;
+    margin-bottom: 25px;
+}
+
+.mypage-btn-withdraw {
+    background: #fff;
+    color: #d32f2f;
+    border: 1px solid #d32f2f;
+    border-radius: 8px;
+    padding: 9px 20px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s, color 0.15s;
+}
+
+.mypage-btn-withdraw:hover {
+    background: #d32f2f;
+    color: #fff;
+}

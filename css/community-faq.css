@@ -1,0 +1,113 @@
+/* ============================================
+   community-faq.css
+   만개의 레시피 — 자주 묻는 질문 페이지 스타일
+============================================ */
+
+.faq-page {
+    background: #f8f7f5;
+}
+
+.faq-inner {
+    max-width: 1264px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ── 페이지 타이틀 ── */
+.faq-page-head {
+    text-align: center;
+    padding: 40px 0 80px;
+}
+
+.faq-page-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+/* ── FAQ 리스트 ── */
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+/* ── FAQ 아이템 ── */
+.faq-item {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: border-color 0.15s;
+}
+
+.faq-item.is-open {
+    border-color: #74b243;
+}
+
+/* ── 질문 행 ── */
+.faq-q {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 18px 24px;
+    cursor: pointer;
+    transition: background 0.15s;
+    background: none;
+    border: none;
+    width: 100%;
+    text-align: left;
+}
+
+.faq-q:hover {
+    background: #fafafa;
+}
+
+.faq-q-mark {
+    font-size: 18px;
+    font-weight: 700;
+    color: #74b243;
+    flex-shrink: 0;
+    width: 20px;
+}
+
+.faq-q-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    flex: 1;
+    line-height: 1.5;
+}
+
+.faq-arrow {
+    flex-shrink: 0;
+    color: #aaa;
+    transition: transform 0.2s;
+}
+
+.faq-item.is-open .faq-arrow {
+    transform: rotate(180deg);
+    color: #74b243;
+}
+
+/* ── 답변 행 ── */
+.faq-a {
+    display: none;
+    padding: 0 24px 20px 58px;
+    border-top: 1px solid #ebebeb;
+}
+
+.faq-item.is-open .faq-a {
+    display: block;
+}
+
+.faq-a-inner {
+    padding-top: 16px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.9;
+}
+
