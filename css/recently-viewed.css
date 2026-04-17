@@ -43,7 +43,6 @@
   border-radius: 6px;
   cursor: pointer;
   transition: border-color .15s, color .15s;
-  font-family: 'Noto Sans KR', sans-serif;
 }
 
 .rv-clear-btn:hover {
